@@ -23,12 +23,7 @@ namespace Model.Auth
         }
 
 
-        public async Task<ApplicationUser> FindUser(UserManager<ApplicationUser> manager,string userName, string password)
-        {
-            ApplicationUser user = await manager.FindAsync(userName, password);
 
-            return user;
-        }
 
         // Create additional parameters to persist on the cookie
         public async static Task<ClaimsIdentity> CreateUserClaims(
@@ -51,6 +46,13 @@ namespace Model.Auth
             identity.AddClaim(new Claim(ClaimTypes.UserData, jUser));
 
             return await Task.FromResult(identity);
+        }
+
+        public async Task<ApplicationUser> FindUser(string userName, string password, UserManager<ApplicationUser> manager)
+        {
+            ApplicationUser user = await manager.FindAsync(userName, password);
+
+            return user;
         }
     }
 }

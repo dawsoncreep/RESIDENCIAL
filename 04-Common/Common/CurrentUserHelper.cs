@@ -29,9 +29,30 @@ namespace Common
                     return null;
                 }
 
-                var jUser = ((ClaimsIdentity)user.Identity).FindFirst(ClaimTypes.UserData).Value;
+                string username = string.Empty;
+                string userId = string.Empty;
+                string name = string.Empty;
 
-                return JsonConvert.DeserializeObject<CurrentUser>(jUser);
+                if (((ClaimsIdentity)user.Identity).FindFirst(ClaimTypes.Name) != null)
+                {
+                    name = ((ClaimsIdentity)user.Identity).FindFirst(ClaimTypes.Name).Value;
+                }
+                if (((ClaimsIdentity)user.Identity).FindFirst(ClaimTypes.NameIdentifier) != null)
+                {
+                    username = ((ClaimsIdentity)user.Identity).FindFirst(ClaimTypes.NameIdentifier).Value;
+                }
+                if (((ClaimsIdentity)user.Identity).FindFirst(ClaimTypes.SerialNumber) != null)
+                {
+                    userId = ((ClaimsIdentity)user.Identity).FindFirst(ClaimTypes.SerialNumber).Value;
+                }
+
+                //return JsonConvert.DeserializeObject<CurrentUser>(jUser);
+                return new CurrentUser
+                {
+                    Name = name,
+                    UserId = userId,
+                    UserName = name
+                };
             }
         }
     }

@@ -26,6 +26,8 @@ namespace Service
         private readonly IDbContextScopeFactory _dbContextScopeFactory;
         private readonly IRepository<Audience> _authorizationServerRepository;
 
+
+
         public AuthorizationServerService(
             IDbContextScopeFactory dbContextScopeFactory,
             IRepository<Audience> authorizationServerRepository

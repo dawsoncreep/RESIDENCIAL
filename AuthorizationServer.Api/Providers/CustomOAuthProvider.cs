@@ -1,15 +1,20 @@
-﻿using Common;
+﻿using Auth.Service;
+using Common;
+using Microsoft.AspNet.Identity.EntityFramework;
+using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.OAuth;
 using Model.Auth;
 using Model.Custom;
+using Persistence.DatabaseContext;
+using Persistence.Repository;
 using Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using System.Web;
+
 
 namespace AuthorizationServer.Api.Providers
 {
@@ -19,6 +24,8 @@ namespace AuthorizationServer.Api.Providers
             DependecyFactory.GetInstance<IAuthorizationServerService>();
 
         private readonly IUserService _userService = DependecyFactory.GetInstance<IUserService>();
+
+
 
         public override Task ValidateClientAuthentication(OAuthValidateClientAuthenticationContext context)
         {
@@ -37,7 +44,6 @@ namespace AuthorizationServer.Api.Providers
                 return Task.FromResult<object>(null);
             }
 
-            //var audience = AudiencesStore.FindAudience(context.ClientId);
             var audience = _authorizationServerRepository.Get(context.ClientId);
 
             if (audience == null)
@@ -50,30 +56,34 @@ namespace AuthorizationServer.Api.Providers
             return Task.FromResult<object>(null);
         }
 
-        public override Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)
+        public override async Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)
         {
 
             context.OwinContext.Response.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
 
-            //ApplicationUser _repo = new ApplicationUser();
+            using (AuthRepository _repo = new AuthRepository())
+            {
+                IdentityUser user = await _repo.FindUser(context.UserName, context.Password);
 
-            //ApplicationUser user = await _repo.FindUser(context.UserName, context.Password);
+                if (user == null)
+                {
+                    context.SetError("invalid_grant", "The user name or password is incorrect.");
+                    return;
+                }
+            }
 
-            
-
-            //if (user == null)
-            //{
-            //    context.SetError("invalid_grant", "The user name or password is incorrect.");
-            //    return Task.FromResult<object>(null);
-            //}
-
+            UserForGridView userFromRepo = _userService.Get(context.UserName);
 
             var identity = new ClaimsIdentity("JWT");
 
             identity.AddClaim(new Claim(ClaimTypes.Name, context.UserName));
             identity.AddClaim(new Claim("sub", context.UserName));
-            identity.AddClaim(new Claim(ClaimTypes.Role, "Manager"));
-            identity.AddClaim(new Claim(ClaimTypes.Role, "Supervisor"));
+
+            userFromRepo.Roles.ForEach(s =>
+            {
+                identity.AddClaim(new Claim(ClaimTypes.Role, s));
+            });
+
 
             var props = new AuthenticationProperties(new Dictionary<string, string>
                 {
@@ -84,7 +94,6 @@ namespace AuthorizationServer.Api.Providers
 
             var ticket = new AuthenticationTicket(identity, props);
             context.Validated(ticket);
-            return Task.FromResult<object>(null);
         }
     }
 }

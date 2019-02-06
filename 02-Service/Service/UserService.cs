@@ -14,7 +14,7 @@ namespace Service
     public interface IUserService
     {
         IEnumerable<UserForGridView> GetAll();
-        ApplicationUser Get(string userName);
+        UserForGridView Get(string userName);
     }
 
     public class UserService : IUserService
@@ -32,16 +32,41 @@ namespace Service
             _applicationUserRepo = applicationUserRepo;
         }
 
-        public ApplicationUser Get(string userName)
+        public UserForGridView Get(string userName)
         {
-            var result = new ApplicationUser();
+            var result = new UserForGridView();
 
             try
             {
                 using (var ctx = _dbContextScopeFactory.CreateReadOnly())
                 {
-                    var user = _applicationUserRepo.Find(f => f.Email == userName).FirstOrDefault();
-                    result = user;
+                    var abc = _applicationUserRepo.GetAll().ToList();
+
+                    var users = ctx.GetEntity<ApplicationUser>().Where(w => w.Email == userName);
+                    var roles = ctx.GetEntity<ApplicationRole>();
+                    var usersPerRoles = ctx.GetEntity<ApplicationUserRole>();
+
+                    var queryUsersPerRoles = (
+                        from upr in usersPerRoles
+                        from r in roles.Where(x => x.Id == upr.RoleId)
+                        select new
+                        {
+                            upr.UserId,
+                            r.Name
+                        }
+                    ).AsQueryable();
+
+                    result = (
+                        from u in users
+                        select new UserForGridView
+                        {
+                            Id = u.Id,
+                            Email = u.Email,
+                            Roles = queryUsersPerRoles.Where(x =>
+                                x.UserId == u.Id
+                            ).Select(x => x.Name).ToList()
+                        }
+                    ).FirstOrDefault();
                 }
             }
             catch (Exception e)
