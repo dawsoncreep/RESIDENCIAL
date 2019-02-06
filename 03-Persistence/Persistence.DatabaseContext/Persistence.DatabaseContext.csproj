@@ -66,6 +66,10 @@
     <Compile Include="Migrations\201706302208467_Initialize.Designer.cs">
       <DependentUpon>201706302208467_Initialize.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201902050743096_AddingAudiences.cs" />
+    <Compile Include="Migrations\201902050743096_AddingAudiences.Designer.cs">
+      <DependentUpon>201902050743096_AddingAudiences.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -85,6 +89,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201706302208467_Initialize.resx">
       <DependentUpon>201706302208467_Initialize.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902050743096_AddingAudiences.resx">
+      <DependentUpon>201902050743096_AddingAudiences.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

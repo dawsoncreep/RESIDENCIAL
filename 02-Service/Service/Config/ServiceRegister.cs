@@ -20,11 +20,13 @@ namespace Service.Config
             container.Register<IRepository<Course>>((x) => new Repository<Course>(ambientDbContextLocator));
             container.Register<IRepository<Student>>((x) => new Repository<Student>(ambientDbContextLocator));
             container.Register<IRepository<StudentPerCourse>>((x) => new Repository<StudentPerCourse>(ambientDbContextLocator));
+            container.Register<IRepository<Audience>>((x) => new Repository<Audience>(ambientDbContextLocator));
 
             container.Register<IStudentService, StudentService>();
             container.Register<IStudentPerCourseService, StudentPerCourseService>();
             container.Register<ICourseService, CourseService>();
             container.Register<IUserService, UserService>();
+            container.Register<IAuthorizationServerService, AuthorizationServerService>();
         }
     }
 }

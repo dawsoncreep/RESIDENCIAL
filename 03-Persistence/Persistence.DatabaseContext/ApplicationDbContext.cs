@@ -21,6 +21,7 @@ namespace Persistence.DatabaseContext
         public virtual DbSet<Student> Student { get;set; }
         public virtual DbSet<StudentPerCourse> StudentPerCourse { get; set; }
         public virtual DbSet<Course> Course { get; set; }
+        public virtual DbSet<Audience> Audience { get; set; }
 
         public ApplicationDbContext()
             : base(string.Format("name={0}", Parameters.AppContext))

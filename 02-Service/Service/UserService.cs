@@ -14,6 +14,7 @@ namespace Service
     public interface IUserService
     {
         IEnumerable<UserForGridView> GetAll();
+        ApplicationUser Get(string userName);
     }
 
     public class UserService : IUserService
@@ -29,6 +30,26 @@ namespace Service
         {
             _dbContextScopeFactory = dbContextScopeFactory;
             _applicationUserRepo = applicationUserRepo;
+        }
+
+        public ApplicationUser Get(string userName)
+        {
+            var result = new ApplicationUser();
+
+            try
+            {
+                using (var ctx = _dbContextScopeFactory.CreateReadOnly())
+                {
+                    var user = _applicationUserRepo.Find(f => f.Email == userName).FirstOrDefault();
+                    result = user;
+                }
+            }
+            catch (Exception e)
+            {
+                logger.Error(e.Message);
+            }
+
+            return result;
         }
 
         public IEnumerable<UserForGridView> GetAll()
