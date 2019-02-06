@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNet.Identity.EntityFramework;
+﻿using Common;
+using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
@@ -30,8 +31,8 @@ namespace Auth.Service
 
         public override async Task<SignInStatus> PasswordSignInAsync(string userName, string password, bool isPersistent, bool shouldLockout)
         {
-            string uri = "http://localhost:23218/";
-            string clientId = "f08ee964c3ca477e8b572968e23722af";
+            string uri = Parameters.Iss; 
+            string clientId = Parameters.audId; 
             var jwtProvider = Providers.JwtProvider.Create(uri);
             string token = await jwtProvider.GetTokenAsync(userName, password, clientId, Environment.MachineName);
             if (token == null)

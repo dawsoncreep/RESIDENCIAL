@@ -1,4 +1,5 @@
-﻿using FrontEnd.App_Start;
+﻿//using FrontEnd.App_Start;
+using Common.Config;
 using Microsoft.Owin;
 using Owin;
 
@@ -12,6 +13,7 @@ namespace FrontEnd
             ConfigureAuth(app);
 
             ParamaterConfig.Initialize();
+
             EnumConfig.Start();
         }
     }

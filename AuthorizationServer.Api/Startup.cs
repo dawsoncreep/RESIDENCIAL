@@ -1,5 +1,7 @@
 ﻿using AuthorizationServer.Api.Formats;
 using AuthorizationServer.Api.Providers;
+using Common;
+using Common.Config;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.OAuth;
 using Owin;
@@ -20,6 +22,8 @@ namespace AuthorizationServer.Api
             // Web API routes
             config.MapHttpAttributeRoutes();
 
+            ParamaterConfig.Initialize();
+
             ConfigureOAuth(app);
 
             app.UseCors(Microsoft.Owin.Cors.CorsOptions.AllowAll);
@@ -38,7 +42,7 @@ namespace AuthorizationServer.Api
                 TokenEndpointPath = new PathString("/oauth2/token"),
                 AccessTokenExpireTimeSpan = TimeSpan.FromMinutes(30),
                 Provider = new CustomOAuthProvider(),
-                AccessTokenFormat = new CustomJwtFormat("http://localhost:23218/")
+                AccessTokenFormat = new CustomJwtFormat(Parameters.Iss)
             };
 
             // OAuth 2.0 Bearer Access Token Generation

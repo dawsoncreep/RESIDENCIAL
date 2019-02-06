@@ -1,5 +1,4 @@
 ﻿using Common;
-using FrontEnd.App_Start;
 using System.Web.Mvc;
 
 namespace FrontEnd.Controllers

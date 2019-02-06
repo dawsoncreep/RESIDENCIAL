@@ -66,7 +66,19 @@ namespace Auth.Service.Providers
             //decode the payload from token
             //in order to create a claim            
             string userId = payload.unique_name;
-            string[] roles = payload.role != null ? payload.role.ToObject(typeof(string[])) : null;
+            string[] roles = null;
+            if (payload.role != null)
+            {
+                if (payload.role.GetType().Equals(typeof(Newtonsoft.Json.Linq.JArray)))
+                {
+                    roles = payload.role.ToObject(typeof(string));
+                }
+                else
+                {
+                    roles = new string[] { payload.role.ToObject(typeof(string)) };
+                }
+            }
+            
 
             var jwtIdentity = new ClaimsIdentity(new JwtIdentity(
                 isAuthenticated, userName, DefaultAuthenticationTypes.ApplicationCookie
