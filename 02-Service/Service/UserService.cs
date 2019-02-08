@@ -14,6 +14,7 @@ namespace Service
     public interface IUserService
     {
         IEnumerable<UserForGridView> GetAll();
+        UserForGridView Get(string userName);
     }
 
     public class UserService : IUserService
@@ -29,6 +30,51 @@ namespace Service
         {
             _dbContextScopeFactory = dbContextScopeFactory;
             _applicationUserRepo = applicationUserRepo;
+        }
+
+        public UserForGridView Get(string userName)
+        {
+            var result = new UserForGridView();
+
+            try
+            {
+                using (var ctx = _dbContextScopeFactory.CreateReadOnly())
+                {
+                    var abc = _applicationUserRepo.GetAll().ToList();
+
+                    var users = ctx.GetEntity<ApplicationUser>().Where(w => w.Email == userName);
+                    var roles = ctx.GetEntity<ApplicationRole>();
+                    var usersPerRoles = ctx.GetEntity<ApplicationUserRole>();
+
+                    var queryUsersPerRoles = (
+                        from upr in usersPerRoles
+                        from r in roles.Where(x => x.Id == upr.RoleId)
+                        select new
+                        {
+                            upr.UserId,
+                            r.Name
+                        }
+                    ).AsQueryable();
+
+                    result = (
+                        from u in users
+                        select new UserForGridView
+                        {
+                            Id = u.Id,
+                            Email = u.Email,
+                            Roles = queryUsersPerRoles.Where(x =>
+                                x.UserId == u.Id
+                            ).Select(x => x.Name).ToList()
+                        }
+                    ).FirstOrDefault();
+                }
+            }
+            catch (Exception e)
+            {
+                logger.Error(e.Message);
+            }
+
+            return result;
         }
 
         public IEnumerable<UserForGridView> GetAll()

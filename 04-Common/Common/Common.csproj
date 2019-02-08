@@ -46,6 +46,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
@@ -56,6 +57,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Config\EnumConfig.cs" />
+    <Compile Include="Config\ParameterConfig.cs" />
     <Compile Include="CurrentUserHelper.cs" />
     <Compile Include="CustomFilters\ISoftDeleted.cs" />
     <Compile Include="DependecyFactory.cs" />

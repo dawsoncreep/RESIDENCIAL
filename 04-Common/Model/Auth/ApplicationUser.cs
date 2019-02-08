@@ -9,6 +9,8 @@ namespace Model.Auth
 {
     public class ApplicationUser : IdentityUser
     {
+
+
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
@@ -19,6 +21,9 @@ namespace Model.Auth
             // Add custom user claims here
             return userIdentity;
         }
+
+
+
 
         // Create additional parameters to persist on the cookie
         public async static Task<ClaimsIdentity> CreateUserClaims(
@@ -41,6 +46,13 @@ namespace Model.Auth
             identity.AddClaim(new Claim(ClaimTypes.UserData, jUser));
 
             return await Task.FromResult(identity);
+        }
+
+        public async Task<ApplicationUser> FindUser(string userName, string password, UserManager<ApplicationUser> manager)
+        {
+            ApplicationUser user = await manager.FindAsync(userName, password);
+
+            return user;
         }
     }
 }

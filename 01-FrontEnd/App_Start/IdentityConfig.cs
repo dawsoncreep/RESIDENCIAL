@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
 
 namespace FrontEnd
 {
@@ -20,4 +21,5 @@ namespace FrontEnd
             return Task.FromResult(0);
         }
     }
+    
 }

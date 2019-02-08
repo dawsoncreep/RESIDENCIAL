@@ -77,31 +77,47 @@ namespace FrontEnd.Controllers
                 return View(model);
             }
 
-            var currentUser = UserManager.FindByEmail(model.Email);
+            //var currentUser = UserManager.FindByEmail(model.Email);
 
-            if (currentUser == null)
+            //if (currentUser == null)
+            //{
+            //    ModelState.AddModelError("", "Invalid login attempt.");
+            //    return View(model);
+            //}
+
+            //if (!UserManager.CheckPassword(currentUser, model.Password))
+            //{
+            //    ModelState.AddModelError("", "Invalid login attempt.");
+            //    return View(model);
+            //}
+
+            //var identity = await UserManager.CreateIdentityAsync(currentUser, DefaultAuthenticationTypes.ApplicationCookie);
+
+            //identity = await ApplicationUser.CreateUserClaims(
+            //    identity,
+            //    UserManager,
+            //    currentUser.Id
+            //);
+
+            //AuthenticationManager.SignIn(new AuthenticationProperties() { IsPersistent = true }, identity);
+
+            //return RedirectToLocal(returnUrl);
+            // This doesn't count login failures towards account lockout
+            // To enable password failures to trigger account lockout, change to shouldLockout: true
+            var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
+            switch (result)
             {
-                ModelState.AddModelError("", "Invalid login attempt.");
-                return View(model);
+                case SignInStatus.Success:
+                    return RedirectToLocal(returnUrl);
+                case SignInStatus.LockedOut:
+                    return View("Lockout");
+                case SignInStatus.RequiresVerification:
+                    return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = model.RememberMe });
+                case SignInStatus.Failure:
+                default:
+                    ModelState.AddModelError("", "Invalid login attempt.");
+                    return View(model);
             }
-
-            if (!UserManager.CheckPassword(currentUser, model.Password))
-            {
-                ModelState.AddModelError("", "Invalid login attempt.");
-                return View(model);
-            }
-
-            var identity = await UserManager.CreateIdentityAsync(currentUser, DefaultAuthenticationTypes.ApplicationCookie);
-
-            identity = await ApplicationUser.CreateUserClaims(
-                identity,
-                UserManager,
-                currentUser.Id
-            );
-
-            AuthenticationManager.SignIn(new AuthenticationProperties() { IsPersistent = true }, identity);
-
-            return RedirectToLocal(returnUrl);
         }
 
         //

@@ -11,7 +11,7 @@ using System.Web.Mvc;
 
 namespace FrontEnd.Controllers
 {
-    [Authorize]
+    [Authorize(Roles ="Admin")]
     public class UsersController : Controller
     {
         private ApplicationRoleManager _roleManager
