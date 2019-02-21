@@ -78,6 +78,10 @@
     <Compile Include="Migrations\201902212044580_versionInicialBD1_0.Designer.cs">
       <DependentUpon>201902212044580_versionInicialBD1_0.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201902212134329_addTablesParameter-Bulletin.cs" />
+    <Compile Include="Migrations\201902212134329_addTablesParameter-Bulletin.Designer.cs">
+      <DependentUpon>201902212134329_addTablesParameter-Bulletin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -106,6 +110,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201902212044580_versionInicialBD1_0.resx">
       <DependentUpon>201902212044580_versionInicialBD1_0.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902212134329_addTablesParameter-Bulletin.resx">
+      <DependentUpon>201902212134329_addTablesParameter-Bulletin.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

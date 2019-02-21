@@ -41,6 +41,8 @@ namespace Persistence.DatabaseContext
         public virtual DbSet<Permission> Permission { get; set; }
         public virtual DbSet<PermissionUser> PermissionUser { get; set; }
         public virtual DbSet<UserBinnacle> UserBinnacle { get; set; }
+        public virtual DbSet<ApplicationParameters> ApplicationParameters { get; set; }
+        public virtual DbSet<Bulletin> Bulletin { get; set; }
 
 
         public ApplicationDbContext()

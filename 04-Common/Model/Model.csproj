@@ -74,6 +74,7 @@
     <Compile Include="Domain\BinnaclePhoto.cs" />
     <Compile Include="Domain\BinnaclePhotoType.cs" />
     <Compile Include="Domain\BinnacleType.cs" />
+    <Compile Include="Domain\Bulletin.cs" />
     <Compile Include="Domain\Course.cs" />
     <Compile Include="Domain\Customer.cs" />
     <Compile Include="Domain\CustomerBinnacle.cs" />
@@ -88,6 +89,7 @@
     <Compile Include="Domain\LocationUserNotification.cs" />
     <Compile Include="Domain\LocationVehicle.cs" />
     <Compile Include="Domain\Notification.cs" />
+    <Compile Include="Domain\ApplicationParameters.cs" />
     <Compile Include="Domain\Permission.cs" />
     <Compile Include="Domain\PermissionUser.cs" />
     <Compile Include="Domain\Student.cs" />
