@@ -70,6 +70,14 @@
     <Compile Include="Migrations\201902050743096_AddingAudiences.Designer.cs">
       <DependentUpon>201902050743096_AddingAudiences.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201902212033398_versionInicialBD.cs" />
+    <Compile Include="Migrations\201902212033398_versionInicialBD.Designer.cs">
+      <DependentUpon>201902212033398_versionInicialBD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902212044580_versionInicialBD1_0.cs" />
+    <Compile Include="Migrations\201902212044580_versionInicialBD1_0.Designer.cs">
+      <DependentUpon>201902212044580_versionInicialBD1_0.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -92,6 +100,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201902050743096_AddingAudiences.resx">
       <DependentUpon>201902050743096_AddingAudiences.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902212033398_versionInicialBD.resx">
+      <DependentUpon>201902212033398_versionInicialBD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902212044580_versionInicialBD1_0.resx">
+      <DependentUpon>201902212044580_versionInicialBD1_0.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
