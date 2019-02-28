@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppResidencial.GenerarRegistroPage" Title="Preferentes Crear/Modificar">
+    <StackLayout Orientation="Vertical">
+        <StackLayout Orientation="Horizontal">
+            <Button x:Name="btnGuardar" Text="guardar" BorderRadius="20" Margin="10,10,10,10"
+                    BackgroundColor="Blue" TextColor="White" WidthRequest="190"/>
+            <Button x:Name="btnCancelar" Text="cancelar" BorderRadius="20" WidthRequest="190"  Margin="10,10,10,10"
+                    BackgroundColor="Blue" TextColor="White"/>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal" Margin="10,10,0,0">
+            <Image Source="x.png" HeightRequest="100" WidthRequest="100"/>
+            <StackLayout Orientation="Vertical">
+                <Label  Text="Nombre:" FontAttributes="Bold" Margin="15,0,0,0"/>
+                <Entry x:Name="lbNombre" Placeholder="Ingresa el nombre" TextColor="Black" Margin="15,0,0,0" WidthRequest="250"/>
+            </StackLayout>
+        </StackLayout>
+        
+            <Label Text="Datos del vehiculo" VerticalOptions="Center" HorizontalOptions="Center" FontAttributes="Bold" FontSize="Small"/>
+            <Label Text="Placas:" FontAttributes="Bold" Margin="10,0,10,0"/>
+            <Entry Placeholder="Ingresa n° de placas" TextColor="Black" Margin="10,0,10,0" WidthRequest="200"/>
+            <Label Text="Marca:" FontAttributes="Bold" Margin="10,0,10,0"/>
+            <Entry Placeholder="Ingresa la marca" TextColor="Black" Margin="10,0,10,0" WidthRequest="200"/>
+            <Label Text="Modelo:" FontAttributes="Bold" Margin="10,0,10,0"/>
+            <Entry Placeholder="Ingresa el modelo" TextColor="Black" Margin="10,0,10,0" WidthRequest="200"/>
+            <Label Text="Color" FontAttributes="Bold" Margin="10,0,10,0"/>
+            <Entry Placeholder="Ingresa el color" TextColor="Black" Margin="10,0,10,0" WidthRequest="200"/>
+            
+        
+        
+    </StackLayout> 
+    
+</ContentPage>

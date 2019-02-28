@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppResidencial.HomePage" Title="Home" >
+    
+    <StackLayout Orientation="Vertical" BackgroundColor="White">
+        
+        <Button x:Name="btnVisitas" Text="Visitas" BorderRadius="20" Margin="10,20,10,0"
+                    BackgroundColor="Blue" TextColor="White"/>
+        
+        <Button x:Name="btnVisitasCoto" Text="Visitas en el coto" BorderRadius="20" Margin="10,10,10,0"
+                    BackgroundColor="Blue" TextColor="White"/>
+        
+        <Button x:Name="btnComunicacion" Text="Comunicacion" BorderRadius="20" Margin="10,10,10,0"
+                    BackgroundColor="Blue" TextColor="White"/>
+        
+        <Button x:Name="btnBoletines" Text="Boletines" BorderRadius="20" Margin="10,10,10,1"
+                    BackgroundColor="Blue" TextColor="White"/>
+        
+        <Button x:Name="btnUsuario" Text="Usuario" BorderRadius="20" Margin="10,10,10,0"
+                    BackgroundColor="Blue" TextColor="White"/>
+        
+        <Button x:Name="btnConfiguracion" Text="Configuracion" BorderRadius="20" Margin="10,10,10,0"
+                    BackgroundColor="Blue" TextColor="White"/>
+        
+        <Button x:Name="btnPanico" Text="Boton de Panico" BorderRadius="20" Margin="10,80,10,0"
+                    BackgroundColor="Blue" TextColor="White" />
+        
+        <Button x:Name="btnRecibirVisitas" Text="Recibiendo Visitas" BorderRadius="20" Margin="10,20,10,0"
+                    BackgroundColor="Green"  TextColor="White"/>
+
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:AppResidencial"
+             x:Class="AppResidencial.MainPage">
+
+    <StackLayout Orientation="Vertical">
+        <Image Source="logor.png" HeightRequest="250"
+                       WidthRequest="150" Margin="0,80,0,30"/>
+        
+        <Entry x:Name="User" Placeholder="Usuario" TextColor="Black" Margin="0,0,0,20" />
+        
+        <Entry x:Name="Pass" Placeholder="Contraseña" IsPassword="True" TextColor="Black" />
+
+        <Button x:Name="btnIniciar" Text="Iniciar sesion" BackgroundColor="Blue" BorderRadius="20" TextColor="White"
+                            Margin="10,25,10,0"/>
+
+
+
+    </StackLayout>
+
+</ContentPage>
