@@ -90,6 +90,10 @@
     <Compile Include="Migrations\201903010624462_Changes20190228.Designer.cs">
       <DependentUpon>201903010624462_Changes20190228.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201902281929597_CatalogosType.cs" />
+    <Compile Include="Migrations\201902281929597_CatalogosType.Designer.cs">
+      <DependentUpon>201902281929597_CatalogosType.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -121,9 +125,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201902212319199_updateTableBinnacleField100.resx">
       <DependentUpon>201902212319199_updateTableBinnacleField100.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903010624462_Changes20190228.resx">
-      <DependentUpon>201903010624462_Changes20190228.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
