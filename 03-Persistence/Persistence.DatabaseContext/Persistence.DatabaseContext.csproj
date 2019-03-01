@@ -42,6 +42,10 @@
       <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -70,10 +74,6 @@
     <Compile Include="Migrations\201902050743096_AddingAudiences.Designer.cs">
       <DependentUpon>201902050743096_AddingAudiences.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201902212033398_versionInicialBD.cs" />
-    <Compile Include="Migrations\201902212033398_versionInicialBD.Designer.cs">
-      <DependentUpon>201902212033398_versionInicialBD.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\201902212044580_versionInicialBD1_0.cs" />
     <Compile Include="Migrations\201902212044580_versionInicialBD1_0.Designer.cs">
       <DependentUpon>201902212044580_versionInicialBD1_0.cs</DependentUpon>
@@ -85,6 +85,10 @@
     <Compile Include="Migrations\201902212319199_updateTableBinnacleField100.cs" />
     <Compile Include="Migrations\201902212319199_updateTableBinnacleField100.Designer.cs">
       <DependentUpon>201902212319199_updateTableBinnacleField100.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903010624462_Changes20190228.cs" />
+    <Compile Include="Migrations\201903010624462_Changes20190228.Designer.cs">
+      <DependentUpon>201903010624462_Changes20190228.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -109,9 +113,6 @@
     <EmbeddedResource Include="Migrations\201902050743096_AddingAudiences.resx">
       <DependentUpon>201902050743096_AddingAudiences.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201902212033398_versionInicialBD.resx">
-      <DependentUpon>201902212033398_versionInicialBD.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201902212044580_versionInicialBD1_0.resx">
       <DependentUpon>201902212044580_versionInicialBD1_0.cs</DependentUpon>
     </EmbeddedResource>
@@ -120,6 +121,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201902212319199_updateTableBinnacleField100.resx">
       <DependentUpon>201902212319199_updateTableBinnacleField100.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903010624462_Changes20190228.resx">
+      <DependentUpon>201903010624462_Changes20190228.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

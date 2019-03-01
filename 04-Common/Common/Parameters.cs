@@ -6,7 +6,7 @@
         public static string Environment { get; set; }
         public static string audId { get; set; }
         public static string Iss { get; set; }
-
+        public static string Sec { get; set; }
 
     }
 }

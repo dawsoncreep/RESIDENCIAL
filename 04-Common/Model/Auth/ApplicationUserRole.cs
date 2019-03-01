@@ -4,6 +4,5 @@ namespace Model.Auth
 {
     public class ApplicationUserRole : IdentityUserRole
     {
-        
     }
 }

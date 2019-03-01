@@ -7,13 +7,13 @@ namespace Persistence.DatabaseContext.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class versionInicialBD : IMigrationMetadata
+    public sealed partial class Changes20190228 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(versionInicialBD));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Changes20190228));
         
         string IMigrationMetadata.Id
         {
-            get { return "201902212033398_versionInicialBD"; }
+            get { return "201903010624462_Changes20190228"; }
         }
         
         string IMigrationMetadata.Source
