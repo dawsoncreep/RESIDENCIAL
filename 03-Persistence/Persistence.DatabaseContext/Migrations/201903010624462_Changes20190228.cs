@@ -3,16 +3,16 @@ namespace Persistence.DatabaseContext.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class versionInicialBD : DbMigration
+    public partial class Changes20190228 : DbMigration
     {
         public override void Up()
         {
-            DropColumn("dbo.AspNetUsers", "HuellaDigital");
+            AlterColumn("dbo.Binnacles", "Name", c => c.String(nullable: false, maxLength: 100));
         }
         
         public override void Down()
         {
-            AddColumn("dbo.AspNetUsers", "HuellaDigital", c => c.String());
+            AlterColumn("dbo.Binnacles", "Name", c => c.String(maxLength: 100));
         }
     }
 }

@@ -1,5 +1,8 @@
 namespace Persistence.DatabaseContext.Migrations
 {
+    using Microsoft.AspNet.Identity;
+    using Microsoft.AspNet.Identity.EntityFramework;
+    using Model.Auth;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
@@ -26,6 +29,33 @@ namespace Persistence.DatabaseContext.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+            if (!context.Roles.Any(r => r.Name == "Admin"))
+            {
+                var store = new RoleStore<ApplicationRole>(context);
+                var manager = new RoleManager<ApplicationRole>(store);
+                var role = new ApplicationRole { Name = "Admin" };
+
+                manager.Create(role);
+            }
+
+
+            if (!context.Users.Any(u => u.UserName == "admin"))
+            {
+                var store = new UserStore<ApplicationUser>(context);
+                var manager = new UserManager<ApplicationUser>(store);
+                var user = new ApplicationUser {
+                    UserName = "admin",
+                    Email = "admin@residencial.com"
+                };
+
+                manager.Create(user, "Admin123.");
+                manager.AddToRole(user.Id, "Admin");
+
+
+
+            }
+
+        
         }
     }
 }

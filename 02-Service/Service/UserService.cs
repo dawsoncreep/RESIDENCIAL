@@ -1,4 +1,5 @@
-﻿using Model.Auth;
+﻿using Microsoft.AspNet.Identity.EntityFramework;
+using Model.Auth;
 using Model.Custom;
 using NLog;
 using Persistence.DbContextScope;
@@ -42,9 +43,9 @@ namespace Service
                 {
                     var abc = _applicationUserRepo.GetAll().ToList();
 
-                    var users = ctx.GetEntity<ApplicationUser>().Where(w => w.Email == userName);
+                    var users = ctx.GetEntity<ApplicationUser>().Where(w => w.UserName == userName);
                     var roles = ctx.GetEntity<ApplicationRole>();
-                    var usersPerRoles = ctx.GetEntity<ApplicationUserRole>();
+                    var usersPerRoles = ctx.GetEntity<IdentityUserRole>();
 
                     var queryUsersPerRoles = (
                         from upr in usersPerRoles
@@ -62,6 +63,7 @@ namespace Service
                         {
                             Id = u.Id,
                             Email = u.Email,
+                            UserName = u.UserName,
                             Roles = queryUsersPerRoles.Where(x =>
                                 x.UserId == u.Id
                             ).Select(x => x.Name).ToList()
