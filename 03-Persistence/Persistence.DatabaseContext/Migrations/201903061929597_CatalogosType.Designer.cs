@@ -13,7 +13,7 @@ namespace Persistence.DatabaseContext.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201902281929597_CatalogosType"; }
+            get { return "201903061929597_CatalogosType"; }
         }
         
         string IMigrationMetadata.Source
