@@ -478,7 +478,7 @@ namespace FrontEnd.Controllers
             {
                 return Redirect(returnUrl);
             }
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Home", new { Area=""});
         }
 
         internal class ChallengeResult : HttpUnauthorizedResult
