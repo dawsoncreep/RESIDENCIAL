@@ -4,45 +4,39 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Seguridad Residencial</title>
-    <link href="~/Assets/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="~/Assets/bower_components/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet" />
-    <link href="~/Assets/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+
+
+    <link href="~/Assets/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Assets/node_modules/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="~/Assets/node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
     <link href="~/Assets/css/style.css" rel="stylesheet" />
+
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Seguridad Residencial", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+    <nav class="navbar navbar-default navbar-fixed-top">
+        @*<div class="navbar navbar-inverse navbar-fixed-top">*@
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/" >
+                        <img alt="Brand" src="~/Content/Images/guizzisinfondo.png" width="30px" height="30px" />
+                    </a>
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("Seguridad Residencial", "Index", "Home", new { Area = "" }, new { @class = "navbar-brand" })
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Usuarios", "Index", "Users", new { Area = "Administration" },new { })</li>
+                        <li>@Html.ActionLink("Roles", "Index", "Roles", new { Area = "Administration" }, new { })</li>
+                    </ul>
+                    @Html.Partial("_LoginPartial")
+                </div>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    @*<li>@Html.ActionLink("Example", "Index", "Example")</li>*@
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Administración <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li role="separator" class="dropdown-header">Catálogos</li>
-                            <li role="separator" class="divider"></li>
-                            <li>@Html.ActionLink("Usuarios", "Index", "Users")</li>
-                            <li>@Html.ActionLink("Roles", "Index", "Roles")</li>
-                            <li>@Html.ActionLink("Ubicaciones", "Index", "Home")</li>
-                        </ul>
-                    </li>
-                    <li role="separator" class="divider"></li>
-                    <li><a href="#">Casetas</a></li>
-                    @*<li>@Html.ActionLink("Users", "Index", "Users")</li>
-                    <li>@Html.ActionLink("Roles", "Index", "Roles")</li>*@
-                </ul>
-                @Html.Partial("_LoginPartial")
-            </div>
-        </div>
-    </div>
+        @*</div>*@
+    </nav>
     <div class="container body-content">
         @RenderBody()
         <hr />
@@ -50,10 +44,10 @@
             <p>&copy; @DateTime.Now.Year - Project created by </p>
         </footer>
     </div>
-    <script src="~/Assets/bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="~/Assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    
+    <script src="~/Assets/node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="~/Assets/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="~/Assets/js/enums.js"></script>
-
     @RenderSection("scripts", required: false)
 </body>
 </html>

@@ -1,0 +1,12 @@
+{
+  "name": "SecuredEntrance",
+  "version": "1.0.0",
+  "description": "Secured Entrance System",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "bootstrap": "3.4.1",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.3.1"
+  }
+}

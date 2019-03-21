@@ -27,6 +27,10 @@ namespace Service.Config
             container.Register<ICourseService, CourseService>();
             container.Register<IUserService, UserService>();
             container.Register<IAuthorizationServerService, AuthorizationServerService>();
+            container.Register<IBinnacleType, BinnacleTypeService>();
+            container.Register<IBinnaclePhotoType, BinnaclePhotoTypeService>();
+            container.Register<ILocationType, LocationTypeService>();
+            container.Register<IEvenType, EventTypeService>();
         }
     }
 }
