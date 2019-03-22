@@ -49,7 +49,16 @@ namespace Persistence.DatabaseContext.Migrations
                 };
 
                 manager.Create(user, "Admin123.");
-                manager.AddToRole(user.Id, "Admin");
+
+                ApplicationUserRole userRole = new ApplicationUserRole();
+                //userRole.AddToRole(user.Id, "Admin", manager);
+                userRole.UserId = user.Id;
+                userRole.RoleId = context.ApplicationRole.Where(w => w.Name == "Admin").FirstOrDefault().Id;
+
+                context.ApplicationUserRole.Add(userRole);
+                context.SaveChanges();
+                //manager.AddToRole(userRole.UserId, "Admin");
+
 
 
 

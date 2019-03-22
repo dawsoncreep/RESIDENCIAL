@@ -172,7 +172,6 @@
     <Compile Include="Areas\Reports\ReportsAreaRegistration.cs" />
     <Compile Include="Controllers\ExampleController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\LocationController.cs" />
     <Compile Include="Areas\Administration\Controllers\ManageController.cs" />
     <Compile Include="Areas\Administration\Controllers\RolesController.cs" />
     <Compile Include="Areas\Administration\Controllers\UsersController.cs" />
@@ -538,7 +537,6 @@
     <Folder Include="Areas\Reports\Controllers\" />
     <Folder Include="Areas\Reports\Models\" />
     <Folder Include="Areas\Reports\Views\Shared\" />
-    <Folder Include="Views\Location\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

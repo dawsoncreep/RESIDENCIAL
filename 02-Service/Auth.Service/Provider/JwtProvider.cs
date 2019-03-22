@@ -69,13 +69,15 @@ namespace Auth.Service.Providers
             string[] roles = null;
             if (payload.role != null)
             {
-                if (payload.role.GetType().Equals(typeof(Newtonsoft.Json.Linq.JArray)))
+                if (!(payload.role.GetType() == (typeof(Newtonsoft.Json.Linq.JArray))))
                 {
                     roles = payload.role.ToObject(typeof(string));
                 }
                 else
                 {
-                    roles = new string[] { payload.role.ToObject(typeof(string)) };
+                    Newtonsoft.Json.Linq.JArray temp = payload.role.ToObject(typeof(Newtonsoft.Json.Linq.JArray));
+
+                    roles = temp.ToObject<string[]>();  //new string[] { payload.role.ToObject(typeof(Newtonsoft.Json.Linq.JArray)) };
                 }
             }
             

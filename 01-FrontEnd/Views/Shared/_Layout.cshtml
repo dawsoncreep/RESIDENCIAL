@@ -27,11 +27,15 @@
                     </button>
                     @Html.ActionLink("Seguridad Residencial", "Index", "Home", new { Area = "" }, new { @class = "navbar-brand" })
                 </div>
+
                 <div class="navbar-collapse collapse">
+                    @if (Request.IsAuthenticated)
+                    {
                     <ul class="nav navbar-nav">
-                        <li>@Html.ActionLink("Usuarios", "Index", "Users", new { Area = "Administration" },new { })</li>
+                        <li>@Html.ActionLink("Usuarios", "Index", "Users", new { Area = "Administration" }, new { })</li>
                         <li>@Html.ActionLink("Roles", "Index", "Roles", new { Area = "Administration" }, new { })</li>
                     </ul>
+                    }
                     @Html.Partial("_LoginPartial")
                 </div>
             </div>

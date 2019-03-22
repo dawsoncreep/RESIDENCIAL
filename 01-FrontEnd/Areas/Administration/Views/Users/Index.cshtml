@@ -16,7 +16,10 @@
         @foreach (var m in Model)
         {
             <tr>
-                <td><a href="~/users/get/@m.Id">@m.Email</a></td>
+                <td>
+                    @Html.ActionLink(m.Email, "Get", "Users", new { Area = "Administration", Id = m.Id.ToString() }, new { })
+                </td>
+                @*<td><a href="~/users/get/@m.Id">@m.Email</a></td>*@
                 <td>@string.Join(", ", m.Roles)</td>
             </tr>
         }
