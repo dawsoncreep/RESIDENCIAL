@@ -76,9 +76,9 @@
     <Compile Include="Domain\BinnacleType.cs" />
     <Compile Include="Domain\Bulletin.cs" />
     <Compile Include="Domain\Course.cs" />
-    <Compile Include="Domain\Customer.cs" />
-    <Compile Include="Domain\CustomerBinnacle.cs" />
-    <Compile Include="Domain\CustomerPhoto.cs" />
+    <Compile Include="Domain\External.cs" />
+    <Compile Include="Domain\ExternalBinnacle.cs" />
+    <Compile Include="Domain\ExternalPhoto.cs" />
     <Compile Include="Domain\Event.cs" />
     <Compile Include="Domain\EventLocation.cs" />
     <Compile Include="Domain\EventType.cs" />

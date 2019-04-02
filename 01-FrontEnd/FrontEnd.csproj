@@ -166,11 +166,11 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Administration\AdministrationAreaRegistration.cs" />
+    <Compile Include="Areas\Colonial\ColonialAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Areas\GuardHouse\Controllers\EntryController.cs" />
     <Compile Include="Areas\GuardHouse\GuardHouseAreaRegistration.cs" />
     <Compile Include="Areas\Reports\ReportsAreaRegistration.cs" />
-    <Compile Include="Controllers\ExampleController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Areas\Administration\Controllers\ManageController.cs" />
     <Compile Include="Areas\Administration\Controllers\RolesController.cs" />
@@ -482,12 +482,15 @@
     <Content Include="Assets\node_modules\jquery\package.json" />
     <Content Include="Assets\node_modules\jquery\README.md" />
     <Content Include="Assets\node_modules\jquery\src\.eslintrc.json" />
-    <Content Include="Areas\Administration\Views\Web.config" />
+    <Content Include="Areas\Administration\Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Areas\GuardHouse\Views\Web.config" />
     <Content Include="Areas\Administration\Views\_ViewStart.cshtml" />
     <Content Include="Areas\GuardHouse\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Reports\Views\web.config" />
     <Content Include="Areas\Administration\Views\Shared\_AdministrationMenu.cshtml" />
+    <Content Include="Areas\Colonial\Views\web.config" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -534,6 +537,9 @@
   <ItemGroup>
     <Folder Include="App_Data\Logs\" />
     <Folder Include="Areas\Administration\Models\" />
+    <Folder Include="Areas\Colonial\Controllers\" />
+    <Folder Include="Areas\Colonial\Models\" />
+    <Folder Include="Areas\Colonial\Views\Shared\" />
     <Folder Include="Areas\GuardHouse\Models\" />
     <Folder Include="Areas\Reports\Controllers\" />
     <Folder Include="Areas\Reports\Models\" />
@@ -557,10 +563,6 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Project_Readme.html" />
-    <Content Include="Views\Example\Index.cshtml" />
-    <Content Include="Views\Example\Crud.cshtml" />
-    <Content Include="Views\Example\Courses.cshtml" />
-    <Content Include="Views\Example\CourseCrud.cshtml" />
     <Content Include="Areas\Administration\Views\Users\Index.cshtml" />
     <Content Include="Areas\Administration\Views\Users\Get.cshtml" />
     <Content Include="Areas\Administration\Views\Roles\Index.cshtml" />
@@ -586,6 +588,10 @@
     <ProjectReference Include="..\03-Persistence\Persistence.DatabaseContext\Persistence.DatabaseContext.csproj">
       <Project>{227c2f50-0778-43c1-80ef-7eeef85005e9}</Project>
       <Name>Persistence.DatabaseContext</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Resources\Resources.csproj">
+      <Project>{d3716b3a-babb-4a63-8fad-08a1a77d805f}</Project>
+      <Name>Resources</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

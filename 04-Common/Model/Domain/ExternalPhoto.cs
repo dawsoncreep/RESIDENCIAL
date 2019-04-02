@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Model.Domain
 {
-    public class CustomerPhoto : AuditEntity, ISoftDeleted
+    public class ExternalPhoto : AuditEntity, ISoftDeleted
     {
         [Key]
         public int Id { get; set; }

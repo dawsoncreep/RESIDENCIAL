@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Model.Domain
 {
-    public class CustomerBinnacle : AuditEntity, ISoftDeleted
+    public class ExternalBinnacle : AuditEntity, ISoftDeleted
     {
         [Key]
         public int Id { get; set; }

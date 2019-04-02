@@ -25,9 +25,9 @@ namespace Persistence.DatabaseContext
         public virtual DbSet<Binnacle> Binnacle { get; set; }
         public virtual DbSet<BinnaclePhoto> BinnaclePhoto { get; set; }
         public virtual DbSet<BinnaclePhotoType> BinnaclePhotoType { get; set; }
-        public virtual DbSet<Customer> Customer{ get; set; }
-        public virtual DbSet<CustomerPhoto> CustomerPhoto { get; set; }
-        public virtual DbSet<CustomerBinnacle> CustomerBinnacle { get; set; }
+        public virtual DbSet<External> External{ get; set; }
+        public virtual DbSet<ExternalPhoto> ExternalPhoto { get; set; }
+        public virtual DbSet<ExternalBinnacle> ExternalBinnacle { get; set; }
         public virtual DbSet<Event> Event { get; set; }
         public virtual DbSet<EventLocation> EventLocation { get; set; }
         public virtual DbSet<EventType> EventType { get; set; }
