@@ -69,9 +69,12 @@ namespace Auth.Service.Providers
             string[] roles = null;
             if (payload.role != null)
             {
+                var type = payload.role.GetType();
+                //Newtonsoft.Json.Linq.JToken
                 if (!(payload.role.GetType() == (typeof(Newtonsoft.Json.Linq.JArray))))
                 {
-                    roles = payload.role.ToObject(typeof(string));
+                    JToken temp = payload.role.ToObject(typeof(Newtonsoft.Json.Linq.JToken));
+                    roles = new string[] { payload.role.ToObject<string>() };
                 }
                 else
                 {
