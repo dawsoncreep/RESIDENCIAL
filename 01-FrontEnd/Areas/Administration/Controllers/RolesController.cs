@@ -11,7 +11,7 @@ using System.Web.Mvc;
 
 namespace FrontEnd.Areas.Administration.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin,SuperUser,ClusterAdministrator")]
     public class RolesController : Controller
     {
         private ApplicationRoleManager _roleManager
