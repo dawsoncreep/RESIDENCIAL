@@ -9,9 +9,8 @@ using Model.Custom;
 using Persistence.DatabaseContext;
 using Persistence.Repository;
 using Service;
-using System;
+using Service.InternalService;
 using System.Collections.Generic;
-using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 

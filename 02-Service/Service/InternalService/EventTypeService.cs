@@ -5,22 +5,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Service
+namespace Service.InternalService
 {
-    public interface IBinnacleType
+    public interface IEvenType
     {
-        IEnumerable<BinnacleType> GeteAll();
-        BinnacleType Get(int id);
+        IEnumerable<EventType> GeteAll();
+        EventType Get(int id);
     }
 
-    public class BinnacleTypeService : IBinnacleType
+    public class EventTypeService : IEvenType
     {
-        public BinnacleType Get(int id)
+        public EventType Get(int id)
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<BinnacleType> GeteAll()
+        public IEnumerable<EventType> GeteAll()
         {
             throw new NotImplementedException();
         }

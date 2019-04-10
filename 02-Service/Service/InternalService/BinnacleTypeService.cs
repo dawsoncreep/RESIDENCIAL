@@ -5,22 +5,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Service
+namespace Service.InternalService
 {
-    public interface ILocationType
+    public interface IBinnacleType
     {
-        IEnumerable<LocationType> GeteAll();
-        ILocationType Get(int id);
+        IEnumerable<BinnacleType> GeteAll();
+        BinnacleType Get(int id);
     }
 
-    public class LocationTypeService : ILocationType
+    public class BinnacleTypeService : IBinnacleType
     {
-        public ILocationType Get(int id)
+        public BinnacleType Get(int id)
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<LocationType> GeteAll()
+        public IEnumerable<BinnacleType> GeteAll()
         {
             throw new NotImplementedException();
         }

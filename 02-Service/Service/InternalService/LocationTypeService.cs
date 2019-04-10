@@ -5,22 +5,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Service
+namespace Service.InternalService
 {
-    public interface IEvenType
+    public interface ILocationType
     {
-        IEnumerable<EventType> GeteAll();
-        EventType Get(int id);
+        IEnumerable<LocationType> GeteAll();
+        ILocationType Get(int id);
     }
 
-    public class EventTypeService : IEvenType
+    public class LocationTypeService : ILocationType
     {
-        public EventType Get(int id)
+        public ILocationType Get(int id)
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<EventType> GeteAll()
+        public IEnumerable<LocationType> GeteAll()
         {
             throw new NotImplementedException();
         }

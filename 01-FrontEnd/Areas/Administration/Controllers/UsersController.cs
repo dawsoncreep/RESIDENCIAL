@@ -2,7 +2,7 @@
 using Common;
 using Microsoft.AspNet.Identity.Owin;
 using Model.Auth;
-using Service;
+using Service.InternalService;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
