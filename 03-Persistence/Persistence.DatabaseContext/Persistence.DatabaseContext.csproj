@@ -98,6 +98,42 @@
     <Compile Include="Migrations\201904021913397_correccionNombreCustomer.Designer.cs">
       <DependentUpon>201904021913397_correccionNombreCustomer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201904111417571_SeAgreganPropiedadesAlUsuario.cs" />
+    <Compile Include="Migrations\201904111417571_SeAgreganPropiedadesAlUsuario.Designer.cs">
+      <DependentUpon>201904111417571_SeAgreganPropiedadesAlUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904112218409_permissionAddProperties.cs" />
+    <Compile Include="Migrations\201904112218409_permissionAddProperties.Designer.cs">
+      <DependentUpon>201904112218409_permissionAddProperties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904121641452_permissionAddRouingProperties.cs" />
+    <Compile Include="Migrations\201904121641452_permissionAddRouingProperties.Designer.cs">
+      <DependentUpon>201904121641452_permissionAddRouingProperties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904121829376_permissionUserUpdateForeignKeysRemoveAuditory.cs" />
+    <Compile Include="Migrations\201904121829376_permissionUserUpdateForeignKeysRemoveAuditory.Designer.cs">
+      <DependentUpon>201904121829376_permissionUserUpdateForeignKeysRemoveAuditory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904121831211_permissionUserUpdateForeignKeys.cs" />
+    <Compile Include="Migrations\201904121831211_permissionUserUpdateForeignKeys.Designer.cs">
+      <DependentUpon>201904121831211_permissionUserUpdateForeignKeys.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904220821346_addingPermissionId_TointroduceForeignKey.cs" />
+    <Compile Include="Migrations\201904220821346_addingPermissionId_TointroduceForeignKey.Designer.cs">
+      <DependentUpon>201904220821346_addingPermissionId_TointroduceForeignKey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904222214393_version20190422.cs" />
+    <Compile Include="Migrations\201904222214393_version20190422.Designer.cs">
+      <DependentUpon>201904222214393_version20190422.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904240619203_Permission_PermissionUserphysicalDelete.cs" />
+    <Compile Include="Migrations\201904240619203_Permission_PermissionUserphysicalDelete.Designer.cs">
+      <DependentUpon>201904240619203_Permission_PermissionUserphysicalDelete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904241943279_setDefaultToPermissions.cs" />
+    <Compile Include="Migrations\201904241943279_setDefaultToPermissions.Designer.cs">
+      <DependentUpon>201904241943279_setDefaultToPermissions.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -138,6 +174,33 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201904021913397_correccionNombreCustomer.resx">
       <DependentUpon>201904021913397_correccionNombreCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904111417571_SeAgreganPropiedadesAlUsuario.resx">
+      <DependentUpon>201904111417571_SeAgreganPropiedadesAlUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904112218409_permissionAddProperties.resx">
+      <DependentUpon>201904112218409_permissionAddProperties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904121641452_permissionAddRouingProperties.resx">
+      <DependentUpon>201904121641452_permissionAddRouingProperties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904121829376_permissionUserUpdateForeignKeysRemoveAuditory.resx">
+      <DependentUpon>201904121829376_permissionUserUpdateForeignKeysRemoveAuditory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904121831211_permissionUserUpdateForeignKeys.resx">
+      <DependentUpon>201904121831211_permissionUserUpdateForeignKeys.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904220821346_addingPermissionId_TointroduceForeignKey.resx">
+      <DependentUpon>201904220821346_addingPermissionId_TointroduceForeignKey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904222214393_version20190422.resx">
+      <DependentUpon>201904222214393_version20190422.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904240619203_Permission_PermissionUserphysicalDelete.resx">
+      <DependentUpon>201904240619203_Permission_PermissionUserphysicalDelete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904241943279_setDefaultToPermissions.resx">
+      <DependentUpon>201904241943279_setDefaultToPermissions.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -176,6 +176,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Administration\AdministrationAreaRegistration.cs" />
+    <Compile Include="Areas\Administration\Controllers\PermissionController.cs" />
     <Compile Include="Areas\Colonial\ColonialAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Areas\GuardHouse\Controllers\EntryController.cs" />
@@ -188,6 +189,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\HtmlPermissionUserHelper.cs" />
     <Compile Include="ViewModels\AccountViewModels.cs" />
     <Compile Include="ViewModels\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -195,7 +197,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\css\site.css" />
+    <Content Include="Assets\js\common.js" />
     <Content Include="Assets\js\enums.js" />
+    <Content Include="Assets\js\Menu\menu.js" />
+    <Content Include="Assets\js\User\user.index.js" />
     <Content Include="Assets\node_modules\bootstrap\dist\css\bootstrap-theme.css" />
     <Content Include="Assets\node_modules\bootstrap\dist\css\bootstrap-theme.min.css" />
     <Content Include="Assets\node_modules\bootstrap\dist\css\bootstrap.css" />
@@ -230,6 +235,61 @@
     <Content Include="Assets\node_modules\font-awesome\css\font-awesome.min.css" />
     <Content Include="Assets\node_modules\font-awesome\fonts\fontawesome-webfont.svg" />
     <Content Include="Assets\node_modules\font-awesome\HELP-US-OUT.txt" />
+    <Content Include="Assets\node_modules\jqgrid\css\ui.jqgrid.css" />
+    <Content Include="Assets\node_modules\jqgrid\index.js" />
+    <Content Include="Assets\node_modules\jqgrid\js\i18n\grid.locale-ar.js" />
+    <Content Include="Assets\node_modules\jqgrid\js\i18n\grid.locale-bg.js" />
+    <Content Include="Assets\node_modules\jqgrid\js\i18n\grid.locale-bg1251.js" />
+    <Content Include="Assets\node_modules\jqgrid\js\i18n\grid.locale-cat.js" />
+    <Content Include="Assets\node_modules\jqgrid\js\i18n\grid.locale-cn.js" />
+    <Content Include="Assets\node_modules\jqgrid\js\i18n\grid.locale-cs.js" />
+    <Content Include="Assets\node_modules\jqgrid\js\i18n\grid.locale-da.js" />
+    <Content Include="Assets\node_modules\jqgrid\js\i18n\grid.locale-de.js" />
+    <Content Include="Assets\node_modules\jqgrid\js\i18n\grid.locale-dk.js" />
+    <Content Include="Assets\node_modules\jqgrid\js\i18n\grid.locale-el.js" />
+    <Content Include="Assets\node_modules\jqgrid\js\i18n\grid.locale-en.js" />
+    <Content Include="Assets\node_modules\jqgrid\js\i18n\grid.locale-es.js" />
+    <Content Include="Assets\node_modules\jqgrid\js\i18n\grid.locale-fa.js" />
+    <Content Include="Assets\node_modules\jqgrid\js\i18n\grid.locale-fi.js" />
+    <Content Include="Assets\node_modules\jqgrid\js\i18n\grid.locale-fr.js" />
+    <Content Include="Assets\node_modules\jqgrid\js\i18n\grid.locale-gl.js" />
+    <Content Include="Assets\node_modules\jqgrid\js\i18n\grid.locale-he.js" />
+    <Content Include="Assets\node_modules\jqgrid\js\i18n\grid.locale-hr.js" />
+    <Content Include="Assets\node_modules\jqgrid\js\i18n\grid.locale-hr1250.js" />
+    <Content Include="Assets\node_modules\jqgrid\js\i18n\grid.locale-hu.js" />
+    <Content Include="Assets\node_modules\jqgrid\js\i18n\grid.locale-id.js" />
+    <Content Include="Assets\node_modules\jqgrid\js\i18n\grid.locale-is.js" />
+    <Content Include="Assets\node_modules\jqgrid\js\i18n\grid.locale-it.js" />
+    <Content Include="Assets\node_modules\jqgrid\js\i18n\grid.locale-ja.js" />
+    <Content Include="Assets\node_modules\jqgrid\js\i18n\grid.locale-kr.js" />
+    <Content Include="Assets\node_modules\jqgrid\js\i18n\grid.locale-lt.js" />
+    <Content Include="Assets\node_modules\jqgrid\js\i18n\grid.locale-mne.js" />
+    <Content Include="Assets\node_modules\jqgrid\js\i18n\grid.locale-nl.js" />
+    <Content Include="Assets\node_modules\jqgrid\js\i18n\grid.locale-no.js" />
+    <Content Include="Assets\node_modules\jqgrid\js\i18n\grid.locale-pl.js" />
+    <Content Include="Assets\node_modules\jqgrid\js\i18n\grid.locale-pt-br.js" />
+    <Content Include="Assets\node_modules\jqgrid\js\i18n\grid.locale-pt.js" />
+    <Content Include="Assets\node_modules\jqgrid\js\i18n\grid.locale-ro.js" />
+    <Content Include="Assets\node_modules\jqgrid\js\i18n\grid.locale-ru.js" />
+    <Content Include="Assets\node_modules\jqgrid\js\i18n\grid.locale-sk.js" />
+    <Content Include="Assets\node_modules\jqgrid\js\i18n\grid.locale-sr-latin.js" />
+    <Content Include="Assets\node_modules\jqgrid\js\i18n\grid.locale-sr.js" />
+    <Content Include="Assets\node_modules\jqgrid\js\i18n\grid.locale-sv.js" />
+    <Content Include="Assets\node_modules\jqgrid\js\i18n\grid.locale-th.js" />
+    <Content Include="Assets\node_modules\jqgrid\js\i18n\grid.locale-tr.js" />
+    <Content Include="Assets\node_modules\jqgrid\js\i18n\grid.locale-tw.js" />
+    <Content Include="Assets\node_modules\jqgrid\js\i18n\grid.locale-ua.js" />
+    <Content Include="Assets\node_modules\jqgrid\js\i18n\grid.locale-vi.js" />
+    <Content Include="Assets\node_modules\jqgrid\js\jquery.jqGrid.src.js" />
+    <Content Include="Assets\node_modules\jqgrid\plugins\grid.addons.js" />
+    <Content Include="Assets\node_modules\jqgrid\plugins\grid.postext.js" />
+    <Content Include="Assets\node_modules\jqgrid\plugins\grid.setcolumns.js" />
+    <Content Include="Assets\node_modules\jqgrid\plugins\jquery.contextmenu.js" />
+    <Content Include="Assets\node_modules\jqgrid\plugins\jquery.searchFilter.js" />
+    <Content Include="Assets\node_modules\jqgrid\plugins\jquery.tablednd.js" />
+    <Content Include="Assets\node_modules\jqgrid\plugins\searchFilter.css" />
+    <Content Include="Assets\node_modules\jqgrid\plugins\ui.multiselect.css" />
+    <Content Include="Assets\node_modules\jqgrid\plugins\ui.multiselect.js" />
     <Content Include="Assets\node_modules\jquery\AUTHORS.txt" />
     <Content Include="Assets\node_modules\jquery\dist\core.js" />
     <Content Include="Assets\node_modules\jquery\dist\jquery.js" />
@@ -886,6 +946,15 @@
     <Content Include="Assets\node_modules\Respond.js\LICENSE-MIT" />
     <Content Include="Assets\node_modules\Respond.js\package.json" />
     <Content Include="Assets\node_modules\Respond.js\README.md" />
+    <Content Include="Areas\Administration\Views\Users\_UserAdd.cshtml" />
+    <Content Include="Assets\node_modules\jqgrid\.travis.yml" />
+    <Content Include="Assets\node_modules\jqgrid\HISTORY.md" />
+    <Content Include="Assets\node_modules\jqgrid\package.json" />
+    <Content Include="Assets\node_modules\jqgrid\README.md" />
+    <Content Include="Areas\Administration\Views\Permission\Index.cshtml" />
+    <Content Include="Areas\Administration\Views\Permission\Create.cshtml" />
+    <Content Include="Assets\js\Administration\permission.functions.js" />
+    <Content Include="Areas\Administration\Views\Permission\Edit.cshtml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -923,7 +992,8 @@
     <Content Include="Areas\Administration\Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Shared\_menuItems.cshtml" />
+    <Content Include="Views\Shared\_Menu.cshtml" />
+    <Content Include="Views\Shared\_Modals.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\Logs\" />

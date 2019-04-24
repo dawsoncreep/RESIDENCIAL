@@ -5,6 +5,7 @@ using NLog;
 using RestSharp;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Service.InternalService
 {
@@ -33,7 +34,7 @@ namespace Service.InternalService
                 //En caso de requerir autenticación hay que extraer el token de la cookie.
                 request.AddHeader("Accept", "application/json");
                 request.AddHeader("Content-Type", "application/json");
-
+                    
                 IRestResponse response = client.Execute(request);
                 var responseDes = Newtonsoft.Json.JsonConvert.DeserializeObject<ApplicationUser>(response.Content);
 
@@ -65,36 +66,37 @@ namespace Service.InternalService
 
             try
             {
-                //using (var ctx = _dbContextScopeFactory.CreateReadOnly())
-                //{
-                //    var abc = _applicationUserRepo.GetAll().ToList();
 
-                //    var users = ctx.GetEntity<ApplicationUser>();
-                //    var roles = ctx.GetEntity<ApplicationRole>();
-                //    var usersPerRoles = ctx.GetEntity<ApplicationUserRole>();
+                var client = new RestClient(Parameters.resourceServerUrl);
 
-                //    var queryUsersPerRoles = (
-                //        from upr in usersPerRoles
-                //        from r in roles.Where(x => x.Id == upr.RoleId)
-                //        select new
-                //        {
-                //            upr.UserId,
-                //            r.Name
-                //        }
-                //    ).AsQueryable();
+                var request = new RestRequest("/user/GetAll", Method.GET);
+                request.AddHeader("Accept", "application/json");
+                request.AddHeader("Content-Type", "application/json");
 
-                //    result = (
-                //        from u in users
-                //        select new UserForGridView {
-                //            Id = u.Id,
-                //            Email = u.Email,
-                //            Roles = queryUsersPerRoles.Where(x =>
-                //                x.UserId == u.Id
-                //            ).Select(x => x.Name).ToList()
-                //        }
-                //    ).ToList();
-                //}
-                throw new NotImplementedException();
+                IRestResponse responseUsers = client.Execute(request);
+                var responseUsersArray = Newtonsoft.Json.JsonConvert.DeserializeObject<List<ApplicationUser>>(responseUsers.Content);
+
+                request = new RestRequest("/role/GetAll", Method.GET);
+                request.AddHeader("Accept", "application/json");
+                request.AddHeader("Content-Type", "application/json");
+                    IRestResponse responseRoles = client.Execute(request);
+                var responseRolesArray = Newtonsoft.Json.JsonConvert.DeserializeObject<List<ApplicationRole>>(responseRoles.Content);
+
+                result = (
+                    from u in responseUsersArray
+                    select new UserForGridView
+                    {
+                        Id = u.Id,
+                        Email = u.Email,
+                        Roles = 
+                            (from r in responseRolesArray
+                            join r2 in u.Roles
+                            on r.Id equals r2.RoleId
+                            select r.Name   
+                        ).ToList()
+                    }
+                ).ToList();
+                
             }
             catch (Exception e)
             {

@@ -166,6 +166,11 @@ isexe@^2.0.0:
   resolved "https://registry.yarnpkg.com/isexe/-/isexe-2.0.0.tgz#e8fbf374dc556ff8947a10dcb0572d633f2cfa10"
   integrity sha1-6PvzdNxVb/iUehDcsFctYz8s+hA=
 
+jqgrid@^4.6.4:
+  version "4.6.4"
+  resolved "https://registry.yarnpkg.com/jqgrid/-/jqgrid-4.6.4.tgz#665c34c178ec7fdcbb2fc701e4231a864ea5d843"
+  integrity sha1-Zlw0wXjsf9y7L8cB5CMahk6l2EM=
+
 jquery@^3.3.1:
   version "3.3.1"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.3.1.tgz#958ce29e81c9790f31be7792df5d4d95fc57fbca"

@@ -1,7 +1,15 @@
-﻿
-@{
-    Layout = "";
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/administration")
 
-<h2>_AdministrationMenu</h2>
 
+<div>
+    
+    @RenderBody()
+    @Html.Partial("_Modals")
+
+
+
+</div>

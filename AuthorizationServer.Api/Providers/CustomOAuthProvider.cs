@@ -6,10 +6,12 @@ using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.OAuth;
 using Model.Auth;
 using Model.Custom;
+using Model.Domain;
 using Persistence.DatabaseContext;
 using Persistence.Repository;
 using Service;
 using Service.InternalService;
+using System;
 using System.Collections.Generic;
 using System.Security.Claims;
 using System.Threading.Tasks;
@@ -23,7 +25,7 @@ namespace AuthorizationServer.Api.Providers
             DependecyFactory.GetInstance<IAuthorizationServerService>();
 
         private readonly IUserService _userService = DependecyFactory.GetInstance<IUserService>();
-
+        private static readonly IPermissionUserService _permissionUserService = DependecyFactory.GetInstance<IPermissionUserService>();
 
 
         public override Task ValidateClientAuthentication(OAuthValidateClientAuthenticationContext context)
@@ -60,15 +62,23 @@ namespace AuthorizationServer.Api.Providers
 
             context.OwinContext.Response.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
 
-            using (AuthRepository _repo = new AuthRepository())
+            try
             {
-                IdentityUser user = await _repo.FindUser(context.UserName, context.Password);
-
-                if (user == null)
+                using (AuthRepository _repo = new AuthRepository())
                 {
-                    context.SetError("invalid_grant", "The user name or password is incorrect.");
-                    return;
+                    IdentityUser user = await _repo.FindUser(context.UserName, context.Password);
+
+                    if (user == null)
+                    {
+                        context.SetError("invalid_grant", "The user name or password is incorrect.");
+                        return;
+                    }
                 }
+            }
+            catch(Exception ex)
+            {
+                context.SetError("invalid_grant", "Internal Server Error.");
+                return;
             }
 
             UserForGridView userFromRepo = _userService.Get(context.UserName);
@@ -77,11 +87,20 @@ namespace AuthorizationServer.Api.Providers
 
             identity.AddClaim(new Claim(ClaimTypes.Name, context.UserName));
             identity.AddClaim(new Claim("sub", context.UserName));
+            identity.AddClaim(new Claim(ClaimTypes.SerialNumber , userFromRepo.Id));
 
             userFromRepo.Roles.ForEach(s =>
             {
                 identity.AddClaim(new Claim(ClaimTypes.Role, s));
             });
+
+            var userPermission = new List<PermissionUser>(_permissionUserService.GetByUserId(new Guid(userFromRepo.Id)));
+            userPermission.ForEach (s =>
+            {
+                identity.AddClaim(new Claim("PermissionUser",s.Permission.Id.ToString()));
+            });
+            
+
 
 
             var props = new AuthenticationProperties(new Dictionary<string, string>

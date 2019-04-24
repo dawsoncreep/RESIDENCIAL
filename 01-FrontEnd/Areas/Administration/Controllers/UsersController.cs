@@ -40,6 +40,11 @@ namespace FrontEnd.Areas.Administration.Controllers
             return View(model);
         }
 
+        public async Task<ActionResult> AddUser(ApplicationUser newUser)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<ActionResult> Get(string id)
         {
             var model = await _userManager.FindByIdAsync(id);

@@ -56,6 +56,8 @@ namespace Persistence.DatabaseContext
             AddMyFilters(ref modelBuilder);
             modelBuilder.Configurations.AddFromAssembly(Assembly.GetAssembly(typeof(ApplicationDbContext)));
 
+            modelBuilder.Entity<PermissionUser>().HasRequired(s => s.Permission).WithMany().HasForeignKey(u => u.Permission_Id);
+
             base.OnModelCreating(modelBuilder);
         }
 

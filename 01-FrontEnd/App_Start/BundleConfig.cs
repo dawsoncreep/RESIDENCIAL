@@ -26,6 +26,22 @@ namespace FrontEnd.App_Start
             bundles.Add(new ScriptBundle("~/bundles/enums").Include(
                       "~/Assets/js/enums.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/users").Include(
+                "~/Assets/js/User/*.js"
+                ));
+
+            bundles.Add(new ScriptBundle("~/bundles/menu").Include(
+                "~/Assets/js/Menu/*.js"
+                ));
+
+            bundles.Add(new ScriptBundle("~/bundles/administration").Include(
+                "~/Assets/js/Administration/*.js"
+                ));
+
+            bundles.Add(new ScriptBundle("~/bundles/common").Include(
+                "~/Assets/js/common.js"
+                ));
+
 
             bundles.Add(new StyleBundle("~/Content/bootstraptheme").Include(
                     "~/Assets/node_modules/bootstrap/dist/css/bootstrap-theme.css",

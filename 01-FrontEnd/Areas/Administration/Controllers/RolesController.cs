@@ -32,6 +32,11 @@ namespace FrontEnd.Areas.Administration.Controllers
 
         public async Task<ActionResult> Add(ApplicationRole model)
         {
+            if (String.IsNullOrEmpty(model.Name))
+            {
+                return RedirectToAction("Index");
+            }
+
             var response = await _roleManager.CreateAsync(model);
 
             if (!response.Succeeded)

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNet.Identity;
 using Newtonsoft.Json;
+using System.Collections.Generic;
 using System.Security.Claims;
 using System.Web;
 
@@ -10,6 +11,7 @@ namespace Common
         public string UserId { get; set; }
         public string UserName { get; set; }
         public string Name { get; set; }
+        public string[] UserPermissions { get; set; }
     }
 
     public class CurrentUserHelper
@@ -32,6 +34,7 @@ namespace Common
                 string username = string.Empty;
                 string userId = string.Empty;
                 string name = string.Empty;
+                List<string> userPermission = new List<string>() ;
 
                 if (((ClaimsIdentity)user.Identity).FindFirst(ClaimTypes.Name) != null)
                 {
@@ -46,12 +49,21 @@ namespace Common
                     userId = ((ClaimsIdentity)user.Identity).FindFirst(ClaimTypes.SerialNumber).Value;
                 }
 
+                if (((ClaimsIdentity)user.Identity).FindFirst("PermissionUser") != null)
+                {
+                    new List<Claim>(((ClaimsIdentity)user.Identity).FindAll("PermissionUser")).ForEach(s =>
+                    {
+                        userPermission.Add(s.Value);
+                    });
+                }
+
                 //return JsonConvert.DeserializeObject<CurrentUser>(jUser);
                 return new CurrentUser
                 {
                     Name = name,
                     UserId = userId,
-                    UserName = name
+                    UserName = name,
+                    UserPermissions = userPermission.ToArray()
                 };
             }
         }

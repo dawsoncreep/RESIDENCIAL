@@ -65,8 +65,11 @@ namespace Auth.Service.Providers
         {
             //decode the payload from token
             //in order to create a claim            
-            string userId = payload.unique_name;
+            string userId = payload.certserialnumber;
+            //string userNamePayload = payload.name;
             string[] roles = null;
+            string[] userPermission = null;
+
             if (payload.role != null)
             {
                 var type = payload.role.GetType();
@@ -83,14 +86,17 @@ namespace Auth.Service.Providers
                     roles = temp.ToObject<string[]>();  //new string[] { payload.role.ToObject(typeof(Newtonsoft.Json.Linq.JArray)) };
                 }
             }
-            
+
+            userPermission = GetUserPermissionFromPayLoad(payload);
+
 
             var jwtIdentity = new ClaimsIdentity(new JwtIdentity(
                 isAuthenticated, userName, DefaultAuthenticationTypes.ApplicationCookie
                     ));
 
             //add user id
-            jwtIdentity.AddClaim(new Claim(ClaimTypes.NameIdentifier, userId));
+            jwtIdentity.AddClaim(new Claim(ClaimTypes.NameIdentifier, userName));
+            jwtIdentity.AddClaim(new Claim(ClaimTypes.SerialNumber, userId));
             //add roles
             if (roles != null)
             {
@@ -99,8 +105,41 @@ namespace Auth.Service.Providers
                     jwtIdentity.AddClaim(new Claim(ClaimTypes.Role, role));
                 }
             }
+            //add Permissions
+            if(userPermission != null)
+            {
+                foreach (var item in userPermission)
+                {
+                    jwtIdentity.AddClaim(new Claim("PermissionUser", item));
+                }
+            }
+
 
             return jwtIdentity;
+        }
+
+        private string[] GetUserPermissionFromPayLoad(dynamic payload)
+        {
+            if (payload.PermissionUser != null)
+            {
+                var type = payload.PermissionUser.GetType();
+                //Newtonsoft.Json.Linq.JToken
+                if (!(payload.PermissionUser.GetType() == (typeof(Newtonsoft.Json.Linq.JArray))))
+                {
+                    JToken temp = payload.PermissionUser.ToObject(typeof(Newtonsoft.Json.Linq.JToken));
+                    return new string[] { payload.PermissionUser.ToObject<string>() };
+                }
+                else
+                {
+                    Newtonsoft.Json.Linq.JArray temp = payload.PermissionUser.ToObject(typeof(Newtonsoft.Json.Linq.JArray));
+                    return temp.ToObject<string[]>();  
+                }
+            }
+            else
+            {
+                return null;
+            }
+            
         }
 
         private byte[] Base64UrlDecode(string input)

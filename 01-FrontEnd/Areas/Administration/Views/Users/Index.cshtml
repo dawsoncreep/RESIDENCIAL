@@ -4,23 +4,34 @@
 }
 
 <h2 class="page-header">@ViewBag.Title</h2>
+@Scripts.Render("~/bundles/users")
 
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th>Email</th>
-            <th>Roles</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var m in Model)
-        {
+<div class="row" id="usersButtonRow">
+    <button id="addUser" class="btn btn-default">@Resources.addUserButton</button>
+</div>
+<div class="row" id="usersFormRow">
+    @{Html.RenderPartial("_UserAdd");}
+</div>
+<div class="row" id="usersGridrow">
+    <table class="table table-striped">
+        <thead>
             <tr>
-                <td>
-                    @Html.ActionLink(m.Email, "Get", "Users", new { Area = "Administration", Id = m.Id.ToString() }, new { })
-                </td>
-                <td>@string.Join(", ", m.Roles)</td>
+                <th>Email</th>
+                <th>Roles</th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var m in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.ActionLink(m.Email, "Get", "Users", new { Area = "Administration", Id = m.Id.ToString() }, new { })
+                    </td>
+                    <td>@string.Join(", ", m.Roles)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+

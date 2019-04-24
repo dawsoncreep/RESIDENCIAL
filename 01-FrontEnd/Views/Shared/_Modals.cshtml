@@ -1,0 +1,23 @@
+﻿
+<!-- Modal Delete -->
+<div class="modal fade" id="DeleteItemModal" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">
+                    <b>@ViewBag.deleteTitleToDelete</b>
+                </h4>
+            </div>
+            <div class="modal-body">
+                <p id="deleteItemModalQuestion"><h5>@ViewBag.deleteQuestionToDelete</h5></p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" id="deleteItemButton" href="@Url.Action("Delete","Permission",new {Area="Administration" })">@Resources.Delete</button>
+                <button class="btn btn-default" data-dismiss="modal">@Resources.Cancel</button>
+            </div>
+        </div>
+
+    </div>
+</div>

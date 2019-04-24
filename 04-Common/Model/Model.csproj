@@ -65,9 +65,7 @@
     <Compile Include="Auth\ApplicationRole.cs" />
     <Compile Include="Auth\ApplicationUser.cs" />
     <Compile Include="AuthorizationServer\AudienceForSuscribe.cs" />
-    <Compile Include="Custom\StudentForCourseSuscribed.cs" />
-    <Compile Include="Custom\CourseForGridView.cs" />
-    <Compile Include="Custom\StudentForGridView.cs" />
+    <Compile Include="Custom\MenuByPermissions.cs" />
     <Compile Include="Custom\UserForGridView.cs" />
     <Compile Include="Domain\Audience.cs" />
     <Compile Include="Domain\Binnacle.cs" />
@@ -104,8 +102,13 @@
   <ItemGroup>
     <Folder Include="Custom\SqlTableFunction\" />
     <Folder Include="Custom\SqlView\" />
+    <Folder Include="Extension\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Resources\Resources.csproj">
+      <Project>{D3716B3A-BABB-4A63-8FAD-08A1A77D805F}</Project>
+      <Name>Resources</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Common\Common.csproj">
       <Project>{fc851e96-7275-4d48-a340-9be06137a8ab}</Project>
       <Name>Common</Name>
