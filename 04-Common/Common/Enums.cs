@@ -65,7 +65,7 @@ namespace Common
         {
             AdmonMenu = 1,
             UsersMenu = 2,
-            RolesMenui = 3,
+            RolesMenu = 3,
             CatalogsMenu = 4,
             PermissionMenu = 5
         }
