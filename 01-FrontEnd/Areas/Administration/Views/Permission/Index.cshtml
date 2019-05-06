@@ -14,7 +14,8 @@
         </p>
     </div>
     <div class="panel-body">
-        <table class="table table-striped">
+        @Html.MVCGrid("PermissionGrid")
+        @*<table class="table table-striped">
             <tr>
                 <th>
                     @Html.DisplayNameFor(model => model.Id)
@@ -67,13 +68,13 @@
                     </td>
                     <td>
                         @Html.ActionLink(Resources.Edit, "Edit", new { id = item.Id },new {@class="btn btn-default" }) |
-                        <button class="btn btn-default deletePermissionButton" id="deleteBtnPermission" 
+                        <button class="btn btn-default deletePermissionButton" id="deleteBtnPermission"
                                 idDelete="@item.Id"
                                 >@Resources.Delete</button>
                     </td>
                 </tr>
             }
 
-        </table>
+        </table>*@
     </div>
 </div>
