@@ -4,11 +4,18 @@ using System;
 using System.ComponentModel.DataAnnotations;
 namespace Model.Domain
 {
-    public class EventType:  ISoftDeleted
+    public class EventType
     {
         [Key]
+        [Display(Name = "Id", ResourceType = typeof(Resources.Resources))]
         public int Id { get; set; }
+
+
+        [Required]
+        [Display(Name = "Description", ResourceType = typeof(Resources.Resources))]
+        [MaxLength(100)]
         public string Description { get; set; }
-        public bool Deleted { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
+
     }
 }

@@ -1,8 +1,10 @@
 ﻿using Common;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using Model.Domain;
 using Newtonsoft.Json;
 using Resources;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Security.Claims;
 using System.Threading.Tasks;
@@ -14,6 +16,7 @@ namespace Model.Auth
         public string Name { get; set; }
         public string MotherSurname { get; set; }
         public string LastName { get; set; }
+
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {

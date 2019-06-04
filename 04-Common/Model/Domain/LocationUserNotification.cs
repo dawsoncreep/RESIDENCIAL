@@ -11,7 +11,7 @@ namespace Model.Domain
         [Key]
         public int Id { get; set; }
         public ICollection<Notification>    NotificationId { get; set; }
-        public ICollection<LocationUser> LocationUserId { get; set; }
+        //public ICollection<LocationUser> LocationUserId { get; set; }
         public bool Deleted { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Model.Auth;
+using System.Collections.Generic;
 
 namespace Model.Custom
 {
@@ -7,6 +8,6 @@ namespace Model.Custom
         public string Id { get; set; }
         public string Email { get; set; }
         public string UserName { get; set; }
-        public List<string> Roles { get; set; }
+        public List<ApplicationRole> Roles { get; set; }
     }
 }

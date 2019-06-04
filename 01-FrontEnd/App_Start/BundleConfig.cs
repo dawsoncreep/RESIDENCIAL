@@ -38,6 +38,12 @@ namespace FrontEnd.App_Start
                 "~/Assets/js/Administration/*.js"
                 ));
 
+            bundles.Add(new ScriptBundle("~/bundles/colonial").Include(
+                "~/Assets/js/Colonial/*.js"
+                ));
+
+            
+
             bundles.Add(new ScriptBundle("~/bundles/common").Include(
                 "~/Assets/js/common.js"
                 ));

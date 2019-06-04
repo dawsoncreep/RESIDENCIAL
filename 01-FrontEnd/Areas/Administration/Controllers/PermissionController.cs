@@ -14,6 +14,14 @@ namespace FrontEnd.Areas.Administration.Controllers
     public class PermissionController : Controller
     {
         private readonly IPermissionService _permissionService = DependecyFactory.GetInstance<IPermissionService>();
+
+        public PermissionController()
+        {
+            ViewBag.ItemToDelete = Resources.Resources.Permission;
+            ViewBag.Controller = "Permission";
+            ViewBag.Area = "Administration";
+        }
+
         // GET: Administration/Permission
         public ActionResult Index()
         {

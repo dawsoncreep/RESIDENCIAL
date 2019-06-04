@@ -23,6 +23,12 @@ namespace Service.Config
             container.Register<IRepository<Audience>>((x) => new Repository<Audience>(ambientDbContextLocator));
             container.Register<IRepository<Permission>>((x) => new Repository<Permission>(ambientDbContextLocator));
             container.Register<IRepository<PermissionUser>>((x) => new Repository<PermissionUser>(ambientDbContextLocator));
+            container.Register<IRepository<PermissionRole>>((x) => new Repository<PermissionRole>(ambientDbContextLocator));
+            container.Register<IRepository<EventType>>((x) => new Repository<EventType>(ambientDbContextLocator));
+            container.Register<IRepository<Event>>((x) => new Repository<Event>(ambientDbContextLocator));
+            container.Register<IRepository<LocationType>>((x) => new Repository<LocationType>(ambientDbContextLocator));
+            container.Register<IRepository<Location>>((x) => new Repository<Location>(ambientDbContextLocator));
+            container.Register<IRepository<LocationUser>>((x) => new Repository<LocationUser>(ambientDbContextLocator));
 
             #endregion
 
@@ -31,15 +37,26 @@ namespace Service.Config
             container.Register<IAPIRoleService, APIRoleService>();
             container.Register<IAPIPermissionService, APIPermissionService>();
             container.Register<IAPIPermissionUserService, APIPermissionUserService>();
+            container.Register<IAPIEventTypeService, APIEventTypeService>();
+            container.Register<IAPIEventService, APIEventService>();
+            container.Register<IAPILocationTypeService, APILocationTypeService>();
+            container.Register<IAPILocationService, APILocationService>();
+            container.Register<IAPIPermissionRoleService, APIPermissionRoleService>();
             container.Register<IAuthorizationServerService, AuthorizationServerService>();
             
+
             #endregion
 
             #region InternalServices
             container.Register<IUserService, UserService>();
             container.Register<IRoleService, RoleService>();
             container.Register<IPermissionService, PermissionService>();
+            container.Register<IEventTypeService, EventTypeService>();
+            container.Register<IEventService, EventService>();
+            container.Register<ILocationTypeService, LocationTypeService>();
+            container.Register<ILocationService, LocationService>();
             container.Register<IPermissionUserService, PermissionUserService>();
+            container.Register<IPermissionRoleService, PermissionRoleService>();
 
             #endregion
         }

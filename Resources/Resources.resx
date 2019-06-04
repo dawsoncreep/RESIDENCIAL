@@ -225,4 +225,82 @@
   <data name="Process_ErrorMessage" xml:space="preserve">
     <value>An unexpected error has occurred during the {0} process</value>
   </data>
+  <data name="EventType" xml:space="preserve">
+    <value>Event Type</value>
+  </data>
+  <data name="EventTypeMenu" xml:space="preserve">
+    <value>Event Types</value>
+  </data>
+  <data name="EventType_Create_Tile" xml:space="preserve">
+    <value>Create Event Type</value>
+  </data>
+  <data name="EventType_Edit_Title" xml:space="preserve">
+    <value>Edit Event Type</value>
+  </data>
+  <data name="LocationType" xml:space="preserve">
+    <value>Location Type</value>
+  </data>
+  <data name="LocationTypeMenu" xml:space="preserve">
+    <value>Location Types</value>
+  </data>
+  <data name="LocationType_Create_Tile" xml:space="preserve">
+    <value>Create Location Type</value>
+  </data>
+  <data name="LocationType_Edit_Title" xml:space="preserve">
+    <value>Edit Location Type</value>
+  </data>
+  <data name="Location" xml:space="preserve">
+    <value>Location</value>
+  </data>
+  <data name="LocationMenu" xml:space="preserve">
+    <value>Locations</value>
+  </data>
+  <data name="Location_Create_Tile" xml:space="preserve">
+    <value>Create Location</value>
+  </data>
+  <data name="Location_Edit_Title" xml:space="preserve">
+    <value>Edit Location</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="Id" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="InNumber" xml:space="preserve">
+    <value>Int Number</value>
+  </data>
+  <data name="OutNumber" xml:space="preserve">
+    <value>Out Number</value>
+  </data>
+  <data name="Street" xml:space="preserve">
+    <value>Street</value>
+  </data>
+  <data name="ColonialMenu" xml:space="preserve">
+    <value>Colonials</value>
+  </data>
+  <data name="EventMenu" xml:space="preserve">
+    <value>Events</value>
+  </data>
+  <data name="Event" xml:space="preserve">
+    <value>Event</value>
+  </data>
+  <data name="DateEnd" xml:space="preserve">
+    <value>End Date</value>
+  </data>
+  <data name="DateStart" xml:space="preserve">
+    <value>Initial Date</value>
+  </data>
+  <data name="External" xml:space="preserve">
+    <value>External</value>
+  </data>
+  <data name="Event_Create_Title" xml:space="preserve">
+    <value>Create Event</value>
+  </data>
+  <data name="FirstName" xml:space="preserve">
+    <value>First Name</value>
+  </data>
+  <data name="Event_Edit_Title" xml:space="preserve">
+    <value>Edit Event</value>
+  </data>
 </root>

@@ -5,11 +5,15 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Model.Domain
 {
-    public class LocationType: ISoftDeleted
+    public class LocationType
     {
         [Key]
+        [Display(Name = "Id", ResourceType = typeof(Resources.Resources))]
         public int Id { get; set; }
-        public bool Deleted { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
+        [Required]
+        [Display(Name = "Description", ResourceType = typeof(Resources.Resources))]
+        [MaxLength(100)]
         public string Description { get; set; }
     }
 }

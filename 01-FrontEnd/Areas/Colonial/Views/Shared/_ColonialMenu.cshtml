@@ -1,0 +1,18 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.ItemToDelete = "Item";
+    ViewBag.deleteTitleToDelete = String.Concat(Resources.Delete, " ", ViewBag.ItemToDelete);
+    ViewBag.deleteQuestionToDelete = String.Format(Resources.Delete_AskToDelete, ViewBag.ItemToDelete);
+}
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/colonial")
+
+
+<div>
+    
+    @RenderBody()
+    @Html.Partial("_Modals")
+
+
+
+</div>

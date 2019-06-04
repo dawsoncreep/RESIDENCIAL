@@ -14,7 +14,9 @@
                 <p id="deleteItemModalQuestion"><h5>@ViewBag.deleteQuestionToDelete</h5></p>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-primary" id="deleteItemButton" href="@Url.Action("Delete","Permission",new {Area="Administration" })">@Resources.Delete</button>
+                <button class="btn btn-primary" id="deleteItemButton" 
+                        href="@Url.Action("Delete",ViewBag.Controller,new {Area=ViewBag.Area })">@Resources.Delete
+                </button>
                 <button class="btn btn-default" data-dismiss="modal">@Resources.Cancel</button>
             </div>
         </div>

@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Colonial/Views/Shared/_ColonialMenu.cshtml";
+
+}
+
+<div class="panel panel-default">
+    <div class="panel-heading ">
+        <p>
+            @Html.ActionLink(Resources.Create, "Create", new { }, new { @class = "btn btn-default" })
+        </p>
+    </div>
+    <div class="panel-body">
+        @Html.MVCGrid("EventGrid")
+    </div>
+</div>
+

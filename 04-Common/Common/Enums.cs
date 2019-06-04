@@ -63,11 +63,16 @@ namespace Common
 
         public enum PermissionMenuId
         {
-            AdmonMenu = 1,
-            UsersMenu = 2,
-            RolesMenu = 3,
-            CatalogsMenu = 4,
-            PermissionMenu = 5
+            AdmonMenu,
+            UsersMenu,
+            RolesMenu,
+            CatalogsMenu,
+            PermissionMenu,
+            EventTypeMenu,
+            LocationTypeMenu,
+            LocationMenu,
+            ColonialMenu,
+            EventMenu
         }
     }
 

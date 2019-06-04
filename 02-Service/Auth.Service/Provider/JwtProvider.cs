@@ -110,7 +110,7 @@ namespace Auth.Service.Providers
             {
                 foreach (var item in userPermission)
                 {
-                    jwtIdentity.AddClaim(new Claim("PermissionUser", item));
+                    jwtIdentity.AddClaim(new Claim("Permissions", item));
                 }
             }
 
@@ -120,18 +120,17 @@ namespace Auth.Service.Providers
 
         private string[] GetUserPermissionFromPayLoad(dynamic payload)
         {
-            if (payload.PermissionUser != null)
+            if (payload.Permissions != null)
             {
-                var type = payload.PermissionUser.GetType();
-                //Newtonsoft.Json.Linq.JToken
-                if (!(payload.PermissionUser.GetType() == (typeof(Newtonsoft.Json.Linq.JArray))))
+                var type = payload.Permissions.GetType();
+                if (!(payload.Permissions.GetType() == (typeof(Newtonsoft.Json.Linq.JArray))))
                 {
-                    JToken temp = payload.PermissionUser.ToObject(typeof(Newtonsoft.Json.Linq.JToken));
-                    return new string[] { payload.PermissionUser.ToObject<string>() };
+                    JToken temp = payload.Permissions.ToObject(typeof(Newtonsoft.Json.Linq.JToken));
+                    return new string[] { payload.Permissions.ToObject<string>() };
                 }
                 else
                 {
-                    Newtonsoft.Json.Linq.JArray temp = payload.PermissionUser.ToObject(typeof(Newtonsoft.Json.Linq.JArray));
+                    Newtonsoft.Json.Linq.JArray temp = payload.Permissions.ToObject(typeof(Newtonsoft.Json.Linq.JArray));
                     return temp.ToObject<string[]>();  
                 }
             }

@@ -23,7 +23,7 @@ namespace Service.InternalService
         public UserForGridView Get(string userName)
         {
             var result = new UserForGridView();
-            List<string> _roles = new List<string>();
+            List<ApplicationRole> _roles = new List<ApplicationRole>();
             try
             {
                 var client = new RestClient(Parameters.resourceServerUrl);
@@ -40,7 +40,7 @@ namespace Service.InternalService
 
                 foreach (var item in responseDes.Roles)
                 {
-                    _roles.Add(_roleService.Get(new Guid(item.RoleId)).Name);
+                    _roles.Add(_roleService.Get(new Guid(item.RoleId)));
                 }
 
                 result = new UserForGridView
@@ -92,7 +92,7 @@ namespace Service.InternalService
                             (from r in responseRolesArray
                             join r2 in u.Roles
                             on r.Id equals r2.RoleId
-                            select r.Name   
+                            select r   
                         ).ToList()
                     }
                 ).ToList();

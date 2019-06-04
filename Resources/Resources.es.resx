@@ -205,7 +205,7 @@
     <value>Controllador para Permisos</value>
   </data>
   <data name="Permission_Edit_Title" xml:space="preserve">
-    <value>Edit Permission</value>
+    <value>Editar Permiso</value>
   </data>
   <data name="Save" xml:space="preserve">
     <value>Guardar</value>
@@ -224,5 +224,83 @@
   </data>
   <data name="Process_ErrorMessage" xml:space="preserve">
     <value>Ocurrio un error inesperado durante el proceso de {0}</value>
+  </data>
+  <data name="EventType" xml:space="preserve">
+    <value>Typo de Evento</value>
+  </data>
+  <data name="EventTypeMenu" xml:space="preserve">
+    <value>Tipos de Eventos</value>
+  </data>
+  <data name="EventType_Create_Tile" xml:space="preserve">
+    <value>Crear Tipo de Evento</value>
+  </data>
+  <data name="EventType_Edit_Title" xml:space="preserve">
+    <value>Editar Tipo de Evento</value>
+  </data>
+  <data name="LocationType" xml:space="preserve">
+    <value>Tipo de ubicación</value>
+  </data>
+  <data name="LocationTypeMenu" xml:space="preserve">
+    <value>Tipos de Ubicación</value>
+  </data>
+  <data name="LocationType_Create_Tile" xml:space="preserve">
+    <value>Crear tipo de ubicación</value>
+  </data>
+  <data name="LocationType_Edit_Title" xml:space="preserve">
+    <value>Editar tipo de ubicación</value>
+  </data>
+  <data name="Location" xml:space="preserve">
+    <value>Ubicación</value>
+  </data>
+  <data name="LocationMenu" xml:space="preserve">
+    <value>Ubicaciones</value>
+  </data>
+  <data name="Location_Create_Tile" xml:space="preserve">
+    <value>Crear Ubicación</value>
+  </data>
+  <data name="Location_Edit_Title" xml:space="preserve">
+    <value>Editar Ubicación</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Descripción</value>
+  </data>
+  <data name="Id" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="InNumber" xml:space="preserve">
+    <value>Número Interior</value>
+  </data>
+  <data name="OutNumber" xml:space="preserve">
+    <value>Número Exterior</value>
+  </data>
+  <data name="Street" xml:space="preserve">
+    <value>Calle</value>
+  </data>
+  <data name="ColonialMenu" xml:space="preserve">
+    <value>Colonos</value>
+  </data>
+  <data name="EventMenu" xml:space="preserve">
+    <value>Eventos</value>
+  </data>
+  <data name="Event" xml:space="preserve">
+    <value>Evento</value>
+  </data>
+  <data name="DateEnd" xml:space="preserve">
+    <value>Fecha Final</value>
+  </data>
+  <data name="DateStart" xml:space="preserve">
+    <value>Fecha Inicial</value>
+  </data>
+  <data name="External" xml:space="preserve">
+    <value>Externo</value>
+  </data>
+  <data name="Event_Create_Title" xml:space="preserve">
+    <value>Crear Evento</value>
+  </data>
+  <data name="FirstName" xml:space="preserve">
+    <value>Apellido Paterno</value>
+  </data>
+  <data name="Event_Edit_Title" xml:space="preserve">
+    <value>Editar Evento</value>
   </data>
 </root>

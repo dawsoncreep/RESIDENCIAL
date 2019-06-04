@@ -32,14 +32,15 @@ namespace Persistence.DatabaseContext
         public virtual DbSet<EventLocation> EventLocation { get; set; }
         public virtual DbSet<EventType> EventType { get; set; }
         public virtual DbSet<Location> Location { get; set; }
+        public virtual DbSet<LocationUser> LocationUser { get; set; }
         public virtual DbSet<LocationTelephone> LocationTelephone { get; set; }
         public virtual DbSet<LocationType> LocationType { get; set; }
-        public virtual DbSet<LocationUser> Locationuser { get; set; }
         public virtual DbSet<LocationUserNotification> LocationuserNotification { get; set; }
         public virtual DbSet<LocationVehicle> LocationVehicle { get; set; }
         public virtual DbSet<Notification> Notification { get; set; }
         public virtual DbSet<Permission> Permission { get; set; }
         public virtual DbSet<PermissionUser> PermissionUser { get; set; }
+        public virtual DbSet<PermissionRole> PermissionRole { get; set; }
         public virtual DbSet<UserBinnacle> UserBinnacle { get; set; }
         public virtual DbSet<ApplicationParameters> ApplicationParameters { get; set; }
         public virtual DbSet<Bulletin> Bulletin { get; set; }

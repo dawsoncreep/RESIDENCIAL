@@ -15,7 +15,7 @@ using System;
 using System.Collections.Generic;
 using System.Security.Claims;
 using System.Threading.Tasks;
-
+using System.Linq;
 
 namespace AuthorizationServer.Api.Providers
 {
@@ -25,7 +25,8 @@ namespace AuthorizationServer.Api.Providers
             DependecyFactory.GetInstance<IAuthorizationServerService>();
 
         private readonly IUserService _userService = DependecyFactory.GetInstance<IUserService>();
-        private static readonly IPermissionUserService _permissionUserService = DependecyFactory.GetInstance<IPermissionUserService>();
+        private static readonly IPermissionRoleService _permissionRoleService = 
+            DependecyFactory.GetInstance<IPermissionRoleService>();
 
 
         public override Task ValidateClientAuthentication(OAuthValidateClientAuthenticationContext context)
@@ -89,18 +90,22 @@ namespace AuthorizationServer.Api.Providers
             identity.AddClaim(new Claim("sub", context.UserName));
             identity.AddClaim(new Claim(ClaimTypes.SerialNumber , userFromRepo.Id));
 
+            List<Permission> permission = new List<Permission>();
             userFromRepo.Roles.ForEach(s =>
             {
-                identity.AddClaim(new Claim(ClaimTypes.Role, s));
+                identity.AddClaim(new Claim(ClaimTypes.Role,s.Name));
             });
 
-            var userPermission = new List<PermissionUser>(_permissionUserService.GetByUserId(new Guid(userFromRepo.Id)));
-            userPermission.ForEach (s =>
+            permission = (from r in userFromRepo.Roles
+                          join pr in new List<PermissionRole>(_permissionRoleService.GetAll())
+                          on r.Id equals pr.ApplicationRole.Id
+                          select pr.Permission
+                         ).ToList();
+
+            permission.ForEach(s =>
             {
-                identity.AddClaim(new Claim("PermissionUser",s.Permission.Id.ToString()));
+               identity.AddClaim(new Claim("Permissions", s.ResourceCode));
             });
-            
-
 
 
             var props = new AuthenticationProperties(new Dictionary<string, string>

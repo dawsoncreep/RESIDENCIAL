@@ -134,6 +134,62 @@
     <Compile Include="Migrations\201904241943279_setDefaultToPermissions.Designer.cs">
       <DependentUpon>201904241943279_setDefaultToPermissions.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905091727139_addPermissionRole.cs" />
+    <Compile Include="Migrations\201905091727139_addPermissionRole.Designer.cs">
+      <DependentUpon>201905091727139_addPermissionRole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905091831264_removePermissionIdFromPermissionRoles.cs" />
+    <Compile Include="Migrations\201905091831264_removePermissionIdFromPermissionRoles.Designer.cs">
+      <DependentUpon>201905091831264_removePermissionIdFromPermissionRoles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905300526366_RemoveISoftDeleteToEventType.cs" />
+    <Compile Include="Migrations\201905300526366_RemoveISoftDeleteToEventType.Designer.cs">
+      <DependentUpon>201905300526366_RemoveISoftDeleteToEventType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905301719553_RemoveISoftDeleteToLocationType.cs" />
+    <Compile Include="Migrations\201905301719553_RemoveISoftDeleteToLocationType.Designer.cs">
+      <DependentUpon>201905301719553_RemoveISoftDeleteToLocationType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905301752420_AddingLocationProperties.cs" />
+    <Compile Include="Migrations\201905301752420_AddingLocationProperties.Designer.cs">
+      <DependentUpon>201905301752420_AddingLocationProperties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905301803088_AddingLocationPropertyiesRemovingEventTYpeErrorProps.cs" />
+    <Compile Include="Migrations\201905301803088_AddingLocationPropertyiesRemovingEventTYpeErrorProps.Designer.cs">
+      <DependentUpon>201905301803088_AddingLocationPropertyiesRemovingEventTYpeErrorProps.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905302024225_AddingLocationStreet.cs" />
+    <Compile Include="Migrations\201905302024225_AddingLocationStreet.Designer.cs">
+      <DependentUpon>201905302024225_AddingLocationStreet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905302051431_AddingLocationValidations.cs" />
+    <Compile Include="Migrations\201905302051431_AddingLocationValidations.Designer.cs">
+      <DependentUpon>201905302051431_AddingLocationValidations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905302234494_RemovingAuditIsoftLocationUser.cs" />
+    <Compile Include="Migrations\201905302234494_RemovingAuditIsoftLocationUser.Designer.cs">
+      <DependentUpon>201905302234494_RemovingAuditIsoftLocationUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906031804393_locationUserremove.cs" />
+    <Compile Include="Migrations\201906031804393_locationUserremove.Designer.cs">
+      <DependentUpon>201906031804393_locationUserremove.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906031945131_locationUserFix.cs" />
+    <Compile Include="Migrations\201906031945131_locationUserFix.Designer.cs">
+      <DependentUpon>201906031945131_locationUserFix.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906032008561_AddingFieldsToEvent.cs" />
+    <Compile Include="Migrations\201906032008561_AddingFieldsToEvent.Designer.cs">
+      <DependentUpon>201906032008561_AddingFieldsToEvent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906032301270_externalUserproperties.cs" />
+    <Compile Include="Migrations\201906032301270_externalUserproperties.Designer.cs">
+      <DependentUpon>201906032301270_externalUserproperties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906040412538_externalFirstName.cs" />
+    <Compile Include="Migrations\201906040412538_externalFirstName.Designer.cs">
+      <DependentUpon>201906040412538_externalFirstName.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -201,6 +257,48 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201904241943279_setDefaultToPermissions.resx">
       <DependentUpon>201904241943279_setDefaultToPermissions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905091727139_addPermissionRole.resx">
+      <DependentUpon>201905091727139_addPermissionRole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905091831264_removePermissionIdFromPermissionRoles.resx">
+      <DependentUpon>201905091831264_removePermissionIdFromPermissionRoles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905300526366_RemoveISoftDeleteToEventType.resx">
+      <DependentUpon>201905300526366_RemoveISoftDeleteToEventType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905301719553_RemoveISoftDeleteToLocationType.resx">
+      <DependentUpon>201905301719553_RemoveISoftDeleteToLocationType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905301752420_AddingLocationProperties.resx">
+      <DependentUpon>201905301752420_AddingLocationProperties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905301803088_AddingLocationPropertyiesRemovingEventTYpeErrorProps.resx">
+      <DependentUpon>201905301803088_AddingLocationPropertyiesRemovingEventTYpeErrorProps.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905302024225_AddingLocationStreet.resx">
+      <DependentUpon>201905302024225_AddingLocationStreet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905302051431_AddingLocationValidations.resx">
+      <DependentUpon>201905302051431_AddingLocationValidations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905302234494_RemovingAuditIsoftLocationUser.resx">
+      <DependentUpon>201905302234494_RemovingAuditIsoftLocationUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906031804393_locationUserremove.resx">
+      <DependentUpon>201906031804393_locationUserremove.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906031945131_locationUserFix.resx">
+      <DependentUpon>201906031945131_locationUserFix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906032008561_AddingFieldsToEvent.resx">
+      <DependentUpon>201906032008561_AddingFieldsToEvent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906032301270_externalUserproperties.resx">
+      <DependentUpon>201906032301270_externalUserproperties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906040412538_externalFirstName.resx">
+      <DependentUpon>201906040412538_externalFirstName.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

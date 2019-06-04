@@ -183,8 +183,13 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Administration\AdministrationAreaRegistration.cs" />
+    <Compile Include="Areas\Administration\Controllers\EventTypeController.cs" />
+    <Compile Include="Areas\Administration\Controllers\LocationController.cs" />
+    <Compile Include="Areas\Administration\Controllers\LocationTypeController.cs" />
     <Compile Include="Areas\Administration\Controllers\PermissionController.cs" />
+    <Compile Include="Areas\Administration\Controllers\PermissionRoleController.cs" />
     <Compile Include="Areas\Colonial\ColonialAreaRegistration.cs" />
+    <Compile Include="Areas\Colonial\Controllers\EventController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Areas\GuardHouse\Controllers\EntryController.cs" />
     <Compile Include="Areas\GuardHouse\GuardHouseAreaRegistration.cs" />
@@ -204,6 +209,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\css\site.css" />
+    <Content Include="Assets\js\Administration\event.functions.js" />
+    <Content Include="Assets\js\Administration\locationType.functions.js" />
+    <Content Include="Assets\js\Administration\eventType.functions.js" />
     <Content Include="Assets\js\common.js" />
     <Content Include="Assets\js\enums.js" />
     <Content Include="Assets\js\Menu\menu.js" />
@@ -962,6 +970,20 @@
     <Content Include="Areas\Administration\Views\Permission\Create.cshtml" />
     <Content Include="Assets\js\Administration\permission.functions.js" />
     <Content Include="Areas\Administration\Views\Permission\Edit.cshtml" />
+    <Content Include="Areas\Administration\Views\EventType\Index.cshtml" />
+    <Content Include="Areas\Administration\Views\EventType\Create.cshtml" />
+    <Content Include="Areas\Administration\Views\EventType\Edit.cshtml" />
+    <Content Include="Areas\Administration\Views\LocationType\Index.cshtml" />
+    <Content Include="Areas\Administration\Views\LocationType\Edit.cshtml" />
+    <Content Include="Areas\Administration\Views\LocationType\Create.cshtml" />
+    <Content Include="Areas\Administration\Views\Location\Create.cshtml" />
+    <Content Include="Areas\Administration\Views\Location\Edit.cshtml" />
+    <Content Include="Areas\Administration\Views\Location\Index.cshtml" />
+    <Content Include="Areas\Colonial\Views\Shared\_ColonialMenu.cshtml" />
+    <Content Include="Areas\Administration\Views\PermissionRole\Index.cshtml" />
+    <Content Include="Areas\Colonial\Views\Event\Index.cshtml" />
+    <Content Include="Areas\Colonial\Views\Event\Create.cshtml" />
+    <Content Include="Areas\Colonial\Views\Event\Edit.cshtml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -1005,13 +1027,12 @@
   <ItemGroup>
     <Folder Include="App_Data\Logs\" />
     <Folder Include="Areas\Administration\Models\" />
-    <Folder Include="Areas\Colonial\Controllers\" />
     <Folder Include="Areas\Colonial\Models\" />
-    <Folder Include="Areas\Colonial\Views\Shared\" />
     <Folder Include="Areas\GuardHouse\Models\" />
     <Folder Include="Areas\Reports\Controllers\" />
     <Folder Include="Areas\Reports\Models\" />
     <Folder Include="Areas\Reports\Views\Shared\" />
+    <Folder Include="Assets\js\Colonial\" />
     <Folder Include="Scripts\" />
   </ItemGroup>
   <ItemGroup>

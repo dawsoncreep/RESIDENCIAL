@@ -27,16 +27,21 @@ namespace FrontEnd
                 {
                     cols.Add("Edit").WithHtmlEncoding(false)
                         .WithHeaderText(" ")
-                        .WithValueExpression((i, c) => c.UrlHelper.Action("Edit","Permission",new { Area="Administration",id = i.Id }))
-                        .WithValueTemplate("<a href={Value} class = 'btn btn-default'>" + Resources.Edit+"</a>");
+                        .WithValueExpression((i, c) => c.UrlHelper.Action("Edit", "Permission", new { Area = "Administration", id = i.Id }))
+                        .WithValueTemplate("<a href={Value} class = 'btn btn-default'>" +
+                        "<span class='glyphicon glyphicon-pencil' aria-hidden='true'></span>" +
+                        "</a>")
+                        .WithCellCssClassExpression(p => p.Id > 0 ? "col-xs-1 warning center" : "col-xs-1 danger");
                     cols.Add("Delete").WithHtmlEncoding(false)
                         .WithHeaderText(" ")
                         .WithValueExpression((i,c) => i.Id.ToString()) 
-                        .WithValueTemplate("<button class='btn btn-default deletePermissionButton' id='deleteBtnPermission' idDelete = '{Value}'>"+
-                                @Resources.Delete+" </button> ");
+                        .WithValueTemplate("<button class='btn btn-default deleteButton' id='deleteBtnPermission' idDelete = '{Value}'>" +
+                        "<span class='glyphicon glyphicon-trash' aria-hidden='true'></span>" +
+                        " </button> ")
+                        .WithCellCssClassExpression(p => p.Id > 0 ? "col-xs-1 danger center" : "col-xs-1 danger");
                     cols.Add().WithColumnName("Id")
                         .WithHeaderText("Id")
-                        .WithValueExpression(i => i.Name); // use the Value Expression to return the cell text for this column
+                        .WithValueExpression(i => i.Id.ToString()); // use the Value Expression to return the cell text for this column
                     cols.Add().WithColumnName("ResourceCode")
                         .WithHeaderText(Resources.Permission_Code)
                         .WithValueExpression(i => i.ResourceCode);
@@ -86,6 +91,242 @@ namespace FrontEnd
                     //};
                 })
             );
+
+
+            MVCGridDefinitionTable.Add("EventTypeGrid", new MVCGridBuilder<EventType>()
+                .WithAuthorizationType(AuthorizationType.AllowAnonymous)
+                .AddColumns(cols =>
+                {
+                    cols.Add("Edit").WithHtmlEncoding(false)
+                        .WithHeaderText(" ")
+                        .WithValueExpression((i, c) => c.UrlHelper.Action("Edit", "EventType", new { Area = "Administration", id = i.Id }))
+                        .WithValueTemplate("<a href={Value} class = 'btn btn-default'>" +
+                        "<span class='glyphicon glyphicon-pencil' aria-hidden='true'></span>" +
+                        "</a>")
+                        .WithCellCssClassExpression(p => p.Id > 0 ? "col-xs-1 warning center" : "col-xs-1 danger"); 
+                    cols.Add("Delete").WithHtmlEncoding(false)
+                        .WithHeaderText(" ")
+                        .WithValueExpression((i, c) => i.Id.ToString())
+                        .WithValueTemplate("<button class='btn btn-default deleteButton' id='deleteBtnEventType' idDelete = '{Value}'>" +
+                        "<span class='glyphicon glyphicon-trash' aria-hidden='true'></span>" +
+                        " </button> ")
+                        .WithCellCssClassExpression(p => p.Id > 0 ? "col-xs-1 danger center" : "col-xs-1 danger");
+                    cols.Add().WithColumnName("Id")
+                        .WithHeaderText("Id")
+                        .WithValueExpression(i => i.Id.ToString()); // use the Value Expression to return the cell text for this column
+                    cols.Add().WithColumnName("Description")
+                        .WithHeaderText("Description")
+                        .WithValueExpression(i => i.Description);
+                })
+                .WithSorting(true, "Id")
+                .WithPaging(true, 10)
+                .WithRetrieveDataMethod((context) =>
+                {
+                    var options = context.QueryOptions;
+                    var result = new QueryResult<EventType>();
+                    IEventTypeService _eventTypeService = DependecyFactory.GetInstance<IEventTypeService>();
+                    var query = _eventTypeService.GetAll().AsQueryable();
+
+                    result.TotalRecords = query.Count();
+
+                    if (options.GetLimitOffset().HasValue)
+                    {
+                        query = query.Skip(options.GetLimitOffset().Value).Take(options.GetLimitRowcount().Value);
+                    }
+                    result.Items = query.ToList();
+                    return result;
+                    //return new QueryResult<Permission>()
+                    //{
+                    //    Items = items,
+                    //    TotalRecords = items.Count()
+                    //};
+                })
+            );
+
+
+            MVCGridDefinitionTable.Add("LocationTypeGrid", new MVCGridBuilder<LocationType>()
+                .WithAuthorizationType(AuthorizationType.AllowAnonymous)
+                .AddColumns(cols =>
+                {
+                    cols.Add("Edit").WithHtmlEncoding(false)
+                        .WithHeaderText(" ")
+                        .WithValueExpression((i, c) => c.UrlHelper.Action("Edit", "LocationType", new { Area = "Administration", id = i.Id }))
+                        .WithValueTemplate("<a href={Value} class = 'btn btn-default'>" +
+                        "<span class='glyphicon glyphicon-pencil' aria-hidden='true'></span>" +
+                        "</a>")
+                        .WithCellCssClassExpression(p => p.Id > 0 ? "col-xs-1 warning center" : "col-xs-1 danger");
+                    cols.Add("Delete").WithHtmlEncoding(false)
+                        .WithHeaderText(" ")
+                        .WithValueExpression((i, c) => i.Id.ToString())
+                        .WithValueTemplate("<button class='btn btn-default deleteButton' id='deleteBtnLocationType' idDelete = '{Value}'>" +
+                        "<span class='glyphicon glyphicon-trash' aria-hidden='true'></span>" +
+                        " </button> ")
+                        .WithCellCssClassExpression(p => p.Id > 0 ? "col-xs-1 danger center" : "col-xs-1 danger");
+                    cols.Add().WithColumnName("Id")
+                        .WithHeaderText("Id")
+                        .WithValueExpression(i => i.Id.ToString()); // use the Value Expression to return the cell text for this column
+                    cols.Add().WithColumnName("Description")
+                        .WithHeaderText("Description")
+                        .WithValueExpression(i => i.Description);
+                })
+                .WithSorting(true, "Id")
+                .WithPaging(true, 10)
+                .WithRetrieveDataMethod((context) =>
+                {
+                    var options = context.QueryOptions;
+                    var result = new QueryResult<LocationType>();
+                    ILocationTypeService _locationTypeService = DependecyFactory.GetInstance<ILocationTypeService>();
+                    var query = _locationTypeService.GetAll().AsQueryable();
+
+                    result.TotalRecords = query.Count();
+
+                    if (options.GetLimitOffset().HasValue)
+                    {
+                        query = query.Skip(options.GetLimitOffset().Value).Take(options.GetLimitRowcount().Value);
+                    }
+                    result.Items = query.ToList();
+                    return result;
+                    //return new QueryResult<Permission>()
+                    //{
+                    //    Items = items,
+                    //    TotalRecords = items.Count()
+                    //};
+                })
+            );
+
+
+            MVCGridDefinitionTable.Add("LocationGrid", new MVCGridBuilder<Location>()
+                .WithAuthorizationType(AuthorizationType.AllowAnonymous)
+                .AddColumns(cols =>
+                {
+                    cols.Add("Edit").WithHtmlEncoding(false)
+                        .WithHeaderText(" ")
+                        .WithValueExpression((i, c) => c.UrlHelper.Action("Edit", "Location", new { Area = "Administration", id = i.Id }))
+                        .WithValueTemplate("<a href={Value} class = 'btn btn-default'>" +
+                        "<span class='glyphicon glyphicon-pencil' aria-hidden='true'></span>" +
+                        "</a>")
+                        .WithCellCssClassExpression(p => p.Id > 0 ? "col-xs-1 warning center" : "col-xs-1 danger");
+                    cols.Add("Delete").WithHtmlEncoding(false)
+                        .WithHeaderText(" ")
+                        .WithValueExpression((i, c) => i.Id.ToString())
+                        .WithValueTemplate("<button class='btn btn-default deleteButton' id='deleteBtnLocation' idDelete = '{Value}'>" +
+                        "<span class='glyphicon glyphicon-trash' aria-hidden='true'></span>" +
+                        " </button> ")
+                        .WithCellCssClassExpression(p => p.Id > 0 ? "col-xs-1 danger center" : "col-xs-1 danger");
+
+                    cols.Add().WithColumnName("Id")
+                        .WithHeaderText("Id")
+                        .WithValueExpression(i => i.Id.ToString()); 
+
+                    cols.Add().WithColumnName("Name")
+                        .WithHeaderText("Name")
+                        .WithValueExpression(i => i.Name);
+
+                    cols.Add().WithColumnName("Description")
+                        .WithHeaderText("Description")
+                        .WithValueExpression(i => i.Description);
+
+                    cols.Add().WithColumnName("OutNumber")
+                        .WithHeaderText("OutNumber")
+                        .WithValueExpression(i => i.OutNumber);
+
+                    cols.Add().WithColumnName("InNumber")
+                        .WithHeaderText("InNumber")
+                        .WithValueExpression(i => i.InNumber);
+
+                    cols.Add().WithColumnName("LocationType")
+                        .WithHeaderText("LocationType")
+                        .WithValueExpression(i => i.LocationType.Description);
+                })
+                .WithSorting(true, "Id")
+                .WithPaging(true, 10)
+                .WithRetrieveDataMethod((context) =>
+                {
+                    var options = context.QueryOptions;
+                    var result = new QueryResult<Location>();
+                    ILocationService _locationService = DependecyFactory.GetInstance<ILocationService>();
+                    var query = _locationService.GetAll().AsQueryable();
+
+                    result.TotalRecords = query.Count();
+
+                    if (options.GetLimitOffset().HasValue)
+                    {
+                        query = query.Skip(options.GetLimitOffset().Value).Take(options.GetLimitRowcount().Value);
+                    }
+                    result.Items = query.ToList();
+                    return result;
+                    //return new QueryResult<Permission>()
+                    //{
+                    //    Items = items,
+                    //    TotalRecords = items.Count()
+                    //};
+                })
+            );
+
+
+            MVCGridDefinitionTable.Add("EventGrid", new MVCGridBuilder<Event>()
+                .WithAuthorizationType(AuthorizationType.AllowAnonymous)
+                .AddColumns(cols =>
+                {
+                    cols.Add("Edit").WithHtmlEncoding(false)
+                        .WithHeaderText(" ")
+                        .WithValueExpression((i, c) => c.UrlHelper.Action("Edit", "Event", new { Area = "Colonial", id = i.Id }))
+                        .WithValueTemplate("<a href={Value} class = 'btn btn-default'>" +
+                        "<span class='glyphicon glyphicon-pencil' aria-hidden='true'></span>" +
+                        "</a>")
+                        .WithCellCssClassExpression(p => p.Id > 0 ? "col-xs-1 warning center" : "col-xs-1 danger");
+                    cols.Add("Delete").WithHtmlEncoding(false)
+                        .WithHeaderText(" ")
+                        .WithValueExpression((i, c) => i.Id.ToString())
+                        .WithValueTemplate("<button class='btn btn-default deleteButton' id='deleteBtnEvent' idDelete = '{Value}'>" +
+                        "<span class='glyphicon glyphicon-trash' aria-hidden='true'></span>" +
+                        " </button> ")
+                        .WithCellCssClassExpression(p => p.Id > 0 ? "col-xs-1 danger center" : "col-xs-1 danger");
+                    cols.Add().WithColumnName("Id")
+                        .WithHeaderText("Id")
+                        .WithValueExpression(i => i.Id.ToString()); // use the Value Expression to return the cell text for this column
+                    cols.Add().WithColumnName("Description")
+                        .WithHeaderText("Description")
+                        .WithValueExpression(i => i.Description);
+                    cols.Add().WithColumnName("DateStart")
+                        .WithHeaderText("DateStart")
+                        .WithValueExpression(i => i.DateStart.ToString("yyyy-MM-dd HH:mm:ss"));
+                    cols.Add().WithColumnName("DateEnd")
+                        .WithHeaderText("DateEnd")
+                        .WithValueExpression(i => i.DateEnd.ToString("yyyy-MM-dd HH:mm:ss"));
+                    cols.Add().WithColumnName("EventTypeDescription")
+                        .WithHeaderText("EventTypeDescription")
+                        .WithValueExpression(i => i.EventType.Description);
+                    cols.Add().WithColumnName("LocationDescription")
+                        .WithHeaderText("LocationDescription")
+                        .WithValueExpression(i => i.Location.Name);
+
+                })
+                .WithSorting(true, "Id")
+                .WithPaging(true, 10)
+                .WithRetrieveDataMethod((context) =>
+                {
+                    var options = context.QueryOptions;
+                    var result = new QueryResult<Event>();
+                    IEventService _locationTypeService = DependecyFactory.GetInstance<IEventService>();
+                    var query = _locationTypeService.GetAll().AsQueryable();
+
+                    result.TotalRecords = query.Count();
+
+                    if (options.GetLimitOffset().HasValue)
+                    {
+                        query = query.Skip(options.GetLimitOffset().Value).Take(options.GetLimitRowcount().Value);
+                    }
+                    result.Items = query.ToList();
+                    return result;
+                    //return new QueryResult<Permission>()
+                    //{
+                    //    Items = items,
+                    //    TotalRecords = items.Count()
+                    //};
+                })
+            );
+
         }
     }
 }

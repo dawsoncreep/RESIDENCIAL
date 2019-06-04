@@ -1,17 +1,19 @@
-﻿using Common.CustomFilters;
-using Model.Helper;
+﻿using Model.Auth;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using Model.Auth;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
 namespace Model.Domain
 {
-    public class LocationUser: AuditEntity ,ISoftDeleted
+    public class LocationUser
     {
         [Key]
         public int Id { get; set; }
-        public ICollection<ApplicationUser> UserId { get; set; }
-        public ICollection<Location> LocationId { get; set; }
-        public bool Deleted { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public ApplicationUser ApplicationUser { get; set; }
+        public Location Location { get; set; }
+
     }
 }

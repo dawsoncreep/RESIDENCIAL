@@ -22,7 +22,7 @@
                     <td>
                         @Html.ActionLink(m.Email, "Get", "Users", new { Area = "Administration", Id = m.Id.ToString() }, new { })
                     </td>
-                    <td>@string.Join(", ", m.Roles)</td>
+                    <td>@string.Join(", ", m.Roles.Select(s => s.Name))</td>
                 </tr>
             }
         </tbody>

@@ -49,9 +49,9 @@ namespace Common
                     userId = ((ClaimsIdentity)user.Identity).FindFirst(ClaimTypes.SerialNumber).Value;
                 }
 
-                if (((ClaimsIdentity)user.Identity).FindFirst("PermissionUser") != null)
+                if (((ClaimsIdentity)user.Identity).FindFirst("Permissions") != null)
                 {
-                    new List<Claim>(((ClaimsIdentity)user.Identity).FindAll("PermissionUser")).ForEach(s =>
+                    new List<Claim>(((ClaimsIdentity)user.Identity).FindAll("Permissions")).ForEach(s =>
                     {
                         userPermission.Add(s.Value);
                     });

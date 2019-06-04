@@ -130,7 +130,7 @@ namespace Service.ExternalService
             catch (Exception e)
             {
                 logger.Error(e.Message);
-                rh.SetResponse(false);
+                rh.SetResponse(false, e.Message);
                 return rh;
             }
         }
