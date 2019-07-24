@@ -12,6 +12,11 @@ namespace Model.Domain
         public int Id { get; set; }
 
         [Required]
+        [Display(Name = "Name", ResourceType = typeof(Resources.Resources))]
+        [MaxLength(100)]
+        public string Name { get; set; }
+
+        [Required]
         [Display(Name = "Description", ResourceType = typeof(Resources.Resources))]
         [MaxLength(100)]
         public string Description { get; set; }

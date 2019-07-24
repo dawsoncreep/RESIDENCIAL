@@ -69,6 +69,8 @@
     <Compile Include="Custom\EventForGridViewExternsion.cs" />
     <Compile Include="Custom\LocationForGridView.cs" />
     <Compile Include="Custom\LocationForGridViewExtension.cs" />
+    <Compile Include="Custom\LocationUserForGridView.cs" />
+    <Compile Include="Custom\LocationUserForGridViewExtension.cs" />
     <Compile Include="Custom\MenuByPermissions.cs" />
     <Compile Include="Custom\PermissionRoleForGridView.cs" />
     <Compile Include="Custom\UserForGridView.cs" />

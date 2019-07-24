@@ -1,0 +1,51 @@
+﻿@model Model.Custom.LocationUserForGridView
+
+@{
+    ViewBag.Title = Resources.LocationUser_Edit_Title;
+    Layout = "~/Areas/Administration/Views/Shared/_AdministrationMenu.cshtml";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+    <h4>@Resources.LocationUser_Edit_Title</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.Id)
+    @Html.HiddenFor(model => model.ApplicationUser.Id)
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.ApplicationUser.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.ApplicationUser.Name, new { htmlAttributes = new { @class = "form-control", @disabled = "disabled", @Value = ViewBag.Name } })
+            @Html.ValidationMessageFor(model => model.ApplicationUser.Name, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.lstLocation, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+
+            @Html.DropDownListFor(model => model.Location.Id,
+                 Model.lstLocation.Select(s => new SelectListItem { Text = s.Name, Value = s.Id.ToString() }).ToList(),
+                 new { @class = "form-control btn btn-default dropdown-toggle", type = "button" })
+
+            @Html.ValidationMessageFor(model => model.Location, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="@Resources.Save" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

@@ -103,6 +103,7 @@
     <Compile Include="ExternalService\APIEventTypeService.cs" />
     <Compile Include="ExternalService\APILocationService.cs" />
     <Compile Include="ExternalService\APILocationTypeService.cs" />
+    <Compile Include="ExternalService\APILocationUserService.cs" />
     <Compile Include="ExternalService\APIPermissionService.cs" />
     <Compile Include="ExternalService\APIPermissionRoleService.cs" />
     <Compile Include="ExternalService\APIPermissionUserService.cs" />
@@ -115,6 +116,7 @@
     <Compile Include="ExternalService\APIUserService.cs" />
     <Compile Include="InternalService\LocationService.cs" />
     <Compile Include="InternalService\LocationTypeService.cs" />
+    <Compile Include="InternalService\LocationUserService.cs" />
     <Compile Include="InternalService\PermissionService.cs" />
     <Compile Include="InternalService\PermissionRoleService.cs" />
     <Compile Include="InternalService\PermissionUserService.cs" />

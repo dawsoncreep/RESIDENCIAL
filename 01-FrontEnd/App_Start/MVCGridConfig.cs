@@ -20,6 +20,59 @@ namespace FrontEnd
     {
         public static void RegisterGrids()
         {
+            MVCGridDefinitionTable.Add("LocationUserGrid", new MVCGridBuilder<LocationUser>()
+                .WithAuthorizationType(AuthorizationType.AllowAnonymous)
+                .AddColumns(cols =>
+                {
+                    cols.Add("Edit").WithHtmlEncoding(false)
+                        .WithHeaderText(" ")
+                        .WithValueExpression((i, c) => c.UrlHelper.Action("Edit", "LocationUser", new { Area = "Administration", id = i.Id }))
+                        .WithValueTemplate("<a href={Value} class = 'btn btn-default'>" +
+                        "<span class='glyphicon glyphicon-pencil' aria-hidden='true'></span>" +
+                        "</a>")
+                        .WithCellCssClassExpression(p => p.Id > 0 ? "col-xs-1 warning center" : "col-xs-1 danger");
+                    cols.Add("Delete").WithHtmlEncoding(false)
+                        .WithHeaderText(" ")
+                        .WithValueExpression((i, c) => i.Id.ToString())
+                        .WithValueTemplate("<button class='btn btn-default deleteButton' id='deleteBtnLocationUser' idDelete = '{Value}'>" +
+                        "<span class='glyphicon glyphicon-trash' aria-hidden='true'></span>" +
+                        " </button> ")
+                        .WithCellCssClassExpression(p => p.Id > 0 ? "col-xs-1 danger center" : "col-xs-1 danger");
+                    cols.Add().WithColumnName("Id")
+                        .WithHeaderText("Id")
+                        .WithValueExpression(i => i.Id.ToString()); // use the Value Expression to return the cell text for this column
+                    cols.Add().WithColumnName("User")
+                        .WithHeaderText(Resources.LocationUser_UName)
+                        .WithValueExpression(i => i.ApplicationUser.UserName);
+                    cols.Add().WithColumnName("Location")
+                        .WithHeaderText(Resources.LocationUser_lName)
+                        .WithValueExpression(i => i.Location.Name);
+                    
+                })
+                .WithSorting(true, "Id")
+                .WithPaging(true, 10)
+                .WithRetrieveDataMethod((context) =>
+                {
+                    var options = context.QueryOptions;
+                    var result = new QueryResult<LocationUser>();
+                    ILocationUserService _locationUserService = DependecyFactory.GetInstance<ILocationUserService>();
+                    var query = _locationUserService.GetAll().AsQueryable();
+
+                    result.TotalRecords = query.Count();
+
+                    if (options.GetLimitOffset().HasValue)
+                    {
+                        query = query.Skip(options.GetLimitOffset().Value).Take(options.GetLimitRowcount().Value);
+                    }
+                    result.Items = query.ToList();
+                    return result;
+                    //return new QueryResult<Permission>()
+                    //{
+                    //    Items = items,
+                    //    TotalRecords = items.Count()
+                    //};
+                })
+            );
 
             MVCGridDefinitionTable.Add("PermissionGrid", new MVCGridBuilder<Permission>()
                 .WithAuthorizationType(AuthorizationType.AllowAnonymous)
