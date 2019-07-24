@@ -68,6 +68,9 @@ namespace Service.InternalService
 
                 request.AddHeader("Accept", "application/json");
                 request.AddHeader("Content-Type", "application/json");
+                request.AddHeader("Authorization",
+                        String.Format("Bearer {0}",CurrentUserHelper.Get.AccessToken.access_token));
+
 
                 IRestResponse<List<Permission>> response = client.Execute<List<Permission>>(request);
 

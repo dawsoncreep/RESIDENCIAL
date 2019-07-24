@@ -30,6 +30,9 @@ namespace FrontEnd.Helpers
                                  where p.ResourceCode == permissionId.ToString()
                                  select p).FirstOrDefault();
 
+                if(permission == null)
+                    return new MvcHtmlString("");
+
                 return html.ActionLink(
                     Resources.Resources.ResourceManager.GetString(permission.ResourceCode),
                     permission.Action,

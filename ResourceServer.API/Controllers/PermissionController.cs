@@ -11,6 +11,7 @@ using System.Web.Http;
 
 namespace ResourceServer.API.Controllers
 {
+    [Authorize]
     [RoutePrefix("api/permission")]
     public class PermissionController : ApiController
     {

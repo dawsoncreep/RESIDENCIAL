@@ -16,6 +16,7 @@ using System.Collections.Generic;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Linq;
+using NLog;
 
 namespace AuthorizationServer.Api.Providers
 {
@@ -28,6 +29,7 @@ namespace AuthorizationServer.Api.Providers
         private static readonly IPermissionRoleService _permissionRoleService = 
             DependecyFactory.GetInstance<IPermissionRoleService>();
 
+        private static ILogger logger = LogManager.GetCurrentClassLogger();
 
         public override Task ValidateClientAuthentication(OAuthValidateClientAuthenticationContext context)
         {
@@ -35,10 +37,13 @@ namespace AuthorizationServer.Api.Providers
             string clientSecret = string.Empty;
             string symmetricKeyAsBase64 = string.Empty;
 
+
             if (!context.TryGetBasicCredentials(out clientId, out clientSecret))
             {
                 context.TryGetFormCredentials(out clientId, out clientSecret);
             }
+
+            logger.Info("[AuthorizationServer][ValidateClientAuthentication] clientId : " + clientId);
 
             if (context.ClientId == null)
             {
@@ -47,6 +52,8 @@ namespace AuthorizationServer.Api.Providers
             }
 
             var audience = _authorizationServerRepository.Get(context.ClientId);
+
+            logger.Info("[AuthorizationServer][ValidateClientAuthentication] audience : " + Newtonsoft.Json.JsonConvert.SerializeObject(audience));
 
             if (audience == null)
             {
@@ -68,6 +75,8 @@ namespace AuthorizationServer.Api.Providers
                 using (AuthRepository _repo = new AuthRepository())
                 {
                     IdentityUser user = await _repo.FindUser(context.UserName, context.Password);
+
+                    logger.Info("[AuthorizationServer][GrantResourceOwnerCredentials] user : " + Newtonsoft.Json.JsonConvert.SerializeObject(user));
 
                     if (user == null)
                     {

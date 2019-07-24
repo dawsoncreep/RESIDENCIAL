@@ -56,7 +56,7 @@ namespace Service.ExternalService
                 return rh;
             }
             catch (Exception e)
-            {
+            {   
                 logger.Error(e.Message);
                 rh.SetResponse(false, e.Message);
                 return rh;

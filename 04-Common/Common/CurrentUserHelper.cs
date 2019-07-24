@@ -12,6 +12,14 @@ namespace Common
         public string UserName { get; set; }
         public string Name { get; set; }
         public string[] UserPermissions { get; set; }
+        public AccessToken AccessToken { get; set; }
+    }
+
+    public class AccessToken
+    {
+        public string access_token { get; set; }
+        public string token_type { get; set; }
+        public string expires_in { get; set; }
     }
 
     public class CurrentUserHelper
@@ -35,6 +43,7 @@ namespace Common
                 string userId = string.Empty;
                 string name = string.Empty;
                 List<string> userPermission = new List<string>() ;
+                AccessToken accessToken = null;
 
                 if (((ClaimsIdentity)user.Identity).FindFirst(ClaimTypes.Name) != null)
                 {
@@ -57,13 +66,21 @@ namespace Common
                     });
                 }
 
+                if (((ClaimsIdentity)user.Identity).FindFirst("AccessToken") != null)
+                {
+                    accessToken = Newtonsoft.Json.JsonConvert.DeserializeObject<AccessToken>
+                        (((ClaimsIdentity)user.Identity).FindFirst("AccessToken").Value);
+                }
+
+
                 //return JsonConvert.DeserializeObject<CurrentUser>(jUser);
                 return new CurrentUser
                 {
                     Name = name,
                     UserId = userId,
                     UserName = name,
-                    UserPermissions = userPermission.ToArray()
+                    UserPermissions = userPermission.ToArray(),
+                    AccessToken = accessToken
                 };
             }
         }

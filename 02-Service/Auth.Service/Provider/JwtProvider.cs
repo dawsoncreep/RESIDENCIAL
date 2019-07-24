@@ -61,7 +61,7 @@ namespace Auth.Service.Providers
             return JObject.Parse(payloadJson);
         }
 
-        public ClaimsIdentity CreateIdentity(bool isAuthenticated, string userName, dynamic payload)
+        public ClaimsIdentity CreateIdentity(bool isAuthenticated, string userName, dynamic payload, string token)
         {
             //decode the payload from token
             //in order to create a claim            
@@ -106,13 +106,15 @@ namespace Auth.Service.Providers
                 }
             }
             //add Permissions
-            if(userPermission != null)
+            if (userPermission != null)
             {
                 foreach (var item in userPermission)
                 {
                     jwtIdentity.AddClaim(new Claim("Permissions", item));
                 }
             }
+
+            jwtIdentity.AddClaim(new Claim("AccessToken", token));
 
 
             return jwtIdentity;

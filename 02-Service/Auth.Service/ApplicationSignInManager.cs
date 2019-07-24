@@ -4,6 +4,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using Model.Auth;
+using NLog;
 using System;
 using System.Security.Claims;
 using System.Threading.Tasks;
@@ -14,6 +15,8 @@ namespace Auth.Service
     // Configure the application sign-in manager which is used in this application.
     public class ApplicationSignInManager : SignInManager<ApplicationUser, string>
     {
+        private static ILogger logger = LogManager.GetCurrentClassLogger();
+
         public ApplicationSignInManager(ApplicationUserManager userManager, IAuthenticationManager authenticationManager)
             : base(userManager, authenticationManager)
         {
@@ -31,10 +34,16 @@ namespace Auth.Service
 
         public override async Task<SignInStatus> PasswordSignInAsync(string userName, string password, bool isPersistent, bool shouldLockout)
         {
+            
             string uri = Parameters.Iss; 
             string clientId = Parameters.audId; 
             var jwtProvider = Providers.JwtProvider.Create(uri);
+
+            logger.Info("[ApplicationSignInManager][PasswordSignInAsync]Ulr de autorizador " + uri);
+            logger.Info("[ApplicationSignInManager][PasswordSignInAsync]clientId de autorizador " + clientId);
+
             string token = await jwtProvider.GetTokenAsync(userName, password, clientId, Environment.MachineName);
+            logger.Info("[ApplicationSignInManager][PasswordSignInAsync]token respuesta " + token);
             if (token == null)
             {
                 return SignInStatus.Failure;
@@ -44,7 +53,7 @@ namespace Auth.Service
                 //decode payload
                 dynamic payload = jwtProvider.DecodePayload(token);
                 //create an Identity Claim
-                ClaimsIdentity claims = jwtProvider.CreateIdentity(true, userName, payload);
+                ClaimsIdentity claims = jwtProvider.CreateIdentity(true, userName, payload, token);
 
                 //sign in
                 var context = HttpContext.Current.Request.GetOwinContext();
