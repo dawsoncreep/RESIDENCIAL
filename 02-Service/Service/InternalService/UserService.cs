@@ -88,6 +88,7 @@ namespace Service.InternalService
                     {
                         Id = u.Id,
                         Email = u.Email,
+                        UserName = u.UserName,
                         Roles = 
                             (from r in responseRolesArray
                             join r2 in u.Roles

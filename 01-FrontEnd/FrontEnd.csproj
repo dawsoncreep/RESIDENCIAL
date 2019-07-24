@@ -186,6 +186,7 @@
     <Compile Include="Areas\Administration\Controllers\EventTypeController.cs" />
     <Compile Include="Areas\Administration\Controllers\LocationController.cs" />
     <Compile Include="Areas\Administration\Controllers\LocationTypeController.cs" />
+    <Compile Include="Areas\Administration\Controllers\LocationUserController.cs" />
     <Compile Include="Areas\Administration\Controllers\PermissionController.cs" />
     <Compile Include="Areas\Administration\Controllers\PermissionRoleController.cs" />
     <Compile Include="Areas\Colonial\ColonialAreaRegistration.cs" />
@@ -984,6 +985,9 @@
     <Content Include="Areas\Colonial\Views\Event\Index.cshtml" />
     <Content Include="Areas\Colonial\Views\Event\Create.cshtml" />
     <Content Include="Areas\Colonial\Views\Event\Edit.cshtml" />
+    <Content Include="Areas\Administration\Views\LocationUser\Index.cshtml" />
+    <Content Include="Areas\Administration\Views\LocationUser\Create.cshtml" />
+    <Content Include="Areas\Administration\Views\LocationUser\Edit.cshtml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>

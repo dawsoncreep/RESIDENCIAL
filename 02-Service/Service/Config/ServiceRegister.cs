@@ -43,7 +43,8 @@ namespace Service.Config
             container.Register<IAPILocationService, APILocationService>();
             container.Register<IAPIPermissionRoleService, APIPermissionRoleService>();
             container.Register<IAuthorizationServerService, AuthorizationServerService>();
-            
+            container.Register<IAPILocationUserService, APILocationUserService>();
+
 
             #endregion
 
@@ -57,6 +58,7 @@ namespace Service.Config
             container.Register<ILocationService, LocationService>();
             container.Register<IPermissionUserService, PermissionUserService>();
             container.Register<IPermissionRoleService, PermissionRoleService>();
+            container.Register<ILocationUserService, LocationUserService>();
 
             #endregion
         }

@@ -169,6 +169,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LocationController.cs" />
     <Compile Include="Controllers\LocationTypeController.cs" />
+    <Compile Include="Controllers\LocationUserController.cs" />
     <Compile Include="Controllers\PermissionController.cs" />
     <Compile Include="Controllers\PermissionRoleController.cs" />
     <Compile Include="Controllers\PermissionUserController.cs" />

@@ -303,4 +303,16 @@
   <data name="Event_Edit_Title" xml:space="preserve">
     <value>Edit Event</value>
   </data>
+  <data name="LocationUser_lName" xml:space="preserve">
+    <value>Location Name</value>
+  </data>
+  <data name="LocationUser_UName" xml:space="preserve">
+    <value>User Name</value>
+  </data>
+  <data name="LocationUser_Edit_Title" xml:space="preserve">
+    <value>Edit Location-User</value>
+  </data>
+  <data name="LocationUserMenu" xml:space="preserve">
+    <value>Location-User</value>
+  </data>
 </root>

@@ -44,7 +44,22 @@
                                     @Html.getMenu(Enums.PermissionMenuId.RolesMenu, null)
                                 </li>
                                 <li>
-                                    @Html.getMenu(Enums.PermissionMenuId.LocationMenu, null)
+                                    <li class="dropdown-submenu" >
+                                        <a class="toggle-submenu" tabindex="1" href="#">
+                                            @Resources.LocationMenu
+                                            <span class="caret"></span>
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                @Html.getMenu(Enums.PermissionMenuId.LocationMenu, null)
+                                            </li>
+                                            <li>
+                                                @Html.getMenu(Enums.PermissionMenuId.LocationUserMenu, null)
+                                            </li>
+                                        </ul>
+
+                                    </li>
+                                    
                                 </li>
                                 @if (MenuByPermissions.isUserAuthorized(Enums.PermissionMenuId.CatalogsMenu))
                                 {

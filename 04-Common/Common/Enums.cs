@@ -72,7 +72,8 @@ namespace Common
             LocationTypeMenu,
             LocationMenu,
             ColonialMenu,
-            EventMenu
+            EventMenu,
+            LocationUserMenu
         }
     }
 

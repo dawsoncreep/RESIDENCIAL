@@ -1,0 +1,56 @@
+﻿@model Model.Custom.LocationUserForGridView
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/Administration/Views/Shared/_AdministrationMenu.cshtml";
+}
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4>@Resources.Location_Create_Tile</h4>
+    </div>
+    <div class="panel-body">
+        @using (Html.BeginForm("Create", "LocationUser", FormMethod.Post, new { }))
+        {
+            @Html.AntiForgeryToken()
+
+        <div class="form-horizontal col-xs-12 col-sm-offset-3 col-md-12">
+            <div class="form-group">
+                @Html.LabelFor(model => model.lstLocation, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+
+                    @Html.DropDownListFor(model => model.Location.Id,
+                         Model.lstLocation.Select(s => new SelectListItem { Text = s.Name, Value = s.Id.ToString() }).ToList(),
+                         new { @class = "form-control btn btn-default dropdown-toggle", type = "button" })
+
+                    @Html.ValidationMessageFor(model => model.Location, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.lstAplicationUser, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+
+                    @Html.DropDownListFor(model => model.ApplicationUser.Id,
+                         Model.lstAplicationUser.Select(s => new SelectListItem { Text = s.UserName, Value = s.Id.ToString() }).ToList(),
+                         new { @class = "form-control btn btn-default dropdown-toggle", type = "button" })
+
+                    @Html.ValidationMessageFor(model => model.ApplicationUser, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="@Resources.Create" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+
+        }
+    </div>
+    <div class="panel-footer">
+        <div>
+            @Html.ActionLink(Resources.BacktoList, "Index", "LocationUser", new { Area = "Administration" }, new { @class = "btn btn-default" })
+        </div>
+    </div>
+</div>

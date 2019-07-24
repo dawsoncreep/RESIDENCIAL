@@ -190,6 +190,10 @@
     <Compile Include="Migrations\201906040412538_externalFirstName.Designer.cs">
       <DependentUpon>201906040412538_externalFirstName.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906071609554_LocationTypeChanges1.cs" />
+    <Compile Include="Migrations\201906071609554_LocationTypeChanges1.Designer.cs">
+      <DependentUpon>201906071609554_LocationTypeChanges1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -299,6 +303,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201906040412538_externalFirstName.resx">
       <DependentUpon>201906040412538_externalFirstName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906071609554_LocationTypeChanges1.resx">
+      <DependentUpon>201906071609554_LocationTypeChanges1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
