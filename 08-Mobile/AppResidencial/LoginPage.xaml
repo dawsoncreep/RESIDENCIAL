@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:local="clr-namespace:AppResidencial"
+             x:Class="AppResidencial.LoginPage" BackgroundColor="Black" Title="Guizzy Seguridad" >
+
+    <ContentPage.Content>
+
+        <Grid>
+
+
+            <Grid Margin="10,0,10,0">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="auto"/>
+
+                </Grid.RowDefinitions>
+                <Image Grid.Row="0" Source="logo3.png" WidthRequest="180" HeightRequest="180" Margin="0,20,0,0"/>
+                <StackLayout Grid.Row="1" Padding="10,20" >
+                    <Frame BackgroundColor="Black">
+
+                        <StackLayout >
+                            <Entry x:Name="entry_usuario" Placeholder="Usuario" PlaceholderColor="WhiteSmoke" TextColor="White"  />
+                        <Entry x:Name="entry_pass" Placeholder="Contraseña" PlaceholderColor="WhiteSmoke" IsPassword="True" TextColor="White" />
+                            <Picker x:Name="picker_fracc" Title="Fraccionamiento" FontSize="18"  TextColor="White"
+                                   TitleColor="WhiteSmoke"/>
+
+                        
+                    </StackLayout>
+                </Frame>
+                    <Button x:Name="btn_iniciar" Text="Iniciar Sesion" BackgroundColor="#2c1bb6" TextColor="White"
+                            Image="login.png"/>
+                </StackLayout>
+            </Grid>
+        </Grid>
+<!--
+    <Grid BackgroundColor="White" >
+             <Grid.RowDefinitions>
+
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="250"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            
+            
+                <Image Grid.Row="1" Source="LOGO.png"  />
+
+                <Entry x:Name="User" Grid.Row="2" Placeholder="Usuario" TextColor="Black"   />
+
+            <Entry x:Name="Pass" Grid.Row="3" Placeholder="Contraseña" IsPassword="True" TextColor="Black"  />
+
+                <Button x:Name="btnIniciar" Grid.Row="5" Text="Iniciar sesion" BackgroundColor="Blue" BorderRadius="20" TextColor="White"/>
+    </Grid>
+  -->
+    </ContentPage.Content>
+
+
+
+</ContentPage>

@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
+             x:Class="AppResidencial.GenerarUsuarioPage" Title="Crear/Modificar Usuario" BackgroundColor="Black">
+
+    <ContentPage.Content>
+
+            <Grid Margin="10,10,10,10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+
+                </Grid.ColumnDefinitions>
+
+
+                <Button Grid.Row="0" Grid.Column="0"  BackgroundColor="#2c1bb6" 
+                  Image="guardar.png" Text="guardar" TextColor="White" />
+                <Button Grid.Row="0" Grid.Column="1" BackgroundColor="#2c1bb6" TextColor="White"
+                  Image="cancelar.png" Text="cancelar"/>
+                <Frame Grid.Row="1" Grid.ColumnSpan="2" Grid.RowSpan="4" BackgroundColor="Black">
+                    <StackLayout>
+                        <StackLayout Orientation="Horizontal" >
+                            <ImageButton  Source="{Binding RutaFoto}" Aspect="Fill" Command="{Binding SeleccionarFotoComand}" 
+                              HeightRequest="100" WidthRequest="100"/>
+                            <StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand" HorizontalOptions="Start" >
+                                <Label  Text="Nombre:" FontAttributes="Bold"  FontSize="Small" TextColor="White"/>
+                                <Entry x:Name="lbNombre" Placeholder="Ingresa el nombre" TextColor="White" PlaceholderColor="WhiteSmoke"/>
+                            </StackLayout>
+
+                        </StackLayout>
+                        <StackLayout >
+                            <Label  Text="Numero de Telefono(Usuario App)" FontAttributes="Bold" TextColor="White" />
+                            <Entry  x:Name="btnUserNumber" Placeholder="Ingresar Telefono" TextColor="White" PlaceholderColor="WhiteSmoke" />
+
+                            <StackLayout Orientation="Horizontal">
+                                <Switch  BackgroundColor="White" OnColor="Green"/>
+                                <Label Text="Conceder accesos" TextColor="White" FontSize="Small"/>
+
+                            </StackLayout>
+
+                            <Button x:Name="btnReiniciarPass" Text="Reiniciar Contraseña" 
+                    BackgroundColor="#2c1bb6" TextColor="White" />
+            
+                            <Entry  x:Name="ReinicioPass" Placeholder="Ingresar contraseña" TextColor="White" PlaceholderColor="WhiteSmoke"/>
+
+                            <Entry x:Name="ConfirmarPass" Placeholder="Confirmar contraseña" TextColor="White" PlaceholderColor="WhiteSmoke"  />
+
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+
+            </Grid>
+
+            <!--        <Grid  RowSpacing="4" Margin="5,0,5,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="5"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="10"/>
+            </Grid.RowDefinitions>
+
+
+            <StackLayout Grid.Row="1" Orientation="Horizontal" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" >
+                <Button x:Name="btnGuardar" Text="guardar" Image="guardar.png" 
+                    BackgroundColor="#2c1bb6" TextColor="White" WidthRequest="170"/>
+                <Button x:Name="btnCancelar" Text="cancelar"  WidthRequest="170" Image="cancelar.png"
+                    BackgroundColor="#2c1bb6" TextColor="White"/>
+            </StackLayout>
+            <StackLayout Grid.Row="2" Orientation="Horizontal" >
+                <ImageButton Source="{Binding RutaFoto}" Aspect="Fill" Command="{Binding SeleccionarFotoComand}"
+                    HeightRequest="100" WidthRequest="100"/>
+                <StackLayout Orientation="Vertical">
+                    <Label  Text="Nombre:" FontAttributes="Bold" Margin="15,0,0,0"/>
+                    <Entry x:Name="lbNombre" Placeholder="Ingresa el nombre" TextColor="Black" Margin="15,0,0,0" WidthRequest="250"/>
+                </StackLayout>
+            </StackLayout>
+            <Label Grid.Row="3" Text="Numero de Telefono(Usuario App)" FontAttributes="Bold" FontSize="Small" Margin="0,10,0,0"/>
+            <Entry Grid.Row="4" x:Name="btnUserNumber" Placeholder="Ingresar Telefono" />
+            <controls:CheckBox Grid.Row="5" x:Name="CheckAccesos" DefaultText="Conceder accesos" FontSize="14" Margin="0,10,0,0"/>
+
+            <Button Grid.Row="6" x:Name="btnReiniciarPass" Text="Reiniciar contraseña" Margin="0,10,0,0"
+                   TextColor="White" BackgroundColor="#2c1bb6"/>
+
+            <Entry Grid.Row="7" x:Name="ReinicioPass" Placeholder="Ingresar contraseña" TextColor="Black" Margin="0,10,0,0"  WidthRequest="250"/>
+
+            <Entry Grid.Row="8" x:Name="ConfirmarPass" Placeholder="Confirmar contraseña" TextColor="Black"  WidthRequest="250"/>
+
+
+
+        </Grid>
+    -->
+    </ContentPage.Content>
+</ContentPage>

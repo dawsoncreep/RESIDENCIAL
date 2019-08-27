@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppResidencial.EventosPage" Title="Eventos" BackgroundColor="Black">
+    <ContentPage.Content>
+        <Grid Margin="5,0,5,0">
+        <Grid.RowDefinitions>
+
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="10"/>
+        </Grid.RowDefinitions>
+
+        <Button Grid.Row="1" x:Name="btnGenerarEvento" Text="Generar Nuevo registro" Image="addevento.png" 
+                    BackgroundColor="#2c1bb6" TextColor="White"/>
+        <ListView Grid.Row="3" >
+            <ListView.Header>
+                    <Label Text="Proximos Eventos" HorizontalOptions="Center" VerticalOptions="Center" TextColor="White" />
+            </ListView.Header>
+             
+            
+            
+            
+        </ListView>
+        
+        
+    </Grid>
+    </ContentPage.Content>
+</ContentPage>

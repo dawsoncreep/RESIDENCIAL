@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppResidencial.VisitasPage" Title="Visitas" BackgroundColor="Black">
+
+    <ContentPage.Content>
+        <Grid Margin="5,10,5,10">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+
+            <Button Grid.Row="0" Grid.Column="0"  BackgroundColor="#2c1bb6" 
+                  Image="preferentes.png" Text="visita habitual" TextColor="White" x:Name="btnPreferentes"/>
+            <Button Grid.Row="0" Grid.Column="1" BackgroundColor="#2c1bb6" TextColor="White"
+                  Image="registro.png" Text="Pre-Registro" x:Name="btnPreRegistro"/>
+            <Button Grid.Row="1" Grid.Column="0" BackgroundColor="#2c1bb6" TextColor="White"
+                   Image="personal.png" Text="Personal" x:Name="btnPersonal"/>
+            <Button Grid.Row="1" Grid.Column="1" BackgroundColor="#2c1bb6" TextColor="White"
+                    Image="eventos.png"  Text="Eventos" x:Name="btnEventos" />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

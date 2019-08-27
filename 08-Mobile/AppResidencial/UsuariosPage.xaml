@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppResidencial.UsuariosPage" Title="Usuario Domicilio" BackgroundColor="Black">
+
+    <StackLayout Orientation="Vertical">
+
+        <Button x:Name="btnGenerarUsuario" Text="Generar Nuevo registro"  Margin="10,20,10,0"
+                    BackgroundColor="#2c1bb6" TextColor="White" Image="add.png"/>
+
+        <ListView>
+            <ListView.Header>
+                <Label Text="Usuarios" HorizontalOptions="Center" VerticalOptions="Center" TextColor="White"/>
+            </ListView.Header>
+
+
+
+
+        </ListView>
+    </StackLayout>
+    
+    
+</ContentPage>

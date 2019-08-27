@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppResidencial.CamaraAccesoPage" Title="Camara Acceso" BackgroundColor="Black">
+
+    <StackLayout Orientation="Vertical">
+        <Label Text="Nombre Usuario" HorizontalOptions="Center" VerticalOptions="Center" Margin="0,20,0,20" TextColor="White" />
+
+        <Label Text="Camara Cabina" HorizontalOptions="Center" VerticalOptions="Center" Margin="0,20,0,20" TextColor="White" />
+
+
+        <Image  HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="White"
+               HeightRequest="150"  WidthRequest="150" Margin="0,20,0,20"/>
+
+
+        <Label Text="Toque para actualizar" HorizontalOptions="Center" VerticalOptions="Center" Margin="0,20,0,20" TextColor="White"/>
+
+        <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+            <Button x:Name="btnAutorizar" Text="Autorizar" 
+                    BackgroundColor="#4bbc27" TextColor="White" WidthRequest="170"/>
+            <Button x:Name="btnNegar" Text="Negar acceso"  WidthRequest="170"  
+                    BackgroundColor="#c71b1b" TextColor="White"/>
+        </StackLayout>
+
+    </StackLayout>
+</ContentPage>
