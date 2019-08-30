@@ -315,4 +315,7 @@
   <data name="LocationUserMenu" xml:space="preserve">
     <value>Location-User</value>
   </data>
+  <data name="Process_OkMessage" xml:space="preserve">
+    <value>The process {0} has been executed correctly.</value>
+  </data>
 </root>

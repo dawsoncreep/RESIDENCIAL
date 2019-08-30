@@ -98,10 +98,11 @@ namespace Service.InternalService
                 request.AddHeader("Accept", "application/json");
                 request.AddHeader("Content-Type", "application/json");
 
-                IRestResponse<List<EventType>> response = client.Execute<List<EventType>>(request);
-
-                result = response.Data;
-
+                IRestResponse<ResponseHelper> response = client.Execute<ResponseHelper>(request);
+                if (response.IsSuccessful)
+                {
+                    result = (List<EventType>)response.Data.Result;
+                }
             }
             catch (Exception e)
             {

@@ -28,7 +28,7 @@ namespace ResourceServer.API.Controllers
         {
             try
             {
-                var eventTypes = _apiEventTypeService.GetAll().ToList();
+                var eventTypes = _apiEventTypeService.GetAll();
                 return Ok(eventTypes);
 
             }

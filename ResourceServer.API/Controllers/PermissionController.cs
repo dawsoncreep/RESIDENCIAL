@@ -30,7 +30,7 @@ namespace ResourceServer.API.Controllers
         {
             try
             {
-                var permissions = _apiPermissionService.GetAll().ToList();
+                var permissions = _apiPermissionService.GetAll();
                 return Ok(permissions);
 
             }

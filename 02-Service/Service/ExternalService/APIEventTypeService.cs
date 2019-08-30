@@ -13,7 +13,7 @@ namespace Service.ExternalService
 {
     public interface IAPIEventTypeService
     {
-        IEnumerable<EventType> GetAll();
+        ResponseHelper GetAll();
         ResponseHelper<EventType> GetById(int id);
         ResponseHelper InsertUpdate(EventType model);
         ResponseHelper Delete(int id);
@@ -57,8 +57,9 @@ namespace Service.ExternalService
             }
         }
 
-        public IEnumerable<EventType> GetAll()
+        public ResponseHelper GetAll()
         {
+            var rh = new ResponseHelper();
             var result = new List<EventType>();
             try
             {
@@ -66,13 +67,17 @@ namespace Service.ExternalService
                 {
                     result = new List<EventType>(_eventTypeRepo.GetAll());
                 }
+                rh.Result = result;
+                rh.SetResponse(true);
 
-                return result;
+                return rh;
             }
             catch (Exception e)
             {
+                rh.Result = result;
+                rh.SetResponse(false);
                 logger.Error(e.Message);
-                return result;
+                return rh;
             }
         }
 

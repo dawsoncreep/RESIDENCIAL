@@ -72,9 +72,9 @@ namespace Service.InternalService
                         String.Format("Bearer {0}",CurrentUserHelper.Get.AccessToken.access_token));
 
 
-                IRestResponse<List<Permission>> response = client.Execute<List<Permission>>(request);
+                IRestResponse<ResponseHelper> response = client.Execute<ResponseHelper>(request);
 
-                result = response.Data;
+                result = response.Data.Result;
 
             }
             catch (Exception e)

@@ -203,6 +203,10 @@
       <Project>{0AEBCABD-3B22-41EF-8E0F-8E10866F0EB3}</Project>
       <Name>Model</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Resources\Resources.csproj">
+      <Project>{d3716b3a-babb-4a63-8fad-08a1a77d805f}</Project>
+      <Name>Resources</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>

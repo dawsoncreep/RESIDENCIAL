@@ -11,7 +11,7 @@ namespace Service.ExternalService
 {
     public interface IAPIPermissionService
     {
-        IEnumerable<Permission> GetAll();
+        ResponseHelper GetAll();
         ResponseHelper<Permission> GetById(int id);
         ResponseHelper InsertUpdate(Permission model);
         ResponseHelper Delete(int id);
@@ -72,8 +72,9 @@ namespace Service.ExternalService
             return rh;
         }
 
-        public IEnumerable<Permission> GetAll()
+        public ResponseHelper GetAll()
         {
+            var rh = new ResponseHelper();
             var result = new List<Permission>();
             try
             {
@@ -82,12 +83,15 @@ namespace Service.ExternalService
                     result = new List<Permission>(_permissionRepo.GetAll());
                 }
 
-                return result;
+                rh.SetResponse(true);
+                rh.Result = result;
+                return rh;
             }
             catch (Exception e)
             {
                 logger.Error(e.Message);
-                return result;
+                rh.SetResponse(false);
+                return rh;
             }
         }
 

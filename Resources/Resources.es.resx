@@ -303,4 +303,7 @@
   <data name="Event_Edit_Title" xml:space="preserve">
     <value>Editar Evento</value>
   </data>
+  <data name="Process_OkMessage" xml:space="preserve">
+    <value>Proceso {0} realizado correctamente.</value>
+  </data>
 </root>

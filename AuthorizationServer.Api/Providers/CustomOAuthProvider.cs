@@ -91,41 +91,49 @@ namespace AuthorizationServer.Api.Providers
                 return;
             }
 
-            UserForGridView userFromRepo = _userService.Get(context.UserName);
-
-            var identity = new ClaimsIdentity("JWT");
-
-            identity.AddClaim(new Claim(ClaimTypes.Name, context.UserName));
-            identity.AddClaim(new Claim("sub", context.UserName));
-            identity.AddClaim(new Claim(ClaimTypes.SerialNumber , userFromRepo.Id));
-
-            List<Permission> permission = new List<Permission>();
-            userFromRepo.Roles.ForEach(s =>
+            try
             {
-                identity.AddClaim(new Claim(ClaimTypes.Role,s.Name));
-            });
-
-            permission = (from r in userFromRepo.Roles
-                          join pr in new List<PermissionRole>(_permissionRoleService.GetAll())
-                          on r.Id equals pr.ApplicationRole.Id
-                          select pr.Permission
-                         ).ToList();
-
-            permission.ForEach(s =>
-            {
-               identity.AddClaim(new Claim("Permissions", s.ResourceCode));
-            });
+                UserForGridView userFromRepo = _userService.Get(context.UserName);
 
 
-            var props = new AuthenticationProperties(new Dictionary<string, string>
+                var identity = new ClaimsIdentity("JWT");
+
+                identity.AddClaim(new Claim(ClaimTypes.Name, context.UserName));
+                identity.AddClaim(new Claim("sub", context.UserName));
+                identity.AddClaim(new Claim(ClaimTypes.SerialNumber , userFromRepo.Id));
+
+                List<Permission> permission = new List<Permission>();
+                userFromRepo.Roles.ForEach(s =>
                 {
-                    {
-                         "audience", (context.ClientId == null) ? string.Empty : context.ClientId
-                    }
+                    identity.AddClaim(new Claim(ClaimTypes.Role,s.Name));
                 });
 
-            var ticket = new AuthenticationTicket(identity, props);
-            context.Validated(ticket);
+                permission = (from r in userFromRepo.Roles
+                              join pr in new List<PermissionRole>(_permissionRoleService.GetAll())
+                              on r.Id equals pr.ApplicationRole.Id
+                              select pr.Permission
+                             ).ToList();
+
+                permission.ForEach(s =>
+                {
+                   identity.AddClaim(new Claim("Permissions", s.ResourceCode));
+                });
+
+
+                var props = new AuthenticationProperties(new Dictionary<string, string>
+                    {
+                        {
+                             "audience", (context.ClientId == null) ? string.Empty : context.ClientId
+                        }
+                    });
+
+                var ticket = new AuthenticationTicket(identity, props);
+                context.Validated(ticket);
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex);
+            }
         }
     }
 }
