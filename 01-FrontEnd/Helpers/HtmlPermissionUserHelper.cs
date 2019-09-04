@@ -21,11 +21,12 @@ namespace FrontEnd.Helpers
             //var permission = permissionUser.Where(w => w.Permission.Id == (int)permissionId).FirstOrDefault();
 
 
+            var permissions = _permissionService.GetAll();
 
             if (CurrentUserHelper.Get.UserPermissions.Where(w => w == permissionId.ToString()).Any())
             {
                 var permission = (from pr in CurrentUserHelper.Get.UserPermissions
-                                 join p in _permissionService.GetAll()
+                                 join p in permissions
                                  on pr equals p.ResourceCode
                                  where p.ResourceCode == permissionId.ToString()
                                  select p).FirstOrDefault();

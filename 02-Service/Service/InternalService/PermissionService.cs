@@ -27,30 +27,16 @@ namespace Service.InternalService
             var rh = new ResponseHelper();
             try
             {
-                var client = new RestClient(Parameters.resourceServerUrl);
-
-                var request = new RestRequest("/permission/InsertUpdate", Method.POST);
-
-                request.Parameters.Add(new Parameter
-                {
-                    Name = "model",
-                    ContentType = "application/json",
-                    DataFormat = DataFormat.Json,
-                    Type = ParameterType.RequestBody,
-                    Value = model
-                });
-                request.AddHeader("Accept", "application/json");
-                request.AddHeader("Content-Type", "application/json");
-
-
-                IRestResponse<ResponseHelper> response = client.Execute<ResponseHelper>(request);
-
-                rh = response.Data;
-
+                rh = Common.RestHelper.DoResourceServerPOST("/permission/InsertUpdate", model);
+                logger.Debug("permission/InsertUpdate - response - " +
+                    Newtonsoft.Json.JsonConvert.SerializeObject(rh));
+               
             }
             catch (Exception e)
             {
                 logger.Error(e.Message);
+                rh.SetResponse(false, String.Format(Resources.Resources.Delete_ErrorMessage,
+                    Resources.Resources.Permission));
             }
 
             return rh;
@@ -62,20 +48,10 @@ namespace Service.InternalService
             List<string> _roles = new List<string>();
             try
             {
-                var client = new RestClient(Parameters.resourceServerUrl);
-
-                var request = new RestRequest("/permission/GetAll", Method.GET);
-
-                request.AddHeader("Accept", "application/json");
-                request.AddHeader("Content-Type", "application/json");
-                request.AddHeader("Authorization",
-                        String.Format("Bearer {0}",CurrentUserHelper.Get.AccessToken.access_token));
-
-
-                IRestResponse<ResponseHelper> response = client.Execute<ResponseHelper>(request);
-
-                result = response.Data.Result;
-
+                var resultreposnse = Common.RestHelper.DoResourceServerGET("/permission/GetAll");
+                String json = Newtonsoft.Json.JsonConvert.SerializeObject(resultreposnse.Result);
+                result = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Permission>>(json);
+               
             }
             catch (Exception e)
             {
@@ -91,20 +67,9 @@ namespace Service.InternalService
 
             try
             {
-                var client = new RestClient(Parameters.resourceServerUrl);
-
-                var request = new RestRequest(String.Format("/permission/GetById/{0}", id), Method.GET);
-
-                request.AddHeader("Accept", "application/json");
-                request.AddHeader("Content-Type", "application/json");
-
-                IRestResponse<ResponseHelper<Permission>> response = client.Execute<ResponseHelper<Permission>>(request);
-                if (response.Data.Response)
-                {
-                    var jsonStrong = response.Data.Result;
-                    result = response.Data.Result;
-                }
-
+                var resultreposnse = Common.RestHelper.DoResourceServerGET(String.Format("/permission/GetById/{0}", id));
+                String json = Newtonsoft.Json.JsonConvert.SerializeObject(resultreposnse.Result);
+                result =  Newtonsoft.Json.JsonConvert.DeserializeObject<Permission>(json);
             }
             catch (Exception e)
             {
@@ -119,31 +84,17 @@ namespace Service.InternalService
             var rh = new ResponseHelper();
             try
             {
-                
-                var client = new RestClient(Parameters.resourceServerUrl);
 
-                var request = new RestRequest("/permission/Delete", Method.POST);
-
-                request.Parameters.Add(new Parameter
-                {
-                    Name = "model",
-                    ContentType = "application/json",
-                    DataFormat = DataFormat.Json,
-                    Type = ParameterType.RequestBody,
-                    Value = GetById(id)
-                });
-                request.AddHeader("Accept", "application/json");
-                request.AddHeader("Content-Type", "application/json");
-
-
-                IRestResponse<ResponseHelper> response = client.Execute<ResponseHelper>(request);
-
-                rh = response.Data;
+                rh = Common.RestHelper.DoResourceServerPOST("/permission/Delete", GetById(id));
+                logger.Debug("permission/Delete - response - " +
+                    Newtonsoft.Json.JsonConvert.SerializeObject(rh));
 
             }
             catch (Exception e)
             {
                 logger.Error(e.Message);
+                rh.SetResponse(false, String.Format(Resources.Resources.Delete_ErrorMessage,
+                    Resources.Resources.Permission));
             }
 
             return rh;

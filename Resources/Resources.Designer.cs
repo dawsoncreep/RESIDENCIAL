@@ -187,6 +187,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The {0} could not be deleted..
+        /// </summary>
+        public static string Delete_ErrorMessage {
+            get {
+                return ResourceManager.GetString("Delete_ErrorMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The {0} has been deleted correctly..
+        /// </summary>
+        public static string Delete_OkMessage {
+            get {
+                return ResourceManager.GetString("Delete_OkMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Description.
         /// </summary>
         public static string Description {
@@ -295,11 +313,20 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to External.
+        ///   Looks up a localized string similar to External User.
         /// </summary>
         public static string External {
             get {
                 return ResourceManager.GetString("External", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to External User Type.
+        /// </summary>
+        public static string ExternalType {
+            get {
+                return ResourceManager.GetString("ExternalType", resourceCulture);
             }
         }
         
@@ -331,6 +358,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Image.
+        /// </summary>
+        public static string Image {
+            get {
+                return ResourceManager.GetString("Image", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Int Number.
         /// </summary>
         public static string InNumber {
@@ -340,11 +376,38 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The {0} could not be added..
+        /// </summary>
+        public static string Insert_ErrorMessage {
+            get {
+                return ResourceManager.GetString("Insert_ErrorMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The {0} has been added correctly..
+        /// </summary>
+        public static string Insert_OkMessage {
+            get {
+                return ResourceManager.GetString("Insert_OkMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Lastname.
         /// </summary>
         public static string LastName {
             get {
                 return ResourceManager.GetString("LastName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to License Plate.
+        /// </summary>
+        public static string LicensePlate {
+            get {
+                return ResourceManager.GetString("LicensePlate", resourceCulture);
             }
         }
         

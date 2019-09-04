@@ -87,6 +87,7 @@
     <Compile Include="Domain\Event.cs" />
     <Compile Include="Domain\EventLocation.cs" />
     <Compile Include="Domain\EventType.cs" />
+    <Compile Include="Domain\ExternalType.cs" />
     <Compile Include="Domain\Location.cs" />
     <Compile Include="Domain\LocationTelephone.cs" />
     <Compile Include="Domain\LocationType.cs" />

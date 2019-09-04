@@ -101,12 +101,14 @@
     <Compile Include="AuthorizationServerService.cs" />
     <Compile Include="ExternalService\APIEventService.cs" />
     <Compile Include="ExternalService\APIEventTypeService.cs" />
+    <Compile Include="ExternalService\APIExternalService.cs" />
     <Compile Include="ExternalService\APILocationService.cs" />
     <Compile Include="ExternalService\APILocationTypeService.cs" />
     <Compile Include="ExternalService\APILocationUserService.cs" />
     <Compile Include="ExternalService\APIPermissionService.cs" />
     <Compile Include="ExternalService\APIPermissionRoleService.cs" />
     <Compile Include="ExternalService\APIPermissionUserService.cs" />
+    <Compile Include="ExternalService\IExternalService.cs" />
     <Compile Include="InternalService\BinnaclePhotoTypeService.cs" />
     <Compile Include="InternalService\BinnacleTypeService.cs" />
     <Compile Include="Config\ServiceRegister.cs" />
@@ -114,6 +116,8 @@
     <Compile Include="InternalService\EventService.cs" />
     <Compile Include="ExternalService\APIRoleService.cs" />
     <Compile Include="ExternalService\APIUserService.cs" />
+    <Compile Include="InternalService\ExternalUserService.cs" />
+    <Compile Include="InternalService\IInternalService.cs" />
     <Compile Include="InternalService\LocationService.cs" />
     <Compile Include="InternalService\LocationTypeService.cs" />
     <Compile Include="InternalService\LocationUserService.cs" />
@@ -146,6 +150,10 @@
     <ProjectReference Include="..\..\03-Persistence\Persistence.Repository\Persistence.Repository.csproj">
       <Project>{5262083d-877d-4258-9cfe-0576f0437072}</Project>
       <Name>Persistence.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Resources\Resources.csproj">
+      <Project>{D3716B3A-BABB-4A63-8FAD-08A1A77D805F}</Project>
+      <Name>Resources</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

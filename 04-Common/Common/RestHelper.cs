@@ -33,8 +33,12 @@ namespace Common
                 });
                 request.AddHeader("Accept", "application/json");
                 request.AddHeader("Content-Type", "application/json");
-                request.AddHeader("Authorization",
-                        String.Format("Bearer {0}", CurrentUserHelper.Get.AccessToken.access_token));
+
+                if (!String.IsNullOrEmpty(CurrentUserHelper.Get.AccessToken.access_token))
+                {
+                    request.AddHeader("Authorization",
+                            String.Format("Bearer {0}", CurrentUserHelper.Get.AccessToken.access_token));
+                }
 
                 IRestResponse<ResponseHelper> response = client.Execute<ResponseHelper>(request);
 
@@ -64,8 +68,12 @@ namespace Common
 
                 request.AddHeader("Accept", "application/json");
                 request.AddHeader("Content-Type", "application/json");
-                request.AddHeader("Authorization",
-                        String.Format("Bearer {0}", CurrentUserHelper.Get.AccessToken.access_token));
+
+                if (!String.IsNullOrEmpty(CurrentUserHelper.Get.AccessToken.access_token))
+                {
+                    request.AddHeader("Authorization",
+                            String.Format("Bearer {0}", CurrentUserHelper.Get.AccessToken.access_token));
+                }
 
                 IRestResponse<ResponseHelper> response = client.Execute<ResponseHelper>(request);
 

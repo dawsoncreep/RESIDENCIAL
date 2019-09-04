@@ -61,12 +61,15 @@ namespace Service.ExternalService
                     }
 
                     ctx.SaveChanges();
-                    rh.SetResponse(true);
+                    rh.SetResponse(true, String.Format(Resources.Resources.Insert_OkMessage,
+                        Resources.Resources.Permission));
                 }
             }
             catch (Exception e)
             {
                 logger.Error(e.Message);
+                rh.SetResponse(false, String.Format(Resources.Resources.Insert_ErrorMessage,
+                        Resources.Resources.Permission));
             }
 
             return rh;
@@ -126,7 +129,8 @@ namespace Service.ExternalService
                     _permissionRepo.Delete(model);
 
                     ctx.SaveChanges();
-                    rh.SetResponse(true);
+                    rh.SetResponse(true,String.Format(Resources.Resources.Delete_OkMessage,
+                        Resources.Resources.Permission));
                 }
                 rh.SetResponse(true);
                 return rh;
@@ -134,7 +138,8 @@ namespace Service.ExternalService
             catch (Exception e)
             {
                 logger.Error(e.Message);
-                rh.SetResponse(false, e.Message);
+                rh.SetResponse(false, String.Format(Resources.Resources.Delete_ErrorMessage,
+                        Resources.Resources.Permission));
                 return rh;
             }
         }

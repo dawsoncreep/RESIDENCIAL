@@ -87,6 +87,7 @@ namespace AuthorizationServer.Api.Providers
             }
             catch(Exception ex)
             {
+                logger.Error(ex);
                 context.SetError("invalid_grant", "Internal Server Error.");
                 return;
             }

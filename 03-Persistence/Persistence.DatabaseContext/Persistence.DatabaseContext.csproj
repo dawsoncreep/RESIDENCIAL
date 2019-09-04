@@ -193,6 +193,10 @@
     <Compile Include="Migrations\201906071609554_LocationTypeChanges1.Designer.cs">
       <DependentUpon>201906071609554_LocationTypeChanges1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201909032211345_AddingExternalTypeAndExternalProperties.cs" />
+    <Compile Include="Migrations\201909032211345_AddingExternalTypeAndExternalProperties.Designer.cs">
+      <DependentUpon>201909032211345_AddingExternalTypeAndExternalProperties.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -305,6 +309,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201906071609554_LocationTypeChanges1.resx">
       <DependentUpon>201906071609554_LocationTypeChanges1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909032211345_AddingExternalTypeAndExternalProperties.resx">
+      <DependentUpon>201909032211345_AddingExternalTypeAndExternalProperties.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

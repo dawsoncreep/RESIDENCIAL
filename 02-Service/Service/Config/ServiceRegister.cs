@@ -29,6 +29,8 @@ namespace Service.Config
             container.Register<IRepository<LocationType>>((x) => new Repository<LocationType>(ambientDbContextLocator));
             container.Register<IRepository<Location>>((x) => new Repository<Location>(ambientDbContextLocator));
             container.Register<IRepository<LocationUser>>((x) => new Repository<LocationUser>(ambientDbContextLocator));
+            container.Register<IRepository<External>>((x) => new Repository<External>(ambientDbContextLocator));
+            container.Register<IRepository<ExternalType>>((x) => new Repository<ExternalType>(ambientDbContextLocator));
 
             #endregion
 
@@ -44,6 +46,7 @@ namespace Service.Config
             container.Register<IAPIPermissionRoleService, APIPermissionRoleService>();
             container.Register<IAuthorizationServerService, AuthorizationServerService>();
             container.Register<IAPILocationUserService, APILocationUserService>();
+            container.Register<IAPIExternalService, APIExternalService>();
 
 
             #endregion
@@ -59,6 +62,7 @@ namespace Service.Config
             container.Register<IPermissionUserService, PermissionUserService>();
             container.Register<IPermissionRoleService, PermissionRoleService>();
             container.Register<ILocationUserService, LocationUserService>();
+            container.Register<IExternalUserService, ExternalUserService>();
 
             #endregion
         }
