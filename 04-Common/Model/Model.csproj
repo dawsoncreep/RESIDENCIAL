@@ -53,6 +53,7 @@
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -67,6 +68,8 @@
     <Compile Include="AuthorizationServer\AudienceForSuscribe.cs" />
     <Compile Include="Custom\EventForGridView.cs" />
     <Compile Include="Custom\EventForGridViewExternsion.cs" />
+    <Compile Include="Custom\ExternalUserForGridView.cs" />
+    <Compile Include="Custom\ExternalUserForGridViewExtension.cs" />
     <Compile Include="Custom\LocationForGridView.cs" />
     <Compile Include="Custom\LocationForGridViewExtension.cs" />
     <Compile Include="Custom\LocationUserForGridView.cs" />
@@ -80,7 +83,6 @@
     <Compile Include="Domain\BinnaclePhotoType.cs" />
     <Compile Include="Domain\BinnacleType.cs" />
     <Compile Include="Domain\Bulletin.cs" />
-    <Compile Include="Domain\Course.cs" />
     <Compile Include="Domain\External.cs" />
     <Compile Include="Domain\ExternalBinnacle.cs" />
     <Compile Include="Domain\ExternalPhoto.cs" />
@@ -99,11 +101,9 @@
     <Compile Include="Domain\Permission.cs" />
     <Compile Include="Domain\PermissionRole.cs" />
     <Compile Include="Domain\PermissionUser.cs" />
-    <Compile Include="Domain\Student.cs" />
     <Compile Include="Domain\UserBinnacle.cs" />
     <Compile Include="Helper\AuditEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Domain\StudentPerCourse.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -63,8 +63,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationDbContext.cs" />
-    <Compile Include="Mapping\CourseMapping.cs" />
-    <Compile Include="Mapping\StudentMapping.cs" />
     <Compile Include="Migrations\201706302208467_Initialize.cs" />
     <Compile Include="Migrations\201706302208467_Initialize.Designer.cs">
       <DependentUpon>201706302208467_Initialize.cs</DependentUpon>
@@ -197,6 +195,18 @@
     <Compile Include="Migrations\201909032211345_AddingExternalTypeAndExternalProperties.Designer.cs">
       <DependentUpon>201909032211345_AddingExternalTypeAndExternalProperties.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201909072222513_ApplicationParameterAddingDescripcionAttributesAndAnnotations.cs" />
+    <Compile Include="Migrations\201909072222513_ApplicationParameterAddingDescripcionAttributesAndAnnotations.Designer.cs">
+      <DependentUpon>201909072222513_ApplicationParameterAddingDescripcionAttributesAndAnnotations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909080414587_201909032211345_AddingExternalTypeAndExternalProperties.cs" />
+    <Compile Include="Migrations\201909080414587_201909032211345_AddingExternalTypeAndExternalProperties.Designer.cs">
+      <DependentUpon>201909080414587_201909032211345_AddingExternalTypeAndExternalProperties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909080612043_ExternalUserLocationsDeleteTestDomainClasses.cs" />
+    <Compile Include="Migrations\201909080612043_ExternalUserLocationsDeleteTestDomainClasses.Designer.cs">
+      <DependentUpon>201909080612043_ExternalUserLocationsDeleteTestDomainClasses.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -313,6 +323,18 @@
     <EmbeddedResource Include="Migrations\201909032211345_AddingExternalTypeAndExternalProperties.resx">
       <DependentUpon>201909032211345_AddingExternalTypeAndExternalProperties.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909072222513_ApplicationParameterAddingDescripcionAttributesAndAnnotations.resx">
+      <DependentUpon>201909072222513_ApplicationParameterAddingDescripcionAttributesAndAnnotations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909080414587_201909032211345_AddingExternalTypeAndExternalProperties.resx">
+      <DependentUpon>201909080414587_201909032211345_AddingExternalTypeAndExternalProperties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909080612043_ExternalUserLocationsDeleteTestDomainClasses.resx">
+      <DependentUpon>201909080612043_ExternalUserLocationsDeleteTestDomainClasses.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Mapping\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

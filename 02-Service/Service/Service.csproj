@@ -101,7 +101,9 @@
     <Compile Include="AuthorizationServerService.cs" />
     <Compile Include="ExternalService\APIEventService.cs" />
     <Compile Include="ExternalService\APIEventTypeService.cs" />
-    <Compile Include="ExternalService\APIExternalService.cs" />
+    <Compile Include="ExternalService\APIApplicationParametersService.cs" />
+    <Compile Include="ExternalService\APIExternalTypeService.cs" />
+    <Compile Include="ExternalService\APIExternalUserService.cs" />
     <Compile Include="ExternalService\APILocationService.cs" />
     <Compile Include="ExternalService\APILocationTypeService.cs" />
     <Compile Include="ExternalService\APILocationUserService.cs" />
@@ -112,12 +114,13 @@
     <Compile Include="InternalService\BinnaclePhotoTypeService.cs" />
     <Compile Include="InternalService\BinnacleTypeService.cs" />
     <Compile Include="Config\ServiceRegister.cs" />
+    <Compile Include="InternalService\ApplicationParameterService.cs" />
     <Compile Include="InternalService\EventTypeService.cs" />
     <Compile Include="InternalService\EventService.cs" />
     <Compile Include="ExternalService\APIRoleService.cs" />
     <Compile Include="ExternalService\APIUserService.cs" />
+    <Compile Include="InternalService\ExternalTypeService.cs" />
     <Compile Include="InternalService\ExternalUserService.cs" />
-    <Compile Include="InternalService\IInternalService.cs" />
     <Compile Include="InternalService\LocationService.cs" />
     <Compile Include="InternalService\LocationTypeService.cs" />
     <Compile Include="InternalService\LocationUserService.cs" />
@@ -125,9 +128,7 @@
     <Compile Include="InternalService\PermissionRoleService.cs" />
     <Compile Include="InternalService\PermissionUserService.cs" />
     <Compile Include="InternalService\RoleService.cs" />
-    <Compile Include="StudentPerCourseService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="CourseService.cs" />
     <Compile Include="InternalService\UserService.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -13,7 +13,7 @@ namespace Service.InternalService
     {
         IEnumerable<External> GetAll();
         External GetById(int id);
-        ResponseHelper InsertUpdate(Permission model);
+        ResponseHelper InsertUpdate(Object model);
         ResponseHelper Delete(int id);
     }
 
@@ -28,18 +28,32 @@ namespace Service.InternalService
 
         public IEnumerable<External> GetAll()
         {
-            return RestHelper.DoResourceServerGET("/external/GetAll");
+            var result = new List<External>();
+            List<string> _roles = new List<string>();
+            try
+            {
+                var resultreposnse = Common.RestHelper.DoResourceServerGET("/external/GetAll");
+                String json = Newtonsoft.Json.JsonConvert.SerializeObject(resultreposnse.Result);
+                result = Newtonsoft.Json.JsonConvert.DeserializeObject<List<External>>(json);
+
+            }
+            catch (Exception e)
+            {
+                logger.Error(e.Message);
+            }
+
+            return result;
         }
 
         public External GetById(int id)
         {
-            var result = new Permission();
+            var result = new External();
 
             try
             {
                 var resultreposnse = Common.RestHelper.DoResourceServerGET(String.Format("/external/GetById/{0}", id));
                 String json = Newtonsoft.Json.JsonConvert.SerializeObject(resultreposnse.Result);
-                return Newtonsoft.Json.JsonConvert.DeserializeObject<Permission>(json);
+                return Newtonsoft.Json.JsonConvert.DeserializeObject<External>(json);
             }
             catch (Exception e)
             {
@@ -56,15 +70,15 @@ namespace Service.InternalService
             try
             {
                 rh = Common.RestHelper.DoResourceServerPOST("/external/InsertUpdate", model);
-                logger.Debug("permission/InsertUpdate - response - " +
+                logger.Debug("external/InsertUpdate - response - " +
                     Newtonsoft.Json.JsonConvert.SerializeObject(rh));
 
             }
             catch (Exception e)
             {
                 logger.Error(e.Message);
-                rh.SetResponse(false, String.Format(Resources.Resources.Delete_ErrorMessage,
-                    Resources.Resources.Permission));
+                rh.SetResponse(false, String.Format(Resources.Resources.Insert_ErrorMessage,
+                    Resources.Resources.External));
             }
 
             return rh;

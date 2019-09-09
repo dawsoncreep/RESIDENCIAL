@@ -97,6 +97,42 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Application parameter.
+        /// </summary>
+        public static string ApplicationParameters {
+            get {
+                return ResourceManager.GetString("ApplicationParameters", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Create applicacion parameter.
+        /// </summary>
+        public static string ApplicationParameters_Create_Tile {
+            get {
+                return ResourceManager.GetString("ApplicationParameters_Create_Tile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit application parameter.
+        /// </summary>
+        public static string ApplicationParameters_Edit_Title {
+            get {
+                return ResourceManager.GetString("ApplicationParameters_Edit_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Application parameters.
+        /// </summary>
+        public static string ApplicationParametersMenu {
+            get {
+                return ResourceManager.GetString("ApplicationParametersMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Back to List.
         /// </summary>
         public static string BacktoList {
@@ -232,6 +268,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Not enough information to carry out the request..
+        /// </summary>
+        public static string ErrorMessage_InsufficientInformation {
+            get {
+                return ResourceManager.GetString("ErrorMessage_InsufficientInformation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Event.
         /// </summary>
         public static string Event {
@@ -331,6 +376,51 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Create External User.
+        /// </summary>
+        public static string ExternalType_Create_Tile {
+            get {
+                return ResourceManager.GetString("ExternalType_Create_Tile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit External User.
+        /// </summary>
+        public static string ExternalType_Edit_Title {
+            get {
+                return ResourceManager.GetString("ExternalType_Edit_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Create External User.
+        /// </summary>
+        public static string ExternalUser_Create_Tile {
+            get {
+                return ResourceManager.GetString("ExternalUser_Create_Tile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit External User.
+        /// </summary>
+        public static string ExternalUser_Edit_Title {
+            get {
+                return ResourceManager.GetString("ExternalUser_Edit_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to External Users.
+        /// </summary>
+        public static string ExternalUserMenu {
+            get {
+                return ResourceManager.GetString("ExternalUserMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to First Name.
         /// </summary>
         public static string FirstName {
@@ -390,6 +480,15 @@ namespace Resources {
         public static string Insert_OkMessage {
             get {
                 return ResourceManager.GetString("Insert_OkMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Key.
+        /// </summary>
+        public static string Key {
+            get {
+                return ResourceManager.GetString("Key", resourceCulture);
             }
         }
         
@@ -723,6 +822,15 @@ namespace Resources {
         public static string UsersMenu {
             get {
                 return ResourceManager.GetString("UsersMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Value.
+        /// </summary>
+        public static string Value {
+            get {
+                return ResourceManager.GetString("Value", resourceCulture);
             }
         }
     }

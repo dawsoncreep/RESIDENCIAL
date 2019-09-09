@@ -18,14 +18,13 @@ namespace Persistence.DatabaseContext
         public DbSet<ApplicationRole> ApplicationRole { get; set; }
         public DbSet<ApplicationUserRole> ApplicationUserRole { get; set; }
 
-        public virtual DbSet<Student> Student { get;set; }
-        public virtual DbSet<StudentPerCourse> StudentPerCourse { get; set; }
-        public virtual DbSet<Course> Course { get; set; }
         public virtual DbSet<Audience> Audience { get; set; }
         public virtual DbSet<Binnacle> Binnacle { get; set; }
         public virtual DbSet<BinnaclePhoto> BinnaclePhoto { get; set; }
+        public virtual DbSet<BinnacleType> BinnacleType { get; set; }
         public virtual DbSet<BinnaclePhotoType> BinnaclePhotoType { get; set; }
         public virtual DbSet<External> External{ get; set; }
+        public virtual DbSet<ExternalType> ExternalType { get; set; }
         public virtual DbSet<ExternalPhoto> ExternalPhoto { get; set; }
         public virtual DbSet<ExternalBinnacle> ExternalBinnacle { get; set; }
         public virtual DbSet<Event> Event { get; set; }

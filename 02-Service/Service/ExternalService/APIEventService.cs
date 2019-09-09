@@ -50,15 +50,16 @@ namespace Service.ExternalService
                     _eventRepo.Delete(model);
 
                     ctx.SaveChanges();
-                    rh.SetResponse(true);
                 }
-                rh.SetResponse(true);
+                rh.SetResponse(true, String.Format(Resources.Resources.Delete_OkMessage,
+                      Resources.Resources.Event));
                 return rh;
             }
             catch (Exception e)
             {   
                 logger.Error(e.Message);
-                rh.SetResponse(false, e.Message);
+                rh.SetResponse(true, String.Format(Resources.Resources.Delete_ErrorMessage,
+                      Resources.Resources.Event));
                 return rh;
             }
         }
@@ -136,12 +137,15 @@ namespace Service.ExternalService
                     }
 
                     ctx.SaveChanges();
-                    rh.SetResponse(true);
+                    rh.SetResponse(true, String.Format(Resources.Resources.Insert_OkMessage,
+                          Resources.Resources.Event));
                 }
             }
             catch (Exception e)
             {
                 logger.Error(e.Message);
+                rh.SetResponse(false, String.Format(Resources.Resources.Insert_ErrorMessage,
+                          Resources.Resources.Event));
             }
 
             return rh;

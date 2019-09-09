@@ -9,12 +9,22 @@ using System.Threading.Tasks;
 
 namespace Model.Domain
 {
-    public class ApplicationParameters : AuditEntity, ISoftDeleted
+    public class ApplicationParameters
     {
         [Key]
         public int Id { get; set; }
+
+        [Required]
+        [MaxLength(50)]
         public String Key { get; set; }
+
+
+        [Required]
+        [MaxLength(255)]
         public String Value { get; set; }
-        public bool Deleted { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
+        [MaxLength(100)]
+        public String Description { get; set; }
+
     }
 }

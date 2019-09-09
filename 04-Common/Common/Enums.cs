@@ -73,7 +73,10 @@ namespace Common
             LocationMenu,
             ColonialMenu,
             EventMenu,
-            LocationUserMenu
+            LocationUserMenu,
+            ExternalUserMenu,
+            ExternalType,
+            ApplicationParameters
         }
     }
 

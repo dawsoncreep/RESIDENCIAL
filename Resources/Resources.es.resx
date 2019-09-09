@@ -321,4 +321,40 @@
   <data name="Insert_OkMessage" xml:space="preserve">
     <value>{0} insertado correctamente.</value>
   </data>
+  <data name="ExternalUserMenu" xml:space="preserve">
+    <value>Usuarios Externos</value>
+  </data>
+  <data name="ExternalUser_Create_Tile" xml:space="preserve">
+    <value>Crear Usuario Externo</value>
+  </data>
+  <data name="ExternalUser_Edit_Title" xml:space="preserve">
+    <value>Editar Usuario Externo</value>
+  </data>
+  <data name="ApplicationParameters" xml:space="preserve">
+    <value>Parametros de la Aplicación</value>
+  </data>
+  <data name="ApplicationParametersMenu" xml:space="preserve">
+    <value>Parametros de la Aplicación</value>
+  </data>
+  <data name="ApplicationParameters_Create_Tile" xml:space="preserve">
+    <value>Crear parametro de Aplicación</value>
+  </data>
+  <data name="ApplicationParameters_Edit_Title" xml:space="preserve">
+    <value>Editar parámetro de Aplicación</value>
+  </data>
+  <data name="ExternalType_Create_Tile" xml:space="preserve">
+    <value>Crear Usuario Externo</value>
+  </data>
+  <data name="ExternalType_Edit_Title" xml:space="preserve">
+    <value>Editar Usuario Externo</value>
+  </data>
+  <data name="Key" xml:space="preserve">
+    <value>Llave</value>
+  </data>
+  <data name="Value" xml:space="preserve">
+    <value>Valor</value>
+  </data>
+  <data name="ErrorMessage_InsufficientInformation" xml:space="preserve">
+    <value>No se pudo recuperar la información suficiente para realizar la solicitud.</value>
+  </data>
 </root>

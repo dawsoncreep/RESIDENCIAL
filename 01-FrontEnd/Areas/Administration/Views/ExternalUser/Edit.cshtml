@@ -1,0 +1,102 @@
+﻿@model Model.Custom.ExternalUserForGridView
+
+@{
+    ViewBag.Title = Resources.ExternalUser_Edit_Title;
+    Layout = "~/Areas/Administration/Views/Shared/_AdministrationMenu.cshtml";
+}
+
+
+@using (Html.BeginForm("Edit", "ExternalUser", new { Area = "Administration" }, FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal col-xs-12 col-md-12">
+    <h4>@Resources.ExternalUser_Edit_Title</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.Id)
+
+    <div class="col-xs-6">
+        <div class="form-group">
+            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.LastName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.LicensePlate, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.LicensePlate, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.LicensePlate, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ExternalType, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10 ">
+
+                @Html.DropDownListFor(model => model.ExternalTypeId,
+                     Model.lstExternalType.Select(s => new SelectListItem { Text = s.Description, Value = s.Id.ToString() }).ToList(),
+                     new { @class = "form-control btn btn-default dropdown-toggle", type = "button" })
+
+                @Html.ValidationMessageFor(model => model.ExternalType, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Location, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10 ">
+
+                @Html.DropDownListFor(model => model.LocationId,
+                     Model.lstLocations.Select(s => new SelectListItem { Text = s.Description, Value = s.Id.ToString() }).ToList(),
+                     new { @class = "form-control btn btn-default dropdown-toggle", type = "button" })
+
+                @Html.ValidationMessageFor(model => model.Location, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-10 col-xs-offset-2">
+                @Html.TextBox("file", "", new { id = "idUrlImage", type = "file", @class = "form-control", accept = ".gif,.jpg,.jpeg,.png" }) <br />
+                @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        @Html.HiddenFor(model => model.Image, new {id="currentUrlImage" })
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value=@Resources.Save class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-6">
+        <div>
+            <img class="img-responsive img-thumbnail" id="idExternalUserPickImage" src="@Model.Image" width="350px" height="400px;" />
+        </div>
+        <br />
+    </div>
+
+
+</div>
+}
+
+<div>
+    @Html.ActionLink(Resources.BacktoList, "Index", "ExternalUser", new { Area = "Administration" }, new { @class = "btn btn-default" })
+</div>

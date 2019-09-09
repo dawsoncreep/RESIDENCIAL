@@ -200,6 +200,9 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Administration\AdministrationAreaRegistration.cs" />
     <Compile Include="Areas\Administration\Controllers\EventTypeController.cs" />
+    <Compile Include="Areas\Administration\Controllers\ApplicationParametersController.cs" />
+    <Compile Include="Areas\Administration\Controllers\ExternalTypeController.cs" />
+    <Compile Include="Areas\Administration\Controllers\ExternalUserController.cs" />
     <Compile Include="Areas\Administration\Controllers\LocationController.cs" />
     <Compile Include="Areas\Administration\Controllers\LocationTypeController.cs" />
     <Compile Include="Areas\Administration\Controllers\LocationUserController.cs" />
@@ -227,6 +230,7 @@
   <ItemGroup>
     <Content Include="Assets\css\site.css" />
     <Content Include="Assets\js\Administration\event.functions.js" />
+    <Content Include="Assets\js\Administration\externalUser.functions.js" />
     <Content Include="Assets\js\Administration\locationType.functions.js" />
     <Content Include="Assets\js\Administration\eventType.functions.js" />
     <Content Include="Assets\js\common.js" />
@@ -1004,6 +1008,15 @@
     <Content Include="Areas\Administration\Views\LocationUser\Index.cshtml" />
     <Content Include="Areas\Administration\Views\LocationUser\Create.cshtml" />
     <Content Include="Areas\Administration\Views\LocationUser\Edit.cshtml" />
+    <Content Include="Areas\Administration\Views\ExternalUser\Create.cshtml" />
+    <Content Include="Areas\Administration\Views\ExternalUser\Index.cshtml" />
+    <Content Include="Areas\Administration\Views\ExternalType\Create.cshtml" />
+    <Content Include="Areas\Administration\Views\ExternalType\Edit.cshtml" />
+    <Content Include="Areas\Administration\Views\ExternalType\Index.cshtml" />
+    <Content Include="Areas\Administration\Views\ApplicationParameters\Create.cshtml" />
+    <Content Include="Areas\Administration\Views\ApplicationParameters\Edit.cshtml" />
+    <Content Include="Areas\Administration\Views\ApplicationParameters\Index.cshtml" />
+    <Content Include="Areas\Administration\Views\ExternalUser\Edit.cshtml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -1047,6 +1060,7 @@
   <ItemGroup>
     <Folder Include="App_Data\Logs\" />
     <Folder Include="Areas\Administration\Models\" />
+    <Folder Include="Areas\Administration\Views\External\" />
     <Folder Include="Areas\Colonial\Models\" />
     <Folder Include="Areas\GuardHouse\Models\" />
     <Folder Include="Areas\Reports\Controllers\" />

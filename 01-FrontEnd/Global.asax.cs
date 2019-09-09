@@ -1,4 +1,5 @@
-﻿using FrontEnd.App_Start;
+﻿using Common.Config;
+using FrontEnd.App_Start;
 using System.Security.Claims;
 using System.Web.Helpers;
 using System.Web.Mvc;
@@ -11,6 +12,7 @@ namespace FrontEnd
     {
         protected void Application_Start()
         {
+
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);

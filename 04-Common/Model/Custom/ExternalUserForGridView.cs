@@ -1,11 +1,17 @@
-﻿using Common.CustomFilters;
+﻿using Model.Domain;
 using Model.Helper;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Web;
 
-namespace Model.Domain
+namespace Model.Custom
 {
-    public class External : AuditEntity
+    public class ExternalUserForGridView : AuditEntity
     {
         [Key]
         public int Id { get; set; }
@@ -38,10 +44,20 @@ namespace Model.Domain
         [Display(Name = "ExternalType", ResourceType = typeof(Resources.Resources))]
         public ExternalType ExternalType { get; set; }
 
-
         [Display(Name = "Location", ResourceType = typeof(Resources.Resources))]
         public Location Location { get; set; }
 
+        public HttpPostedFileBase file { get; set; }
+
+        [Required]
+        public String ExternalTypeId { get; set; }
+
+        public IEnumerable<ExternalType> lstExternalType { get; set; }
+
+        [Required]
+        public String LocationId { get; set; }
+
+        public IEnumerable<Location> lstLocations { get; set; }
 
     }
 }

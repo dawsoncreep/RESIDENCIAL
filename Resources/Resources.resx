@@ -339,4 +339,40 @@
   <data name="Insert_OkMessage" xml:space="preserve">
     <value>The {0} has been added correctly.</value>
   </data>
+  <data name="ExternalUserMenu" xml:space="preserve">
+    <value>External Users</value>
+  </data>
+  <data name="ExternalUser_Create_Tile" xml:space="preserve">
+    <value>Create External User</value>
+  </data>
+  <data name="ExternalUser_Edit_Title" xml:space="preserve">
+    <value>Edit External User</value>
+  </data>
+  <data name="ApplicationParameters" xml:space="preserve">
+    <value>Application parameter</value>
+  </data>
+  <data name="ApplicationParametersMenu" xml:space="preserve">
+    <value>Application parameters</value>
+  </data>
+  <data name="ApplicationParameters_Create_Tile" xml:space="preserve">
+    <value>Create applicacion parameter</value>
+  </data>
+  <data name="ApplicationParameters_Edit_Title" xml:space="preserve">
+    <value>Edit application parameter</value>
+  </data>
+  <data name="ExternalType_Create_Tile" xml:space="preserve">
+    <value>Create External User</value>
+  </data>
+  <data name="ExternalType_Edit_Title" xml:space="preserve">
+    <value>Edit External User</value>
+  </data>
+  <data name="Key" xml:space="preserve">
+    <value>Key</value>
+  </data>
+  <data name="Value" xml:space="preserve">
+    <value>Value</value>
+  </data>
+  <data name="ErrorMessage_InsufficientInformation" xml:space="preserve">
+    <value>Not enough information to carry out the request.</value>
+  </data>
 </root>

@@ -8,32 +8,29 @@ using Model.Domain;
 using NLog;
 using Persistence.DbContextScope;
 using Persistence.Repository;
-using Resources;
 
 namespace Service.ExternalService
 {
-    public interface IAPIExternalService : IExternalService
+
+    public interface IAPIExternalTypeService : IExternalService
     {
 
     }
 
-    public class APIExternalService : IAPIExternalService
+    public class APIExternalTypeService : IAPIExternalTypeService
     {
         private static ILogger logger = LogManager.GetCurrentClassLogger();
         private readonly IDbContextScopeFactory _dbContextScopeFactory;
-        private readonly IRepository<External> _externalRepo;
         private readonly IRepository<ExternalType> _externalTypeRepo;
 
-
-        public APIExternalService(
+        public APIExternalTypeService(
             IDbContextScopeFactory dbContextScopeFactory,
-            IRepository<External> externalRepo,
             IRepository<ExternalType> externalTypeRepo)
         {
             _dbContextScopeFactory = dbContextScopeFactory;
-            _externalRepo = externalRepo;
             _externalTypeRepo = externalTypeRepo;
         }
+
 
         public ResponseHelper Delete(int id)
         {
@@ -42,12 +39,12 @@ namespace Service.ExternalService
             {
                 using (var ctx = _dbContextScopeFactory.Create())
                 {
-                    var model = _externalRepo.SingleOrDefault(x => x.Id == id);
-                    _externalRepo.Delete(model);
+                    var model = _externalTypeRepo.SingleOrDefault(x => x.Id == id);
+                    _externalTypeRepo.Delete(model);
 
                     ctx.SaveChanges();
-                    rh.SetResponse(true,String.Format(Resources.Resources.Delete_OkMessage,
-                        Resources.Resources.External));
+                    rh.SetResponse(true, String.Format(Resources.Resources.Delete_OkMessage,
+                        Resources.Resources.ExternalType));
                 }
                 rh.SetResponse(true);
                 return rh;
@@ -56,7 +53,7 @@ namespace Service.ExternalService
             {
                 logger.Error(e.Message);
                 rh.SetResponse(false, String.Format(Resources.Resources.Delete_ErrorMessage,
-                    Resources.Resources.External));
+                    Resources.Resources.ExternalType));
                 return rh;
             }
         }
@@ -64,12 +61,12 @@ namespace Service.ExternalService
         public ResponseHelper GetAll()
         {
             var rh = new ResponseHelper();
-            var result = new List<External>();
+            var result = new List<ExternalType>();
             try
             {
                 using (var ctx = _dbContextScopeFactory.CreateReadOnly())
                 {
-                    result = new List<External>(_externalRepo.GetAll(et => et.ExternalType));
+                    result = new List<ExternalType>(_externalTypeRepo.GetAll());
                 }
                 rh.Result = result;
                 rh.SetResponse(true);
@@ -78,21 +75,21 @@ namespace Service.ExternalService
             catch (Exception e)
             {
                 logger.Error(e.Message);
-                rh.SetResponse(false);
+                rh.SetResponse(false, String.Format(Resources.Resources.Process_ErrorMessage,
+                    Resources.Resources.ExternalType));
                 return rh;
             }
-            
         }
 
         public ResponseHelper GetById(int id)
         {
             var rh = new ResponseHelper();
-            var result = new External();
+            var result = new ExternalType();
             try
             {
                 using (var ctx = _dbContextScopeFactory.CreateReadOnly())
                 {
-                    result = _externalRepo.SingleOrDefault(s => s.Id == id, s => s.ExternalType);
+                    result = _externalTypeRepo.SingleOrDefault(s => s.Id == id);
                 }
                 rh.Result = result;
                 rh.SetResponse(true);
@@ -101,14 +98,15 @@ namespace Service.ExternalService
             catch (Exception e)
             {
                 logger.Error(e.Message);
-                rh.SetResponse(false);
+                rh.SetResponse(false, String.Format(Resources.Resources.Process_ErrorMessage,
+                    Resources.Resources.ExternalType));
                 return rh;
             }
         }
 
         public ResponseHelper InsertUpdate(object pModel)
         {
-            External model = (External)pModel;
+            ExternalType model = (ExternalType)pModel;
 
             var rh = new ResponseHelper();
 
@@ -116,45 +114,32 @@ namespace Service.ExternalService
             {
                 using (var ctx = _dbContextScopeFactory.Create())
                 {
-                    var modelById = _externalRepo.Find(x =>
+                    var modelById = _externalTypeRepo.Find(x =>
                         x.Id == model.Id
                     ).SingleOrDefault();
 
                     if (modelById == null)
                     {
-                        model.ExternalType = _externalTypeRepo.
-                            Find(f => f.Id == model.ExternalType.Id).SingleOrDefault();
-
-                        model.CreatedAt = DateTime.Now;
-                        model.CreatedBy = CurrentUserHelper.Get.UserName;
-                        _externalRepo.Insert(model);
+                        _externalTypeRepo.Insert(model);
                     }
                     else
                     {
-                        modelById.UpdatedAt = DateTime.Now;
-                        modelById.UpdatedBy = CurrentUserHelper.Get.UserName;
-
-                        modelById.ExternalType = _externalTypeRepo.Find(f => f.Id == model.ExternalType.Id).SingleOrDefault();
-                        modelById.FirstName = model.FirstName;
-                        modelById.Name = model.Name;
-                        modelById.LastName = model.LastName;
-                        modelById.LicensePlate = model.LicensePlate;
-                        modelById.UrlImage = model.UrlImage;
+                        modelById.Description = model.Description;
                         modelById.Id = model.Id;
 
-                        _externalRepo.Update(modelById);
+                        _externalTypeRepo.Update(modelById);
                     }
 
                     ctx.SaveChanges();
-                    rh.SetResponse(true,String.Format(Resources.Resources.Insert_OkMessage,
-                        Resources.Resources.External));
+                    rh.SetResponse(true, String.Format(Resources.Resources.Insert_OkMessage,
+                        Resources.Resources.ExternalType));
                 }
             }
             catch (Exception e)
             {
                 logger.Error(e.Message);
                 rh.SetResponse(false, String.Format(Resources.Resources.Insert_ErrorMessage,
-                    Resources.Resources.External));
+                    Resources.Resources.ExternalType));
             }
 
             return rh;

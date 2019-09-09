@@ -166,6 +166,9 @@
   <ItemGroup>
     <Compile Include="Controllers\EventController.cs" />
     <Compile Include="Controllers\EventTypeController.cs" />
+    <Compile Include="Controllers\ExternalController.cs" />
+    <Compile Include="Controllers\ApplicationParametersController.cs" />
+    <Compile Include="Controllers\ExternalTypeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LocationController.cs" />
     <Compile Include="Controllers\LocationTypeController.cs" />

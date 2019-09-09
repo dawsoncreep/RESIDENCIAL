@@ -18,8 +18,78 @@ namespace FrontEnd
 
     public static class MVCGridConfig 
     {
+
         public static void RegisterGrids()
         {
+
+            MVCGridDefinitionTable.Add("ExternalUserGrid", new MVCGridBuilder<External>()
+                .WithAuthorizationType(AuthorizationType.AllowAnonymous)
+                .AddColumns(cols =>
+                {
+                    cols.Add("Edit").WithHtmlEncoding(false)
+                        .WithHeaderText(" ")
+                        .WithValueExpression((i, c) => c.UrlHelper.Action("Edit", "ExternalUser", new { Area = "Administration", id = i.Id }))
+                        .WithValueTemplate("<a href={Value} class = 'btn btn-default'>" +
+                        "<span class='glyphicon glyphicon-pencil' aria-hidden='true'></span>" +
+                        "</a>")
+                        .WithCellCssClassExpression(p => p.Id > 0 ? "col-xs-1 warning center" : "col-xs-1 danger");
+                    cols.Add("Delete").WithHtmlEncoding(false)
+                        .WithHeaderText(" ")
+                        .WithValueExpression((i, c) => i.Id.ToString())
+                        .WithValueTemplate("<button class='btn btn-default deleteButton' id='deleteBtnExternalUser' idDelete = '{Value}'>" +
+                        "<span class='glyphicon glyphicon-trash' aria-hidden='true'></span>" +
+                        " </button> ")
+                        .WithCellCssClassExpression(p => p.Id > 0 ? "col-xs-1 danger center" : "col-xs-1 danger");
+                    cols.Add().WithColumnName("Id")
+                        .WithHeaderText("Id")
+                        .WithValueExpression(i => i.Id.ToString()); // use the Value Expression to return the cell text for this column
+                    cols.Add().WithColumnName("Name")
+                        .WithHeaderText(Resources.Name)
+                        .WithValueExpression(i => i.Name);
+                    cols.Add().WithColumnName("FirstName")
+                        .WithHeaderText(Resources.FirstName)
+                        .WithValueExpression(i => i.FirstName);
+                    cols.Add().WithColumnName("LastName")
+                        .WithHeaderText(Resources.LastName)
+                        .WithValueExpression(i => i.LastName);
+                    cols.Add().WithColumnName("LicencePlate")
+                        .WithHeaderText(Resources.LicensePlate)
+                        .WithValueExpression(i => i.LicensePlate);
+                    cols.Add().WithColumnName("ExternalType")
+                        .WithHeaderText(Resources.ExternalType)
+                        .WithValueExpression(i => i.ExternalType.Description);
+                    cols.Add().WithColumnName("Location")
+                        .WithHeaderText(Resources.Location)
+                        .WithValueExpression(i => 
+                            String.Format("{0} {1}",
+                                i.Location.Street,
+                                i.Location.OutNumber));
+                    cols.Add("Image").WithHtmlEncoding(false)
+                        .WithHeaderText(" ")
+                        .WithValueTemplate("<img class='img-responsive img-thumbnail' id='imgExternalUser' src='{Model.Image}' />")
+                        .WithCellCssClassExpression(p => p.Image != null ?  "col-xs-1 danger center" : "col-xs-1 danger");
+
+                })
+                .WithSorting(true, "Id")
+                .WithPaging(true, 10)
+                .WithRetrieveDataMethod((context) =>
+                {
+                    var options = context.QueryOptions;
+                    var result = new QueryResult<External>();
+                    IExternalUserService _externalUserService = DependecyFactory.GetInstance<IExternalUserService>();
+                    var query = _externalUserService.GetAll().AsQueryable();
+
+                    result.TotalRecords = query.Count();
+
+                    if (options.GetLimitOffset().HasValue)
+                    {
+                        query = query.Skip(options.GetLimitOffset().Value).Take(options.GetLimitRowcount().Value);
+                    }
+                    result.Items = query.ToList();
+                    return result;
+                })
+            );
+
             MVCGridDefinitionTable.Add("LocationUserGrid", new MVCGridBuilder<LocationUser>()
                 .WithAuthorizationType(AuthorizationType.AllowAnonymous)
                 .AddColumns(cols =>
@@ -145,6 +215,101 @@ namespace FrontEnd
                 })
             );
 
+            MVCGridDefinitionTable.Add("ApplicationParametersGrid", new MVCGridBuilder<ApplicationParameters>()
+                .WithAuthorizationType(AuthorizationType.AllowAnonymous)
+                .AddColumns(cols =>
+                {
+                    cols.Add("Edit").WithHtmlEncoding(false)
+                        .WithHeaderText(" ")
+                        .WithValueExpression((i, c) => c.UrlHelper.Action("Edit", "ApplicationParameters", new { Area = "Administration", id = i.Id }))
+                        .WithValueTemplate("<a href={Value} class = 'btn btn-default'>" +
+                        "<span class='glyphicon glyphicon-pencil' aria-hidden='true'></span>" +
+                        "</a>")
+                        .WithCellCssClassExpression(p => p.Id > 0 ? "col-xs-1 warning center" : "col-xs-1 danger");
+                    cols.Add("Delete").WithHtmlEncoding(false)
+                        .WithHeaderText(" ")
+                        .WithValueExpression((i, c) => i.Id.ToString())
+                        .WithValueTemplate("<button class='btn btn-default deleteButton' id='deleteBtnApplicationParameters' idDelete = '{Value}'>" +
+                        "<span class='glyphicon glyphicon-trash' aria-hidden='true'></span>" +
+                        " </button> ")
+                        .WithCellCssClassExpression(p => p.Id > 0 ? "col-xs-1 danger center" : "col-xs-1 danger");
+                    cols.Add().WithColumnName("Id")
+                        .WithHeaderText("Id")
+                        .WithValueExpression(i => i.Id.ToString()); // use the Value Expression to return the cell text for this column
+                    cols.Add().WithColumnName("Key")
+                        .WithHeaderText(Resources.Key)
+                        .WithValueExpression(i => i.Key);
+                    cols.Add().WithColumnName("Value")
+                        .WithHeaderText(Resources.Value)
+                        .WithValueExpression(i => i.Value);
+                    cols.Add().WithColumnName("Description")
+                        .WithHeaderText("Description")
+                        .WithValueExpression(i => i.Description);
+                })
+                .WithSorting(true, "Id")
+                .WithPaging(true, 10)
+                .WithRetrieveDataMethod((context) =>
+                {
+                    var options = context.QueryOptions;
+                    var result = new QueryResult<ApplicationParameters>();
+                    IApplicationParametersService _ApplicationParametersService = DependecyFactory.GetInstance<IApplicationParametersService>();
+                    var query = _ApplicationParametersService.GetAll().AsQueryable();
+
+                    result.TotalRecords = query.Count();
+
+                    if (options.GetLimitOffset().HasValue)
+                    {
+                        query = query.Skip(options.GetLimitOffset().Value).Take(options.GetLimitRowcount().Value);
+                    }
+                    result.Items = query.ToList();
+                    return result;
+                })
+            );
+
+            MVCGridDefinitionTable.Add("ExternalTypeGrid", new MVCGridBuilder<ExternalType>()
+                .WithAuthorizationType(AuthorizationType.AllowAnonymous)
+                .AddColumns(cols =>
+                {
+                    cols.Add("Edit").WithHtmlEncoding(false)
+                        .WithHeaderText(" ")
+                        .WithValueExpression((i, c) => c.UrlHelper.Action("Edit", "ExternalType", new { Area = "Administration", id = i.Id }))
+                        .WithValueTemplate("<a href={Value} class = 'btn btn-default'>" +
+                        "<span class='glyphicon glyphicon-pencil' aria-hidden='true'></span>" +
+                        "</a>")
+                        .WithCellCssClassExpression(p => p.Id > 0 ? "col-xs-1 warning center" : "col-xs-1 danger");
+                    cols.Add("Delete").WithHtmlEncoding(false)
+                        .WithHeaderText(" ")
+                        .WithValueExpression((i, c) => i.Id.ToString())
+                        .WithValueTemplate("<button class='btn btn-default deleteButton' id='deleteBtnExternalType' idDelete = '{Value}'>" +
+                        "<span class='glyphicon glyphicon-trash' aria-hidden='true'></span>" +
+                        " </button> ")
+                        .WithCellCssClassExpression(p => p.Id > 0 ? "col-xs-1 danger center" : "col-xs-1 danger");
+                    cols.Add().WithColumnName("Id")
+                        .WithHeaderText("Id")
+                        .WithValueExpression(i => i.Id.ToString()); // use the Value Expression to return the cell text for this column
+                    cols.Add().WithColumnName("Description")
+                        .WithHeaderText("Description")
+                        .WithValueExpression(i => i.Description);
+                })
+                .WithSorting(true, "Id")
+                .WithPaging(true, 10)
+                .WithRetrieveDataMethod((context) =>
+                {
+                    var options = context.QueryOptions;
+                    var result = new QueryResult<ExternalType>();
+                    IExternalTypeService _externalTypeService = DependecyFactory.GetInstance<IExternalTypeService>();
+                    var query = _externalTypeService.GetAll().AsQueryable();
+
+                    result.TotalRecords = query.Count();
+
+                    if (options.GetLimitOffset().HasValue)
+                    {
+                        query = query.Skip(options.GetLimitOffset().Value).Take(options.GetLimitRowcount().Value);
+                    }
+                    result.Items = query.ToList();
+                    return result;
+                })
+            );
 
             MVCGridDefinitionTable.Add("EventTypeGrid", new MVCGridBuilder<EventType>()
                 .WithAuthorizationType(AuthorizationType.AllowAnonymous)

@@ -63,20 +63,9 @@ namespace Service.InternalService
 
             try
             {
-                var client = new RestClient(Parameters.resourceServerUrl);
-
-                var request = new RestRequest(String.Format("/eventtype/GetById/{0}", id), Method.GET);
-
-                request.AddHeader("Accept", "application/json");
-                request.AddHeader("Content-Type", "application/json");
-
-                IRestResponse<ResponseHelper<EventType>> response = client.Execute<ResponseHelper<EventType>>(request);
-                if (response.Data.Response)
-                {
-                    var jsonStrong = response.Data.Result;
-                    result = response.Data.Result;
-                }
-
+                var resultreposnse = Common.RestHelper.DoResourceServerGET(String.Format("/eventtype/GetById/{0}", id));
+                String json = Newtonsoft.Json.JsonConvert.SerializeObject(resultreposnse.Result);
+                return Newtonsoft.Json.JsonConvert.DeserializeObject<EventType>(json);
             }
             catch (Exception e)
             {
@@ -91,18 +80,10 @@ namespace Service.InternalService
             var result = new List<EventType>();
             try
             {
-                var client = new RestClient(Parameters.resourceServerUrl);
+                var resultreposnse = Common.RestHelper.DoResourceServerGET("/eventtype/GetAll");
+                String json = Newtonsoft.Json.JsonConvert.SerializeObject(resultreposnse.Result);
+                result = Newtonsoft.Json.JsonConvert.DeserializeObject<List<EventType>>(json);
 
-                var request = new RestRequest("/eventtype/GetAll", Method.GET);
-
-                request.AddHeader("Accept", "application/json");
-                request.AddHeader("Content-Type", "application/json");
-
-                IRestResponse<ResponseHelper> response = client.Execute<ResponseHelper>(request);
-                if (response.IsSuccessful)
-                {
-                    result = (List<EventType>)response.Data.Result;
-                }
             }
             catch (Exception e)
             {
