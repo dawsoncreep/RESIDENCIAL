@@ -76,7 +76,8 @@ namespace Common
             LocationUserMenu,
             ExternalUserMenu,
             ExternalType,
-            ApplicationParameters
+            ApplicationParameters,
+            TagMenu
         }
     }
 

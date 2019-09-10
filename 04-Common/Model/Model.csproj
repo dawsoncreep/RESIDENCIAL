@@ -67,6 +67,7 @@
     <Compile Include="Auth\ApplicationUser.cs" />
     <Compile Include="AuthorizationServer\AudienceForSuscribe.cs" />
     <Compile Include="Custom\EventForGridView.cs" />
+    <Compile Include="Custom\TagForGridViewExternsion.cs" />
     <Compile Include="Custom\EventForGridViewExternsion.cs" />
     <Compile Include="Custom\ExternalUserForGridView.cs" />
     <Compile Include="Custom\ExternalUserForGridViewExtension.cs" />
@@ -76,6 +77,7 @@
     <Compile Include="Custom\LocationUserForGridViewExtension.cs" />
     <Compile Include="Custom\MenuByPermissions.cs" />
     <Compile Include="Custom\PermissionRoleForGridView.cs" />
+    <Compile Include="Custom\TagForGridView.cs" />
     <Compile Include="Custom\UserForGridView.cs" />
     <Compile Include="Domain\Audience.cs" />
     <Compile Include="Domain\Binnacle.cs" />
@@ -101,6 +103,7 @@
     <Compile Include="Domain\Permission.cs" />
     <Compile Include="Domain\PermissionRole.cs" />
     <Compile Include="Domain\PermissionUser.cs" />
+    <Compile Include="Domain\Tag.cs" />
     <Compile Include="Domain\UserBinnacle.cs" />
     <Compile Include="Helper\AuditEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

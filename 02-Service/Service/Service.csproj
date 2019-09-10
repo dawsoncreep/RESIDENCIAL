@@ -102,6 +102,7 @@
     <Compile Include="ExternalService\APIEventService.cs" />
     <Compile Include="ExternalService\APIEventTypeService.cs" />
     <Compile Include="ExternalService\APIApplicationParametersService.cs" />
+    <Compile Include="ExternalService\APITagService.cs" />
     <Compile Include="ExternalService\APIExternalTypeService.cs" />
     <Compile Include="ExternalService\APIExternalUserService.cs" />
     <Compile Include="ExternalService\APILocationService.cs" />
@@ -119,6 +120,7 @@
     <Compile Include="InternalService\EventService.cs" />
     <Compile Include="ExternalService\APIRoleService.cs" />
     <Compile Include="ExternalService\APIUserService.cs" />
+    <Compile Include="InternalService\TagService.cs" />
     <Compile Include="InternalService\ExternalTypeService.cs" />
     <Compile Include="InternalService\ExternalUserService.cs" />
     <Compile Include="InternalService\LocationService.cs" />

@@ -43,6 +43,7 @@ namespace Persistence.DatabaseContext
         public virtual DbSet<UserBinnacle> UserBinnacle { get; set; }
         public virtual DbSet<ApplicationParameters> ApplicationParameters { get; set; }
         public virtual DbSet<Bulletin> Bulletin { get; set; }
+        public virtual DbSet<Tag> Tag { get; set; }
 
 
         public ApplicationDbContext()

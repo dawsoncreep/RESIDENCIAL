@@ -201,6 +201,7 @@
     <Compile Include="Areas\Administration\AdministrationAreaRegistration.cs" />
     <Compile Include="Areas\Administration\Controllers\EventTypeController.cs" />
     <Compile Include="Areas\Administration\Controllers\ApplicationParametersController.cs" />
+    <Compile Include="Areas\Administration\Controllers\TagController.cs" />
     <Compile Include="Areas\Administration\Controllers\ExternalTypeController.cs" />
     <Compile Include="Areas\Administration\Controllers\ExternalUserController.cs" />
     <Compile Include="Areas\Administration\Controllers\LocationController.cs" />
@@ -1017,6 +1018,9 @@
     <Content Include="Areas\Administration\Views\ApplicationParameters\Edit.cshtml" />
     <Content Include="Areas\Administration\Views\ApplicationParameters\Index.cshtml" />
     <Content Include="Areas\Administration\Views\ExternalUser\Edit.cshtml" />
+    <Content Include="Areas\Administration\Views\Tag\Create.cshtml" />
+    <Content Include="Areas\Administration\Views\Tag\Edit.cshtml" />
+    <Content Include="Areas\Administration\Views\Tag\Index.cshtml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -1060,7 +1064,6 @@
   <ItemGroup>
     <Folder Include="App_Data\Logs\" />
     <Folder Include="Areas\Administration\Models\" />
-    <Folder Include="Areas\Administration\Views\External\" />
     <Folder Include="Areas\Colonial\Models\" />
     <Folder Include="Areas\GuardHouse\Models\" />
     <Folder Include="Areas\Reports\Controllers\" />

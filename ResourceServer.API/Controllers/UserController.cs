@@ -38,7 +38,6 @@ namespace ResourceServer.API.Controllers
             }
         }
 
-        
         [HttpGet]
         [Route("GetById/{id}")]
         public IHttpActionResult GetById(String id)

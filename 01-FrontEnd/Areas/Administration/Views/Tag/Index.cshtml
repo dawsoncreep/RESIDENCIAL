@@ -1,0 +1,14 @@
+﻿@{
+    Layout = "~/Areas/Administration/Views/Shared/_AdministrationMenu.cshtml";
+}
+
+<div class="panel panel-default">
+    <div class="panel-heading ">
+        <p>
+            @Html.ActionLink(Resources.Create, "Create", new { }, new { @class = "btn btn-default" })
+        </p>
+    </div>
+    <div class="panel-body">
+        @Html.MVCGrid("TagGrid")
+    </div>
+</div>

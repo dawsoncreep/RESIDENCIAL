@@ -375,4 +375,37 @@
   <data name="ErrorMessage_InsufficientInformation" xml:space="preserve">
     <value>Not enough information to carry out the request.</value>
   </data>
+  <data name="Tag" xml:space="preserve">
+    <value>Tag</value>
+  </data>
+  <data name="Tag_Create_Tile" xml:space="preserve">
+    <value>Create Tag</value>
+  </data>
+  <data name="Tag_Edit_Title" xml:space="preserve">
+    <value>Edit Tag</value>
+  </data>
+  <data name="Observations" xml:space="preserve">
+    <value>Observations</value>
+  </data>
+  <data name="TagCode" xml:space="preserve">
+    <value>Tag Code</value>
+  </data>
+  <data name="TagMenu" xml:space="preserve">
+    <value>Tags</value>
+  </data>
+  <data name="VehicleBrand" xml:space="preserve">
+    <value>Vehicle Brand</value>
+  </data>
+  <data name="VehicleModel" xml:space="preserve">
+    <value>Vehicle Model</value>
+  </data>
+  <data name="VehicleYear" xml:space="preserve">
+    <value>Vehicle Year</value>
+  </data>
+  <data name="Vehicle" xml:space="preserve">
+    <value>Vehicle</value>
+  </data>
+  <data name="NoAssignation" xml:space="preserve">
+    <value>No Assignation</value>
+  </data>
 </root>

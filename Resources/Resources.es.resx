@@ -357,4 +357,37 @@
   <data name="ErrorMessage_InsufficientInformation" xml:space="preserve">
     <value>No se pudo recuperar la información suficiente para realizar la solicitud.</value>
   </data>
+  <data name="Tag" xml:space="preserve">
+    <value>Tag</value>
+  </data>
+  <data name="Tag_Create_Tile" xml:space="preserve">
+    <value>Crear Tag</value>
+  </data>
+  <data name="Tag_Edit_Title" xml:space="preserve">
+    <value>Editar Tag</value>
+  </data>
+  <data name="Observations" xml:space="preserve">
+    <value>Observaciones</value>
+  </data>
+  <data name="TagCode" xml:space="preserve">
+    <value>Código de Tag</value>
+  </data>
+  <data name="TagMenu" xml:space="preserve">
+    <value>Tags</value>
+  </data>
+  <data name="VehicleBrand" xml:space="preserve">
+    <value>Marca del Vehiculo</value>
+  </data>
+  <data name="VehicleModel" xml:space="preserve">
+    <value>Modelo del Vehiculo</value>
+  </data>
+  <data name="VehicleYear" xml:space="preserve">
+    <value>Año del Vehiculo</value>
+  </data>
+  <data name="Vehicle" xml:space="preserve">
+    <value>Vehiculo</value>
+  </data>
+  <data name="NoAssignation" xml:space="preserve">
+    <value>No Asignado</value>
+  </data>
 </root>

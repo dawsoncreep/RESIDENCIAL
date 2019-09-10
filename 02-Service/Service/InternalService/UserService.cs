@@ -13,6 +13,7 @@ namespace Service.InternalService
     {
         IEnumerable<UserForGridView> GetAll();
         UserForGridView Get(string userName);
+        UserForGridView GetById(string Id);
     }
 
     public class UserService : IUserService
@@ -48,7 +49,10 @@ namespace Service.InternalService
                     Email = responseDes.Email,
                     Id = responseDes.Id,
                     Roles = _roles,
-                    UserName = responseDes.UserName
+                    UserName = responseDes.UserName,
+                    LastName = responseDes.LastName,
+                    MotherSurname = responseDes.MotherSurname,
+                    Name = responseDes.Name
                 };
 
             }
@@ -89,6 +93,9 @@ namespace Service.InternalService
                         Id = u.Id,
                         Email = u.Email,
                         UserName = u.UserName,
+                        LastName = u.LastName,
+                        MotherSurname = u.MotherSurname,
+                        Name = u.Name,
                         Roles = 
                             (from r in responseRolesArray
                             join r2 in u.Roles
@@ -105,6 +112,42 @@ namespace Service.InternalService
             }
 
             return result;
+        }
+
+        public UserForGridView GetById(string Id)
+        {
+            var result = new UserForGridView();
+            List<ApplicationRole> _roles = new List<ApplicationRole>();
+
+            try
+            {
+                var resultreposnse = Common.RestHelper.DoResourceServerGET(String.Format("/user/GetById/{0}", Id));
+                String json = Newtonsoft.Json.JsonConvert.SerializeObject(resultreposnse.Result);
+                var responseDes = Newtonsoft.Json.JsonConvert.DeserializeObject<ApplicationUser>(json);
+
+
+                foreach (var item in responseDes.Roles)
+                {
+                    _roles.Add(_roleService.Get(new Guid(item.RoleId)));
+                }
+
+                result = new UserForGridView
+                {
+                    Email = responseDes.Email,
+                    Id = responseDes.Id,
+                    Roles = _roles,
+                    UserName = responseDes.UserName,
+                    LastName = responseDes.LastName,
+                    MotherSurname = responseDes.MotherSurname,
+                    Name = responseDes.Name
+                };
+            }
+            catch (Exception e)
+            {
+                logger.Error(e.Message);
+            }
+
+            return result; 
         }
     }
 }

@@ -32,6 +32,7 @@ namespace Service.Config
             container.Register<IRepository<External>>((x) => new Repository<External>(ambientDbContextLocator));
             container.Register<IRepository<ExternalType>>((x) => new Repository<ExternalType>(ambientDbContextLocator));
             container.Register<IRepository<ApplicationParameters>>((x) => new Repository<ApplicationParameters>(ambientDbContextLocator));
+            container.Register<IRepository<Tag>>((x) => new Repository<Tag>(ambientDbContextLocator));
 
             #endregion
 
@@ -50,6 +51,7 @@ namespace Service.Config
             container.Register<IAPIExternalUserService, APIExternalUserService>();
             container.Register<IAPIExternalTypeService, APIExternalTypeService>();
             container.Register<IAPIApplicationParametersService, APIApplicationParametersService>();
+            container.Register<IAPITagService, APITagService>();
 
 
             #endregion
@@ -68,6 +70,7 @@ namespace Service.Config
             container.Register<IExternalUserService, ExternalUserService>();
             container.Register<IExternalTypeService, ExternalTypeService>();
             container.Register<IApplicationParametersService, ApplicationParametersService>();
+            container.Register<ITagService, TagService>();
 
             #endregion
         }

@@ -207,6 +207,18 @@
     <Compile Include="Migrations\201909080612043_ExternalUserLocationsDeleteTestDomainClasses.Designer.cs">
       <DependentUpon>201909080612043_ExternalUserLocationsDeleteTestDomainClasses.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201909100359024_NewEntityTag.cs" />
+    <Compile Include="Migrations\201909100359024_NewEntityTag.Designer.cs">
+      <DependentUpon>201909100359024_NewEntityTag.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909100433401_TagsAddingUserAssignation.cs" />
+    <Compile Include="Migrations\201909100433401_TagsAddingUserAssignation.Designer.cs">
+      <DependentUpon>201909100433401_TagsAddingUserAssignation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909100544302_AddAuditoryFieldsTag.cs" />
+    <Compile Include="Migrations\201909100544302_AddAuditoryFieldsTag.Designer.cs">
+      <DependentUpon>201909100544302_AddAuditoryFieldsTag.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -331,6 +343,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201909080612043_ExternalUserLocationsDeleteTestDomainClasses.resx">
       <DependentUpon>201909080612043_ExternalUserLocationsDeleteTestDomainClasses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909100359024_NewEntityTag.resx">
+      <DependentUpon>201909100359024_NewEntityTag.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909100433401_TagsAddingUserAssignation.resx">
+      <DependentUpon>201909100433401_TagsAddingUserAssignation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909100544302_AddAuditoryFieldsTag.resx">
+      <DependentUpon>201909100544302_AddAuditoryFieldsTag.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

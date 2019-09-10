@@ -655,6 +655,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No Assignation.
+        /// </summary>
+        public static string NoAssignation {
+            get {
+                return ResourceManager.GetString("NoAssignation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Observations.
+        /// </summary>
+        public static string Observations {
+            get {
+                return ResourceManager.GetString("Observations", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Out Number.
         /// </summary>
         public static string OutNumber {
@@ -817,6 +835,51 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Tag.
+        /// </summary>
+        public static string Tag {
+            get {
+                return ResourceManager.GetString("Tag", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Create Tag.
+        /// </summary>
+        public static string Tag_Create_Tile {
+            get {
+                return ResourceManager.GetString("Tag_Create_Tile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit Tag.
+        /// </summary>
+        public static string Tag_Edit_Title {
+            get {
+                return ResourceManager.GetString("Tag_Edit_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tag Code.
+        /// </summary>
+        public static string TagCode {
+            get {
+                return ResourceManager.GetString("TagCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tags.
+        /// </summary>
+        public static string TagMenu {
+            get {
+                return ResourceManager.GetString("TagMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Users.
         /// </summary>
         public static string UsersMenu {
@@ -831,6 +894,42 @@ namespace Resources {
         public static string Value {
             get {
                 return ResourceManager.GetString("Value", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vehicle.
+        /// </summary>
+        public static string Vehicle {
+            get {
+                return ResourceManager.GetString("Vehicle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vehicle Brand.
+        /// </summary>
+        public static string VehicleBrand {
+            get {
+                return ResourceManager.GetString("VehicleBrand", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vehicle Model.
+        /// </summary>
+        public static string VehicleModel {
+            get {
+                return ResourceManager.GetString("VehicleModel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vehicle Year.
+        /// </summary>
+        public static string VehicleYear {
+            get {
+                return ResourceManager.GetString("VehicleYear", resourceCulture);
             }
         }
     }

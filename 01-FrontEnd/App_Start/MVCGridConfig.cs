@@ -266,6 +266,76 @@ namespace FrontEnd
                 })
             );
 
+            MVCGridDefinitionTable.Add("TagGrid", new MVCGridBuilder<Tag>()
+                .WithAuthorizationType(AuthorizationType.AllowAnonymous)
+                .AddColumns(cols =>
+                {
+                    cols.Add("Edit").WithHtmlEncoding(false)
+                        .WithHeaderText(" ")
+                        .WithValueExpression((i, c) => c.UrlHelper.Action("Edit", "Tag", new { Area = "Administration", id = i.Id }))
+                        .WithValueTemplate("<a href={Value} class = 'btn btn-default'>" +
+                        "<span class='glyphicon glyphicon-pencil' aria-hidden='true'></span>" +
+                        "</a>")
+                        .WithCellCssClassExpression(p => p.Id > 0 ? "col-xs-1 warning center" : "col-xs-1 danger");
+                    cols.Add("Delete").WithHtmlEncoding(false)
+                        .WithHeaderText(" ")
+                        .WithValueExpression((i, c) => i.Id.ToString())
+                        .WithValueTemplate("<button class='btn btn-default deleteButton' id='deleteBtnTag' idDelete = '{Value}'>" +
+                        "<span class='glyphicon glyphicon-trash' aria-hidden='true'></span>" +
+                        " </button> ")
+                        .WithCellCssClassExpression(p => p.Id > 0 ? "col-xs-1 danger center" : "col-xs-1 danger");
+                    cols.Add().WithColumnName("Id")
+                        .WithHeaderText("Id")
+                        .WithValueExpression(i => i.Id.ToString()); // use the Value Expression to return the cell text for this column
+                    cols.Add().WithColumnName("TagCode")
+                        .WithHeaderText(Resources.TagCode)
+                        .WithValueExpression(i => i.TagCode);
+                    cols.Add().WithColumnName("VehicleBrand")
+                        .WithHeaderText(Resources.Vehicle)
+                        .WithValueExpression(i => String.Format("{0} {1} {2}",
+                                i.VehicleBrand,
+                                i.VehicleModel,
+                                i.VehicleYear));
+                    cols.Add().WithColumnName("User")
+                        .WithHeaderText(Resources.ColonialMenu)
+                        .WithValueExpression(i => String.Format("{0} {1} {2}",
+                            i.ApplicationUser != null ? i.ApplicationUser.Name : string.Empty,
+                            i.ApplicationUser != null ? i.ApplicationUser.LastName : string.Empty,
+                            i.ApplicationUser != null ? i.ApplicationUser.MotherSurname : string.Empty));
+                    cols.Add().WithColumnName("Observations")
+                        .WithHeaderText(Resources.Observations)
+                        .WithValueExpression(i => i.Observations);
+                    cols.Add().WithColumnName("CreatedAt")
+                        .WithHeaderText("CreatedAt")
+                        .WithValueExpression(i => i.CreatedAt.HasValue ? 
+                            i.CreatedAt.Value.ToString("yyyy-MM-dd HH:mm:ss") : string.Empty);
+                    cols.Add().WithColumnName("UpdatedAt")
+                        .WithHeaderText("UpdatedAt")
+                        .WithValueExpression(i => i.UpdatedAt.HasValue ?
+                            i.UpdatedAt.Value.ToString("yyyy-MM-dd HH:mm:ss") : string.Empty);
+
+
+                })
+                .WithSorting(true, "Id")
+                .WithPaging(true, 10)
+                .WithRetrieveDataMethod((context) =>
+                {
+                    var options = context.QueryOptions;
+                    var result = new QueryResult<Tag>();
+                    ITagService _tagService = DependecyFactory.GetInstance<ITagService>();
+                    var query = _tagService.GetAll().AsQueryable();
+
+                    result.TotalRecords = query.Count();
+
+                    if (options.GetLimitOffset().HasValue)
+                    {
+                        query = query.Skip(options.GetLimitOffset().Value).Take(options.GetLimitRowcount().Value);
+                    }
+                    result.Items = query.ToList();
+                    return result;
+                })
+            );
+
             MVCGridDefinitionTable.Add("ExternalTypeGrid", new MVCGridBuilder<ExternalType>()
                 .WithAuthorizationType(AuthorizationType.AllowAnonymous)
                 .AddColumns(cols =>
