@@ -190,6 +190,28 @@
     <BundleResource Include="Resources\Default.png" />
   </ItemGroup>
   <ItemGroup>
+    <BundleResource Include="Resources\abierto.png" />
+    <BundleResource Include="Resources\acceso.png" />
+    <BundleResource Include="Resources\actuales.png" />
+    <BundleResource Include="Resources\add.png" />
+    <BundleResource Include="Resources\addevento.png" />
+    <BundleResource Include="Resources\ajustes.png" />
     <Content Include="Resources\AppIcon.png" />
+    <BundleResource Include="Resources\boletines.png" />
+    <BundleResource Include="Resources\cancelar.png" />
+    <BundleResource Include="Resources\cerrado.png" />
+    <BundleResource Include="Resources\eventos.png" />
+    <BundleResource Include="Resources\guardar.png" />
+    <BundleResource Include="Resources\login.png" />
+    <BundleResource Include="Resources\LOGO.png" />
+    <BundleResource Include="Resources\logo2.png" />
+    <BundleResource Include="Resources\logo3.png" />
+    <BundleResource Include="Resources\personal.png" />
+    <BundleResource Include="Resources\preferentes.png" />
+    <BundleResource Include="Resources\registro.png" />
+    <BundleResource Include="Resources\Splash.png" />
+    <BundleResource Include="Resources\Splash2.png" />
+    <BundleResource Include="Resources\usuarios.png" />
+    <BundleResource Include="Resources\visitas.png" />
   </ItemGroup>
 </Project>
