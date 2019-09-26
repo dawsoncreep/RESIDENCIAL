@@ -22,6 +22,49 @@ namespace FrontEnd
         public static void RegisterGrids()
         {
 
+            MVCGridDefinitionTable.Add("PermissionRoleGrid", new MVCGridBuilder<PermissionRole>()
+                .WithAuthorizationType(AuthorizationType.AllowAnonymous)
+                .AddColumns(cols =>
+                {
+
+                    cols.Add("Delete").WithHtmlEncoding(false)
+                        .WithHeaderText(" ")
+                        .WithValueExpression((i, c) => i.Id.ToString())
+                        .WithValueTemplate("<button class='btn btn-default deleteButton' id='deleteBtnPermissionRole' idDelete = '{Value}'>" +
+                        "<span class='glyphicon glyphicon-trash' aria-hidden='true'></span>" +
+                        " </button> ")
+                        .WithCellCssClassExpression(p => p.Id > 0 ? "col-xs-1 danger center" : "col-xs-1 danger");
+                    cols.Add().WithColumnName("Id")
+                        .WithHeaderText("Id")
+                        .WithValueExpression(i => i.Id.ToString()); // use the Value Expression to return the cell text for this column
+                    cols.Add().WithColumnName("Permission")
+                        .WithHeaderText(Resources.Permission)
+                        .WithValueExpression(i => i.Permission.Name);
+                    cols.Add().WithColumnName("Role")
+                        .WithHeaderText(Resources.Role)
+                        .WithValueExpression(i => i.ApplicationRole.Name);
+
+                })
+                .WithSorting(true, "Id")
+                .WithPaging(true, 10)
+                .WithRetrieveDataMethod((context) =>
+                {
+                    var options = context.QueryOptions;
+                    var result = new QueryResult<PermissionRole>();
+                    IPermissionRoleService _permissionRoleService = DependecyFactory.GetInstance<IPermissionRoleService>();
+                    var query = _permissionRoleService.GetAll().AsQueryable();
+
+                    result.TotalRecords = query.Count();
+
+                    if (options.GetLimitOffset().HasValue)
+                    {
+                        query = query.Skip(options.GetLimitOffset().Value).Take(options.GetLimitRowcount().Value);
+                    }
+                    result.Items = query.ToList();
+                    return result;
+                })
+            );
+
             MVCGridDefinitionTable.Add("ExternalUserGrid", new MVCGridBuilder<External>()
                 .WithAuthorizationType(AuthorizationType.AllowAnonymous)
                 .AddColumns(cols =>

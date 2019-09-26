@@ -77,7 +77,8 @@ namespace Common
             ExternalUserMenu,
             ExternalType,
             ApplicationParameters,
-            TagMenu
+            TagMenu,
+            PermissionRoleMenu
         }
     }
 

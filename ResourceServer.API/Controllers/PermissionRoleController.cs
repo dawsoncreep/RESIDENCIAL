@@ -1,4 +1,5 @@
 ﻿using Common;
+using Model.Domain;
 using NLog;
 using Service.ExternalService;
 using System;
@@ -43,6 +44,59 @@ namespace ResourceServer.API.Controllers
             {
                 var rolePermissions = _apiPermissionRoleService.GetAll().ToList();
                 return Ok(rolePermissions);
+
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex);
+                return InternalServerError(ex);
+            }
+        }
+
+        [HttpPost]
+        [Route("InsertUpdate")]
+        public IHttpActionResult InsertUpdate(PermissionRole model)
+        {
+
+            try
+            {
+                var rh = _apiPermissionRoleService.InsertUpdate(model);
+                return Ok(rh);
+
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex);
+                return InternalServerError(ex);
+            }
+        }
+
+        [HttpPost]
+        [Route("Delete")]
+        public IHttpActionResult Delete(PermissionRole model)
+        {
+            try
+            {
+                var rh = _apiPermissionRoleService.Delete(model.Id);
+                return Ok(rh);
+
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex);
+                return InternalServerError(ex);
+            }
+
+        }
+
+        [HttpGet]
+        [Route("GetById/{roleId}")]
+        public IHttpActionResult GetById(int roleId)
+        {
+            try
+            {
+                var permissionRole = _apiPermissionRoleService.GetById(roleId);
+                return Ok(permissionRole);
 
             }
             catch (Exception ex)

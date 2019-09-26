@@ -408,4 +408,13 @@
   <data name="NoAssignation" xml:space="preserve">
     <value>No Assignation</value>
   </data>
+  <data name="PermissionRoleMenu" xml:space="preserve">
+    <value>Role-Menu</value>
+  </data>
+  <data name="Role" xml:space="preserve">
+    <value>Role</value>
+  </data>
+  <data name="PermissionRole_Create_Title" xml:space="preserve">
+    <value>Create Permission Role</value>
+  </data>
 </root>

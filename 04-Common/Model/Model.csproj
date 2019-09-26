@@ -67,6 +67,7 @@
     <Compile Include="Auth\ApplicationUser.cs" />
     <Compile Include="AuthorizationServer\AudienceForSuscribe.cs" />
     <Compile Include="Custom\EventForGridView.cs" />
+    <Compile Include="Custom\PermissionRoleForGridViewExtension.cs" />
     <Compile Include="Custom\TagForGridViewExternsion.cs" />
     <Compile Include="Custom\EventForGridViewExternsion.cs" />
     <Compile Include="Custom\ExternalUserForGridView.cs" />

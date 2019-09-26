@@ -1021,6 +1021,7 @@
     <Content Include="Areas\Administration\Views\Tag\Create.cshtml" />
     <Content Include="Areas\Administration\Views\Tag\Edit.cshtml" />
     <Content Include="Areas\Administration\Views\Tag\Index.cshtml" />
+    <Content Include="Areas\Administration\Views\PermissionRole\Create.cshtml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
