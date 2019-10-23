@@ -20,32 +20,30 @@
             </Grid.ColumnDefinitions>
 
 
-            <Button Grid.Row="0" Grid.Column="0"  BackgroundColor="#2c1bb6" 
+            <Button x:Name="BtnGuardar" Grid.Row="0" Grid.Column="0"  BackgroundColor="#2c1bb6" 
                   Image="guardar.png" Text="guardar" TextColor="White" />
             <Button Grid.Row="0" Grid.Column="1" BackgroundColor="#2c1bb6" TextColor="White"
-                  Image="cancelar.png" Text="cancelar"/>
+                  Image="cancelar.png" Text="cancelar" x:Name="btnCancelar"/>
             <Frame Grid.Row="1" Grid.ColumnSpan="2" Grid.RowSpan="4" BackgroundColor="Black">
                 <StackLayout>
                 <StackLayout Orientation="Horizontal" >
-                    <ImageButton  Source="{Binding RutaFoto}" Aspect="Fill" Command="{Binding SeleccionarFotoComand}" 
-                              HeightRequest="100" WidthRequest="100"/>
-                    <StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand" HorizontalOptions="Start" >
-                        <Label  Text="Nombre:" FontAttributes="Bold" Margin="0,20,0,0" FontSize="Small" TextColor="White"/>
-                            <Entry x:Name="lbNombre" Placeholder="Ingresa el nombre" WidthRequest="300" TextColor="White" PlaceholderColor="WhiteSmoke"/>
+                        <ImageButton x:Name="ImFoto"  Source="{Binding RutaFoto}" Aspect="Fill" Command="{Binding SeleccionarFotoComand}" 
+                              HeightRequest="100" WidthRequest="150"/>
+                        <StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand" HorizontalOptions="Start" >
+                            <Label  Text="Nombre:" FontAttributes="Bold" Margin="0,20,0,0" FontSize="Small" TextColor="White"/>
+                            <Entry x:Name="InNombre" Placeholder="Nombre" WidthRequest="300" TextColor="White" PlaceholderColor="WhiteSmoke"/>
+                            <Entry x:Name="InApPat" Placeholder="Apellido Paterno" WidthRequest="300" TextColor="White" PlaceholderColor="WhiteSmoke" />
+                            <Entry x:Name="InApMat" Placeholder="Apellido Materno" WidthRequest="300" TextColor="White" PlaceholderColor="WhiteSmoke" />
+                        </StackLayout>
+
                     </StackLayout>
-                    
-                </StackLayout>
-                <StackLayout >
-                        <Label TextColor="White" Text="Datos del vehiculo" VerticalOptions="Center" HorizontalOptions="Center" FontAttributes="Bold" FontSize="Micro"/>
+                    <StackLayout >
+                        <!-- <Label TextColor="White" Text="Datos del vehiculo" VerticalOptions="Center" HorizontalOptions="Center" FontAttributes="Bold" FontSize="Micro"/> -->
                         <Label TextColor="White" Text="Placas:" FontAttributes="Bold" FontSize="Small" />
-                        <Entry Placeholder="Ingresa n° de placas" TextColor="White"  PlaceholderColor="WhiteSmoke" />
-                        <Label TextColor="White" Text="Marca:" FontAttributes="Bold" FontSize="Small" />
-                        <Entry Placeholder="Ingresa la marca" TextColor="White" PlaceholderColor="WhiteSmoke"/>
-                        <Label TextColor="White" Text="Modelo:" FontAttributes="Bold" FontSize="Small"/>
-                        <Entry Placeholder="Ingresa el modelo" TextColor="White" PlaceholderColor="WhiteSmoke" />
-                        <Label TextColor="White" Text="Color" FontAttributes="Bold" FontSize="Small"/>
-                        <Entry Placeholder="Ingresa el color" TextColor="White" PlaceholderColor="WhiteSmoke" />
-                </StackLayout>
+                        <Entry x:Name="InPlacas" Placeholder="N° de placas" TextColor="White"  PlaceholderColor="WhiteSmoke" />
+                        <Label TextColor="White" Text="Ubicación" FontAttributes="Bold" FontSize="Small" />
+                        <Entry x:Name="InLoca" Placeholder="Ubicación" TextColor="White" PlaceholderColor="WhiteSmoke"/>
+                    </StackLayout>
                 </StackLayout>
             </Frame>
             

@@ -24,42 +24,30 @@
             </Grid.ColumnDefinitions>
 
 
-            <Button Grid.Row="0" Grid.Column="0"  BackgroundColor="#2c1bb6" 
+            <Button Grid.Row="0" Grid.Column="0"  BackgroundColor="#2c1bb6" x:Name="btnGuardar"
                   Image="guardar.png" Text="guardar" TextColor="White" />
             <Button Grid.Row="0" Grid.Column="1" BackgroundColor="#2c1bb6" TextColor="White"
-                  Image="cancelar.png" Text="cancelar"/>
+                  Image="cancelar.png" Text="cancelar" x:Name="btnCancelar"/>
             <Frame Grid.Row="1" Grid.ColumnSpan="2" Grid.RowSpan="4" BackgroundColor="Black">
                 <StackLayout>
                     <StackLayout Orientation="Horizontal" >
-                        <ImageButton  Source="{Binding RutaFoto}" Aspect="Fill" Command="{Binding SeleccionarFotoComand}" 
-                              HeightRequest="100" WidthRequest="100"/>
+                        <ImageButton x:Name="ImFoto"  Source="{Binding RutaFoto}" Aspect="Fill" Command="{Binding SeleccionarFotoComand}" 
+                              HeightRequest="100" WidthRequest="150"/>
                         <StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand" HorizontalOptions="Start" >
                             <Label  Text="Nombre:" FontAttributes="Bold" Margin="0,20,0,0" FontSize="Small" TextColor="White"/>
-                            <Entry x:Name="lbNombre" Placeholder="Ingresa el nombre" WidthRequest="300" TextColor="White" PlaceholderColor="WhiteSmoke"/>
+                            <Entry x:Name="InNombre" Placeholder="Nombre" WidthRequest="300" TextColor="White" PlaceholderColor="WhiteSmoke"/>
+                            <Entry x:Name="InApPat" Placeholder="Apellido Paterno" WidthRequest="300" TextColor="White" PlaceholderColor="WhiteSmoke" />
+                            <Entry x:Name="InApMat" Placeholder="Apellido Materno" WidthRequest="300" TextColor="White" PlaceholderColor="WhiteSmoke" />
                         </StackLayout>
 
                     </StackLayout>
                     <StackLayout >
-
-                        <Label Text="Ultimos ingresos" VerticalOptions="Center" HorizontalOptions="Center" TextColor="White"/>
-
-                        <StackLayout Orientation="Vertical">
-                            <StackLayout Orientation="Horizontal">
-                                <Label Text="Fecha de ingreso:" Margin="15,10,0,0" VerticalOptions="Center" TextColor="White"
-                             HorizontalOptions="Center" FontAttributes="Bold" FontSize="Small" />
-                                <DatePicker MinimumDate="01/01/2019" MaximumDate="12/31/2020" TextColor="White" FontSize="Small" FontAttributes="Bold"
-                                  Date="01/01/2019"   />
-                            </StackLayout>
-                            <ListView>
-                                <ListView.Header>
-                                    <Label Text="Ultimos accesos" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Micro" TextColor="White" />
-                                </ListView.Header>
-
-                            </ListView>
-
-
-                        </StackLayout>
-                   </StackLayout>
+                        <!-- <Label TextColor="White" Text="Datos del vehiculo" VerticalOptions="Center" HorizontalOptions="Center" FontAttributes="Bold" FontSize="Micro"/> -->
+                        <Label TextColor="White" Text="Placas:" FontAttributes="Bold" FontSize="Small" />
+                        <Entry x:Name="InPlacas" Placeholder="N° de placas" TextColor="White"  PlaceholderColor="WhiteSmoke" />
+                        <Label TextColor="White" Text="Ubicación" FontAttributes="Bold" FontSize="Small" />
+                        <Entry x:Name="InLoca" Placeholder="Ubicación" TextColor="White" PlaceholderColor="WhiteSmoke"/>
+                    </StackLayout>
                 </StackLayout>
             </Frame>
 

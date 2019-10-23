@@ -16,6 +16,22 @@ namespace AppResidencial
 		{
 			InitializeComponent ();
             this.BindingContext = new FotoClass();
+            btnCancelar.Clicked += BtnCancelar_Clicked;
+            btnGuardar.Clicked += BtnGuardar_Clicked;
 		}
-	}
+
+        private void BtnGuardar_Clicked(object sender, EventArgs e)
+        {
+            Model.Domain.Event evento = new Model.Domain.Event()
+            {
+                
+            };
+                
+        }
+
+        private void BtnCancelar_Clicked(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+    }
 }

@@ -24,7 +24,6 @@ namespace Model.Domain
         [DataType(DataType.DateTime)]
         public DateTime DateStart { get; set; }
 
-
         [Display(Name = "DateEnd", ResourceType = typeof(Resources.Resources))]
         [DataType(DataType.DateTime)]
         public DateTime DateEnd { get; set; }

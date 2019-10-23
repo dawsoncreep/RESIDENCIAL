@@ -7,6 +7,7 @@ namespace TestMobile
         static void Main(string[] args)
         {
 
+
             Model.Domain.EventType et = new Model.Domain.EventType()
             {
                 Description = "PoolParty"

@@ -24,9 +24,9 @@
 
 
             <Button Grid.Row="0" Grid.Column="0"  BackgroundColor="#2c1bb6" 
-                  Image="guardar.png" Text="guardar" TextColor="White" />
+                  Image="guardar.png" Text="guardar" TextColor="White" x:Name="btnGuardar" />
             <Button Grid.Row="0" Grid.Column="1" BackgroundColor="#2c1bb6" TextColor="White"
-                  Image="cancelar.png" Text="cancelar"/>
+                  Image="cancelar.png" Text="cancelar" x:Name="btnCancelar" />
             <Frame Grid.Row="1" Grid.ColumnSpan="2" Grid.RowSpan="4" BackgroundColor="Black">
                 <StackLayout>
                     <StackLayout Orientation="Horizontal" >
@@ -60,7 +60,7 @@
                             <StackLayout Orientation="Horizontal">
                                 <Label Text="Hora de inicio:         "  VerticalOptions="Center" TextColor="White"
                    HorizontalOptions="Center" FontAttributes="Bold" FontSize="Small" />
-                                <TimePicker  TextColor="White"   FontAttributes="Bold" FontSize="Small"/>
+                                <TimePicker  TextColor="White"   FontAttributes="Bold" FontSize="Small" x:Name="tpHorainicio"/>
                             </StackLayout>
                             <StackLayout Orientation="Horizontal">
                                 <Label Text="Fecha de termino:   "  VerticalOptions="Center"  TextColor="White" FontAttributes="Bold" FontSize="Small"
