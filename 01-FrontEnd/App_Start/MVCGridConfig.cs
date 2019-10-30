@@ -21,6 +21,57 @@ namespace FrontEnd
 
         public static void RegisterGrids()
         {
+            MVCGridDefinitionTable.Add("BulletinsGrid", new MVCGridBuilder<Bulletin>()
+                .WithAuthorizationType(AuthorizationType.AllowAnonymous)
+                .AddColumns(cols =>
+                {
+                    cols.Add("Edit").WithHtmlEncoding(false)
+                        .WithHeaderText(" ")
+                        .WithValueExpression((i, c) => c.UrlHelper.Action("Edit", "Bulletins", new { Area = "Administration", id = i.Id }))
+                        .WithValueTemplate("<a href={Value} class = 'btn btn-default'>" +
+                        "<span class='glyphicon glyphicon-pencil' aria-hidden='true'></span>" +
+                        "</a>")
+                        .WithCellCssClassExpression(p => p.Id > 0 ? "col-xs-1 warning center" : "col-xs-1 danger");
+                    cols.Add("Delete").WithHtmlEncoding(false)
+                        .WithHeaderText(" ")
+                        .WithValueExpression((i, c) => i.Id.ToString())
+                        .WithValueTemplate("<button class='btn btn-default deleteButton' id='deletedBulletin' idDelete = '{Value}'>" +
+                        "<span class='glyphicon glyphicon-trash' aria-hidden='true'></span>" +
+                        " </button> ")
+                        .WithCellCssClassExpression(p => p.Id > 0 ? "col-xs-1 danger center" : "col-xs-1 danger");
+                    cols.Add().WithColumnName("Id")
+                        .WithHeaderText("Id")
+                        .WithValueExpression(i => i.Id.ToString()); // use the Value Expression to return the cell text for this column
+                    cols.Add().WithColumnName("Name")
+                        .WithHeaderText(Resources.Permission)
+                        .WithValueExpression(i => i.Name);
+                    cols.Add().WithColumnName("Description")
+                        .WithHeaderText(Resources.Description)
+                        .WithValueExpression(i => i.Description);
+                    cols.Add().WithColumnName("Date")
+                        .WithHeaderText(Resources.Role)
+                        .WithValueExpression(i => i.DateCreated.ToString());
+
+                })
+                .WithSorting(true, "Id")
+                .WithPaging(true, 10)
+                .WithRetrieveDataMethod((context) =>
+                {
+                    var options = context.QueryOptions;
+                    var result = new QueryResult<Bulletin>();
+                    IBulletinesService _bulletinesService = DependecyFactory.GetInstance<IBulletinesService>();
+                    var query = _bulletinesService.GetAll().AsQueryable();
+
+                    result.TotalRecords = query.Count();
+
+                    if (options.GetLimitOffset().HasValue)
+                    {
+                        query = query.Skip(options.GetLimitOffset().Value).Take(options.GetLimitRowcount().Value);
+                    }
+                    result.Items = query.ToList();
+                    return result;
+                })
+            );
 
             MVCGridDefinitionTable.Add("PermissionRoleGrid", new MVCGridBuilder<PermissionRole>()
                 .WithAuthorizationType(AuthorizationType.AllowAnonymous)

@@ -219,6 +219,14 @@
     <Compile Include="Migrations\201909100544302_AddAuditoryFieldsTag.Designer.cs">
       <DependentUpon>201909100544302_AddAuditoryFieldsTag.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201909261959187_BoletinesModel.cs" />
+    <Compile Include="Migrations\201909261959187_BoletinesModel.Designer.cs">
+      <DependentUpon>201909261959187_BoletinesModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909262001438_BoletinesModel-1.cs" />
+    <Compile Include="Migrations\201909262001438_BoletinesModel-1.Designer.cs">
+      <DependentUpon>201909262001438_BoletinesModel-1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -352,6 +360,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201909100544302_AddAuditoryFieldsTag.resx">
       <DependentUpon>201909100544302_AddAuditoryFieldsTag.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909261959187_BoletinesModel.resx">
+      <DependentUpon>201909261959187_BoletinesModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909262001438_BoletinesModel-1.resx">
+      <DependentUpon>201909262001438_BoletinesModel-1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

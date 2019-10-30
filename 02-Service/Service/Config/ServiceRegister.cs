@@ -52,6 +52,7 @@ namespace Service.Config
             container.Register<IAPIExternalTypeService, APIExternalTypeService>();
             container.Register<IAPIApplicationParametersService, APIApplicationParametersService>();
             container.Register<IAPITagService, APITagService>();
+            container.Register<IAPIBulletinsService, APIBulletinsService>();
 
 
             #endregion
@@ -71,6 +72,7 @@ namespace Service.Config
             container.Register<IExternalTypeService, ExternalTypeService>();
             container.Register<IApplicationParametersService, ApplicationParametersService>();
             container.Register<ITagService, TagService>();
+            container.Register<IBulletinesService, BulletinsService>();
 
             #endregion
         }

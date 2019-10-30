@@ -199,6 +199,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Administration\AdministrationAreaRegistration.cs" />
+    <Compile Include="Areas\Administration\Controllers\BulletinsController.cs" />
     <Compile Include="Areas\Administration\Controllers\EventTypeController.cs" />
     <Compile Include="Areas\Administration\Controllers\ApplicationParametersController.cs" />
     <Compile Include="Areas\Administration\Controllers\TagController.cs" />
@@ -1022,6 +1023,7 @@
     <Content Include="Areas\Administration\Views\Tag\Edit.cshtml" />
     <Content Include="Areas\Administration\Views\Tag\Index.cshtml" />
     <Content Include="Areas\Administration\Views\PermissionRole\Create.cshtml" />
+    <Content Include="Areas\Administration\Views\Bulletins\Index.cshtml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
