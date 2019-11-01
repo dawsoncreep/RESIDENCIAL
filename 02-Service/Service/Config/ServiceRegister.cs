@@ -33,6 +33,10 @@ namespace Service.Config
             container.Register<IRepository<ExternalType>>((x) => new Repository<ExternalType>(ambientDbContextLocator));
             container.Register<IRepository<ApplicationParameters>>((x) => new Repository<ApplicationParameters>(ambientDbContextLocator));
             container.Register<IRepository<Tag>>((x) => new Repository<Tag>(ambientDbContextLocator));
+            container.Register<IRepository<BinnacleType>>((x) => new Repository<BinnacleType>(ambientDbContextLocator));
+            container.Register<IRepository<ExternalBinnacle>>((x) => new Repository<ExternalBinnacle>(ambientDbContextLocator));
+            container.Register<IRepository<ExternalBinnaclePhoto>>((x) => new Repository<ExternalBinnaclePhoto>(ambientDbContextLocator));
+            container.Register<IRepository<BinnaclePhotoType>>((x) => new Repository<BinnaclePhotoType>(ambientDbContextLocator));
 
             #endregion
 
@@ -52,6 +56,8 @@ namespace Service.Config
             container.Register<IAPIExternalTypeService, APIExternalTypeService>();
             container.Register<IAPIApplicationParametersService, APIApplicationParametersService>();
             container.Register<IAPITagService, APITagService>();
+            container.Register<IAPIBinnacleTypeService, APIBinnacleTypeService>();
+            container.Register<IAPIExternalBinnacleService, APIExternalBinnacleService>();
 
 
             #endregion
@@ -71,6 +77,8 @@ namespace Service.Config
             container.Register<IExternalTypeService, ExternalTypeService>();
             container.Register<IApplicationParametersService, ApplicationParametersService>();
             container.Register<ITagService, TagService>();
+            container.Register<IBinnacleTypeService, BinnacleTypeService>();
+            container.Register<IExternalBinnacleService, ExternalBinnacleService>();
 
             #endregion
         }

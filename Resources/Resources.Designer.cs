@@ -142,6 +142,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Binnacles.
+        /// </summary>
+        public static string BinnacleMenu {
+            get {
+                return ResourceManager.GetString("BinnacleMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Binnacle Type.
+        /// </summary>
+        public static string BinnacleType {
+            get {
+                return ResourceManager.GetString("BinnacleType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cancel.
         /// </summary>
         public static string Cancel {
@@ -156,6 +174,15 @@ namespace Resources {
         public static string CatalogsMenu {
             get {
                 return ResourceManager.GetString("CatalogsMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Colonial.
+        /// </summary>
+        public static string Colonial {
+            get {
+                return ResourceManager.GetString("Colonial", resourceCulture);
             }
         }
         
@@ -268,6 +295,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Entry Date.
+        /// </summary>
+        public static string EntryDate {
+            get {
+                return ResourceManager.GetString("EntryDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Not enough information to carry out the request..
         /// </summary>
         public static string ErrorMessage_InsufficientInformation {
@@ -358,11 +394,29 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Exit Date.
+        /// </summary>
+        public static string ExitDate {
+            get {
+                return ResourceManager.GetString("ExitDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to External User.
         /// </summary>
         public static string External {
             get {
                 return ResourceManager.GetString("External", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to External Users Binnacle.
+        /// </summary>
+        public static string ExternalBinnacle {
+            get {
+                return ResourceManager.GetString("ExternalBinnacle", resourceCulture);
             }
         }
         
@@ -790,6 +844,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Create Permission Role.
+        /// </summary>
+        public static string PermissionRole_Create_Title {
+            get {
+                return ResourceManager.GetString("PermissionRole_Create_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Role-Menu.
+        /// </summary>
+        public static string PermissionRoleMenu {
+            get {
+                return ResourceManager.GetString("PermissionRoleMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to An unexpected error has occurred during the {0} process.
         /// </summary>
         public static string Process_ErrorMessage {
@@ -804,6 +876,15 @@ namespace Resources {
         public static string Process_OkMessage {
             get {
                 return ResourceManager.GetString("Process_OkMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Role.
+        /// </summary>
+        public static string Role {
+            get {
+                return ResourceManager.GetString("Role", resourceCulture);
             }
         }
         

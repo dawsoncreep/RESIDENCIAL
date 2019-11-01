@@ -408,6 +408,12 @@
   <data name="NoAssignation" xml:space="preserve">
     <value>No Assignation</value>
   </data>
+  <data name="EntryDate" xml:space="preserve">
+    <value>Entry Date</value>
+  </data>
+  <data name="ExitDate" xml:space="preserve">
+    <value>Exit Date</value>
+  </data>
   <data name="PermissionRoleMenu" xml:space="preserve">
     <value>Role-Menu</value>
   </data>
@@ -416,5 +422,17 @@
   </data>
   <data name="PermissionRole_Create_Title" xml:space="preserve">
     <value>Create Permission Role</value>
+  </data>
+  <data name="BinnacleType" xml:space="preserve">
+    <value>Binnacle Type</value>
+  </data>
+  <data name="ExternalBinnacle" xml:space="preserve">
+    <value>External Users Binnacle</value>
+  </data>
+  <data name="Colonial" xml:space="preserve">
+    <value>Colonial</value>
+  </data>
+  <data name="BinnacleMenu" xml:space="preserve">
+    <value>Binnacles</value>
   </data>
 </root>

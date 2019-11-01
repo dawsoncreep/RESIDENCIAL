@@ -44,6 +44,8 @@ namespace Persistence.DatabaseContext
         public virtual DbSet<ApplicationParameters> ApplicationParameters { get; set; }
         public virtual DbSet<Bulletin> Bulletin { get; set; }
         public virtual DbSet<Tag> Tag { get; set; }
+        public virtual DbSet<ExternalBinnaclePhoto> ExternalBinnaclePhoto  { get; set; }
+        public virtual DbSet<PhotoType> PhotoType { get; set; }
 
 
         public ApplicationDbContext()

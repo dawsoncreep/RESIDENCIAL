@@ -219,6 +219,54 @@
     <Compile Include="Migrations\201909100544302_AddAuditoryFieldsTag.Designer.cs">
       <DependentUpon>201909100544302_AddAuditoryFieldsTag.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201909190441514_ExternalBinnacle_1.cs" />
+    <Compile Include="Migrations\201909190441514_ExternalBinnacle_1.Designer.cs">
+      <DependentUpon>201909190441514_ExternalBinnacle_1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909190445400_ExternalBinnacle_11.cs" />
+    <Compile Include="Migrations\201909190445400_ExternalBinnacle_11.Designer.cs">
+      <DependentUpon>201909190445400_ExternalBinnacle_11.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909190449360_PhotoType_1.cs" />
+    <Compile Include="Migrations\201909190449360_PhotoType_1.Designer.cs">
+      <DependentUpon>201909190449360_PhotoType_1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909190451412_PhotoType_11.cs" />
+    <Compile Include="Migrations\201909190451412_PhotoType_11.Designer.cs">
+      <DependentUpon>201909190451412_PhotoType_11.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910241953154_AddBinnacleTypeFields.cs" />
+    <Compile Include="Migrations\201910241953154_AddBinnacleTypeFields.Designer.cs">
+      <DependentUpon>201910241953154_AddBinnacleTypeFields.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910300432580_ExternalBinnacleAddSessionFields.cs" />
+    <Compile Include="Migrations\201910300432580_ExternalBinnacleAddSessionFields.Designer.cs">
+      <DependentUpon>201910300432580_ExternalBinnacleAddSessionFields.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910300437121_ExternalBinnacleASessionIdNullable.cs" />
+    <Compile Include="Migrations\201910300437121_ExternalBinnacleASessionIdNullable.Designer.cs">
+      <DependentUpon>201910300437121_ExternalBinnacleASessionIdNullable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910300444019_BinnaclePhoto.cs" />
+    <Compile Include="Migrations\201910300444019_BinnaclePhoto.Designer.cs">
+      <DependentUpon>201910300444019_BinnaclePhoto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910300445268_BinnaclePhoto1.cs" />
+    <Compile Include="Migrations\201910300445268_BinnaclePhoto1.Designer.cs">
+      <DependentUpon>201910300445268_BinnaclePhoto1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910300448469_BinnaclePhoto2.cs" />
+    <Compile Include="Migrations\201910300448469_BinnaclePhoto2.Designer.cs">
+      <DependentUpon>201910300448469_BinnaclePhoto2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910300450596_BinnaclePhotoType.cs" />
+    <Compile Include="Migrations\201910300450596_BinnaclePhotoType.Designer.cs">
+      <DependentUpon>201910300450596_BinnaclePhotoType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910300635340_BinnaclePhotoType1.cs" />
+    <Compile Include="Migrations\201910300635340_BinnaclePhotoType1.Designer.cs">
+      <DependentUpon>201910300635340_BinnaclePhotoType1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -352,6 +400,42 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201909100544302_AddAuditoryFieldsTag.resx">
       <DependentUpon>201909100544302_AddAuditoryFieldsTag.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909190441514_ExternalBinnacle_1.resx">
+      <DependentUpon>201909190441514_ExternalBinnacle_1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909190445400_ExternalBinnacle_11.resx">
+      <DependentUpon>201909190445400_ExternalBinnacle_11.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909190449360_PhotoType_1.resx">
+      <DependentUpon>201909190449360_PhotoType_1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909190451412_PhotoType_11.resx">
+      <DependentUpon>201909190451412_PhotoType_11.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910241953154_AddBinnacleTypeFields.resx">
+      <DependentUpon>201910241953154_AddBinnacleTypeFields.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910300432580_ExternalBinnacleAddSessionFields.resx">
+      <DependentUpon>201910300432580_ExternalBinnacleAddSessionFields.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910300437121_ExternalBinnacleASessionIdNullable.resx">
+      <DependentUpon>201910300437121_ExternalBinnacleASessionIdNullable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910300444019_BinnaclePhoto.resx">
+      <DependentUpon>201910300444019_BinnaclePhoto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910300445268_BinnaclePhoto1.resx">
+      <DependentUpon>201910300445268_BinnaclePhoto1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910300448469_BinnaclePhoto2.resx">
+      <DependentUpon>201910300448469_BinnaclePhoto2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910300450596_BinnaclePhotoType.resx">
+      <DependentUpon>201910300450596_BinnaclePhotoType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910300635340_BinnaclePhotoType1.resx">
+      <DependentUpon>201910300635340_BinnaclePhotoType1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

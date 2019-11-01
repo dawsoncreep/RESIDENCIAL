@@ -5,11 +5,14 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Model.Domain
 {
-    public class BinnacleType :  ISoftDeleted
+    public class BinnacleType 
     {
         [Key]
+        [Display(Name = "Id", ResourceType = typeof(Resources.Resources))]
         public int Id { get; set; }
-        public bool Deleted { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
+        [Display(Name = "Description", ResourceType = typeof(Resources.Resources))]
+        [MaxLength(100)]
         public string Description { get; set; }
     }
 }

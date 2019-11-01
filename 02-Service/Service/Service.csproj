@@ -99,6 +99,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AuthorizationServerService.cs" />
+    <Compile Include="ExternalService\APIBinnacleTypeService.cs" />
+    <Compile Include="ExternalService\APIExternalBinnacleService.cs" />
     <Compile Include="ExternalService\APIEventService.cs" />
     <Compile Include="ExternalService\APIEventTypeService.cs" />
     <Compile Include="ExternalService\APIApplicationParametersService.cs" />
@@ -116,6 +118,7 @@
     <Compile Include="InternalService\BinnacleTypeService.cs" />
     <Compile Include="Config\ServiceRegister.cs" />
     <Compile Include="InternalService\ApplicationParameterService.cs" />
+    <Compile Include="InternalService\ExternalBinnacleService.cs" />
     <Compile Include="InternalService\EventTypeService.cs" />
     <Compile Include="InternalService\EventService.cs" />
     <Compile Include="ExternalService\APIRoleService.cs" />

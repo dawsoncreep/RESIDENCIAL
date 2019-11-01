@@ -67,6 +67,7 @@
     <Compile Include="Auth\ApplicationUser.cs" />
     <Compile Include="AuthorizationServer\AudienceForSuscribe.cs" />
     <Compile Include="Custom\EventForGridView.cs" />
+    <Compile Include="Custom\ExternalBinnacleForGridView.cs" />
     <Compile Include="Custom\PermissionRoleForGridViewExtension.cs" />
     <Compile Include="Custom\TagForGridViewExternsion.cs" />
     <Compile Include="Custom\EventForGridViewExternsion.cs" />
@@ -88,6 +89,7 @@
     <Compile Include="Domain\Bulletin.cs" />
     <Compile Include="Domain\External.cs" />
     <Compile Include="Domain\ExternalBinnacle.cs" />
+    <Compile Include="Domain\ExternalBinnaclePhoto.cs" />
     <Compile Include="Domain\ExternalPhoto.cs" />
     <Compile Include="Domain\Event.cs" />
     <Compile Include="Domain\EventLocation.cs" />
@@ -104,6 +106,7 @@
     <Compile Include="Domain\Permission.cs" />
     <Compile Include="Domain\PermissionRole.cs" />
     <Compile Include="Domain\PermissionUser.cs" />
+    <Compile Include="Domain\PhotoType.cs" />
     <Compile Include="Domain\Tag.cs" />
     <Compile Include="Domain\UserBinnacle.cs" />
     <Compile Include="Helper\AuditEntity.cs" />

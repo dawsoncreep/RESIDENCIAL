@@ -209,6 +209,9 @@
     <Compile Include="Areas\Administration\Controllers\LocationUserController.cs" />
     <Compile Include="Areas\Administration\Controllers\PermissionController.cs" />
     <Compile Include="Areas\Administration\Controllers\PermissionRoleController.cs" />
+    <Compile Include="Areas\Binnacle\BinnacleAreaRegistration.cs" />
+    <Compile Include="Areas\Binnacle\Controllers\ExternalBinnacleController.cs" />
+    <Compile Include="Areas\Binnacle\Controllers\LocalBinnacleController.cs" />
     <Compile Include="Areas\Colonial\ColonialAreaRegistration.cs" />
     <Compile Include="Areas\Colonial\Controllers\EventController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
@@ -967,15 +970,11 @@
     <Content Include="Assets\node_modules\modernizr\LICENSE" />
     <Content Include="Assets\node_modules\modernizr\node_modules\.bin\markdown-it" />
     <Content Include="Assets\node_modules\modernizr\node_modules\.bin\markdown-it.cmd" />
-    <Content Include="Assets\node_modules\modernizr\node_modules\.bin\markdown-it.ps1" />
     <Content Include="Assets\node_modules\modernizr\node_modules\.bin\mkdirp" />
     <Content Include="Assets\node_modules\modernizr\node_modules\.bin\mkdirp.cmd" />
-    <Content Include="Assets\node_modules\modernizr\node_modules\.bin\mkdirp.ps1" />
     <Content Include="Assets\node_modules\modernizr\node_modules\.bin\r.js.cmd" />
-    <Content Include="Assets\node_modules\modernizr\node_modules\.bin\r.js.ps1" />
     <Content Include="Assets\node_modules\modernizr\node_modules\.bin\r_js" />
     <Content Include="Assets\node_modules\modernizr\node_modules\.bin\r_js.cmd" />
-    <Content Include="Assets\node_modules\modernizr\node_modules\.bin\r_js.ps1" />
     <Content Include="Assets\node_modules\modernizr\package.json" />
     <Content Include="Assets\node_modules\modernizr\README.md" />
     <Content Include="Assets\node_modules\Respond.js\.gitignore" />
@@ -1022,6 +1021,9 @@
     <Content Include="Areas\Administration\Views\Tag\Edit.cshtml" />
     <Content Include="Areas\Administration\Views\Tag\Index.cshtml" />
     <Content Include="Areas\Administration\Views\PermissionRole\Create.cshtml" />
+    <Content Include="Areas\Binnacle\Views\web.config" />
+    <Content Include="Areas\Binnacle\Views\Shared\_BinnacleMenu.cshtml" />
+    <Content Include="Areas\Binnacle\Views\ExternalBinnacle\Index.cshtml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -1065,6 +1067,8 @@
   <ItemGroup>
     <Folder Include="App_Data\Logs\" />
     <Folder Include="Areas\Administration\Models\" />
+    <Folder Include="Areas\Binnacle\Models\" />
+    <Folder Include="Areas\Binnacle\Views\LocalBinnacle\" />
     <Folder Include="Areas\Colonial\Models\" />
     <Folder Include="Areas\GuardHouse\Models\" />
     <Folder Include="Areas\Reports\Controllers\" />

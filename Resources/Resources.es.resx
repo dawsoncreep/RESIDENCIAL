@@ -390,4 +390,25 @@
   <data name="NoAssignation" xml:space="preserve">
     <value>No Asignado</value>
   </data>
+  <data name="EntryDate" xml:space="preserve">
+    <value>Fecha Entrada</value>
+  </data>
+  <data name="ExitDate" xml:space="preserve">
+    <value>Fecha Salida</value>
+  </data>
+  <data name="Role" xml:space="preserve">
+    <value>Rol</value>
+  </data>
+  <data name="BinnacleType" xml:space="preserve">
+    <value>Tipo de Bitácora</value>
+  </data>
+  <data name="ExternalBinnacle" xml:space="preserve">
+    <value>Bitácora de Usuarios Externos</value>
+  </data>
+  <data name="Colonial" xml:space="preserve">
+    <value>Colono</value>
+  </data>
+  <data name="BinnacleMenu" xml:space="preserve">
+    <value>Bitácoras</value>
+  </data>
 </root>

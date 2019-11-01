@@ -1,0 +1,27 @@
+﻿@model Model.Custom.ExternalBinnacleForGridView
+@{
+    Layout = "~/Areas/Binnacle/Views/Shared/_BinnacleMenu.cshtml";
+
+}
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <p>
+            @Html.ActionLink(Resources.Create, "Create", new { }, new { @class = "btn btn-default" })
+        </p>
+        <div class="col-xs-3 col-xs-offset-3">
+            @Html.LabelFor(model => model.ExternalTypes, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-12">
+
+                @Html.DropDownListFor(model => model.ExternalId,
+                    Model.lstExternalType.Select(s => new SelectListItem { Text = s.Description, Value = s.Id.ToString() }).ToList(),
+                    new { @class = "form-control btn btn-default dropdown-toggle", type = "button" })
+
+                @Html.ValidationMessageFor(model => model.ExternalTypes, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+    <div class="panel-body">
+        @Html.MVCGrid("ExternalBinnacleGrid")
+    </div>
+</div>

@@ -6,13 +6,13 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Model.Domain
 {
-    public class BinnaclePhoto : AuditEntity, ISoftDeleted
+    public class BinnaclePhoto : AuditEntity
     {
         [Key]
         public int Id { get; set; }
-        public ICollection<Binnacle> BinnacleId { get; set; }
-        public ICollection<BinnacleType> BinnacleTypeId { get; set; }
-
-        public bool Deleted { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public Binnacle Binnacle { get; set; }
+        public ExternalBinnacle ExternalBinnacle { get; set; }
+        public BinnaclePhotoType BinnaclePhotoType { get; set; }
+        public String Image { get; set; }
     }
 }

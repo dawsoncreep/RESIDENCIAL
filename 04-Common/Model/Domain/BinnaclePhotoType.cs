@@ -6,11 +6,14 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Model.Domain
 {
-    public class BinnaclePhotoType : ISoftDeleted
+    public class BinnaclePhotoType 
     {
         [Key]
+        [Display(Name = "Id", ResourceType = typeof(Resources.Resources))]
         public int Id { get; set; }
-        public bool Deleted { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
+        [Display(Name = "Description", ResourceType = typeof(Resources.Resources))]
+        [MaxLength(100)]
         public string Description { get; set; }
     }
 }
