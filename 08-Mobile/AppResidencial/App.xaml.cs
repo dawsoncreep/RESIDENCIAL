@@ -2,6 +2,7 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace AppResidencial
 {
@@ -11,7 +12,7 @@ namespace AppResidencial
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new HomePage())
+            MainPage = new NavigationPage(new LoginPage())
             {
                 BarBackgroundColor = Color.Black,
                 BarTextColor = Color.White,

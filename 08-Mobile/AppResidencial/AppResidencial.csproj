@@ -10,11 +10,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
-    <PackageReference Include="Xam.Plugin.Media" Version="4.0.1.5" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3-beta2" />
+    <PackageReference Include="Xam.Plugin.Media" Version="4.4.6-beta" />
     <PackageReference Include="Xam.Plugins.Notifier" Version="3.0.1" />
-    <PackageReference Include="Xamarin.Forms" Version="3.6.0.344457" />
-    <PackageReference Include="XLabs.Forms" Version="2.0.5782" />
+    <PackageReference Include="Xamarin.Forms" Version="4.4.0.936621-pre1" />
+    <PackageReference Include="XLabs.Forms" Version="2.3.0-pre05" />
   </ItemGroup>
 
   <ItemGroup>

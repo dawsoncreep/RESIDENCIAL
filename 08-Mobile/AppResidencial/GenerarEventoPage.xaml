@@ -29,56 +29,47 @@
                   Image="cancelar.png" Text="cancelar" x:Name="btnCancelar" />
             <Frame Grid.Row="1" Grid.ColumnSpan="2" Grid.RowSpan="4" BackgroundColor="Black">
                 <StackLayout>
-                    <StackLayout Orientation="Horizontal" >
-                        <ImageButton  Source="{Binding RutaFoto}" Aspect="Fill" Command="{Binding SeleccionarFotoComand}" 
-                              HeightRequest="100" WidthRequest="100"/>
-                        <StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand" HorizontalOptions="Start" >
-                            <Label  Text="Nombre:" FontAttributes="Bold"  FontSize="Small" TextColor="White"/>
-                            <Entry x:Name="lbNombre" Placeholder="Ingresa el nombre" WidthRequest="300" TextColor="White" PlaceholderColor="WhiteSmoke"/>
-                        </StackLayout>
-
-                    </StackLayout>
-                    <StackLayout >
-                        <!--
-                        <controls:CheckBox x:Name="CheckCodigo" DefaultText="Generar codigo QR" FontSize="14" TextColor="White"/>-->
-                        <StackLayout Orientation="Horizontal">
-                            <Switch  BackgroundColor="White" OnColor="Green"/>
-                            <Label Text="Generar codigo QR" TextColor="White" FontSize="Small"/>
+                    
+                        
+                              <Label Text="Datos del evento" VerticalOptions="Center" TextColor="White" Margin="0,20,0,0"
+                              HorizontalOptions="Center"/>
+                        <StackLayout >
+                            <Label TextColor="White" Text="Descripción:" FontAttributes="Bold" FontSize="Small" />
+                            <Entry x:Name="InDesc" Placeholder="Descripción" TextColor="White"  PlaceholderColor="WhiteSmoke" />
                             
                         </StackLayout>
-                        
-                        <Label Text="Datos del evento" VerticalOptions="Center" TextColor="White" Margin="0,20,0,0"
-                   HorizontalOptions="Center"/>
 
                         <StackLayout Orientation="Vertical">
                             <StackLayout Orientation="Horizontal">
                                 <Label Text="Fecha de inicio:       "  VerticalOptions="Center"  TextColor="White" FontAttributes="Bold" FontSize="Small"
-                   HorizontalOptions="Center"   />
+                                 HorizontalOptions="Center"   />
                                 <DatePicker MinimumDate="01/01/2019" MaximumDate="12/31/2020" TextColor="White" FontAttributes="Bold" FontSize="Small"
-                        Date="01/01/2019"  />
+                                     Date="01/01/2019" x:Name="dpstart" />
                             </StackLayout>
                             <StackLayout Orientation="Horizontal">
                                 <Label Text="Hora de inicio:         "  VerticalOptions="Center" TextColor="White"
-                   HorizontalOptions="Center" FontAttributes="Bold" FontSize="Small" />
-                                <TimePicker  TextColor="White"   FontAttributes="Bold" FontSize="Small" x:Name="tpHorainicio"/>
+                              HorizontalOptions="Center" FontAttributes="Bold" FontSize="Small" />
+                                <TimePicker  TextColor="White"   FontAttributes="Bold" FontSize="Small"  x:Name="tpStart"/>
                             </StackLayout>
                             <StackLayout Orientation="Horizontal">
                                 <Label Text="Fecha de termino:   "  VerticalOptions="Center"  TextColor="White" FontAttributes="Bold" FontSize="Small"
-                   HorizontalOptions="Center" />
+                                HorizontalOptions="Center" />
                                 <DatePicker MinimumDate="01/01/2019" MaximumDate="12/31/2020" TextColor="White" FontAttributes="Bold" FontSize="Small"
-                        Date="01/01/2019"  />
+                        Date="01/01/2019"  x:Name="dpEnd"/>
                             </StackLayout>
                             <StackLayout Orientation="Horizontal">
                                 <Label Text="Hora de termino:     "  VerticalOptions="Center" FontAttributes="Bold" FontSize="Small"
-                   HorizontalOptions="Center" TextColor="White" />
-                                <TimePicker TextColor="White" FontAttributes="Bold" FontSize="Small"/>
+                                HorizontalOptions="Center" TextColor="White" />
+                                <TimePicker TextColor="White" FontAttributes="Bold" FontSize="Small" x:Name="tpEnd"/>
                             </StackLayout>
 
+                             <StackLayout >
+                            <Label TextColor="White" Text="Ubicación:" FontAttributes="Bold" FontSize="Small" />
+                            <Entry x:Name="InLoc" Placeholder="Ubicación" TextColor="White"  PlaceholderColor="WhiteSmoke" />
 
-
+                             </StackLayout>
+                    
                         </StackLayout>
-
-                    </StackLayout>
                 </StackLayout>
             </Frame>
 

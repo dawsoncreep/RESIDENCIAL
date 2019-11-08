@@ -23,7 +23,7 @@
             <Button Grid.Row="0" Grid.Column="0"  BackgroundColor="#2c1bb6" 
                   Image="guardar.png" Text="guardar" TextColor="White" x:Name="btnGuardar" />
             <Button Grid.Row="0" Grid.Column="1" BackgroundColor="#2c1bb6" TextColor="White"
-                  Image="cancelar.png" Text="cancelar" x:Name="btnCancelar" x:Name="btnCancelar" />
+                  Image="cancelar.png" Text="cancelar" x:Name="btnCancelar"  />
             <Frame Grid.Row="1" Grid.ColumnSpan="2" Grid.RowSpan="4" BackgroundColor="Black">
                 <StackLayout>
                     <StackLayout Orientation="Horizontal" >

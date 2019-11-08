@@ -42,7 +42,6 @@
 
                     </StackLayout>
                     <StackLayout >
-                        <!-- <Label TextColor="White" Text="Datos del vehiculo" VerticalOptions="Center" HorizontalOptions="Center" FontAttributes="Bold" FontSize="Micro"/> -->
                         <Label TextColor="White" Text="Placas:" FontAttributes="Bold" FontSize="Small" />
                         <Entry x:Name="InPlacas" Placeholder="N° de placas" TextColor="White"  PlaceholderColor="WhiteSmoke" />
                         <Label TextColor="White" Text="Ubicación" FontAttributes="Bold" FontSize="Small" />
