@@ -1,7 +1,8 @@
 ﻿'use strict';
 
 var commonObj = {
-    _idToDelete: 0
+    _idToDelete: 0,
+    _idToShowDetails: 0
 };
 
 
@@ -14,14 +15,32 @@ function getIdToDelete() {
     return commonObj._idToDelete;
 }
 
+function setIdBinnacleToShowDetails(id) {
+    console.log(id);
+    commonObj._idToShowDetails = id;
+}
+
+function getIdBinnacleToShowDetails() {
+    return commonObj._idToShowDetails;
+}
+
+
 function showDeleteModal(questionText) {
     $('#DeleteItemModal').modal('show');
 }
+
+
 
 function hideDeleteModal() {
     $('#DeleteItemModal').modal('hide');
 }
 
+
+/*Detalle Modal*/
+function showBinnacleDetailsModal() {
+    $('#DetailsBinnacleModal').modal('show');
+}
+/*Detalle Modal*/
 
 $(document).ready(function () {
     $('#deleteItemButton').on('click', function (event) {
@@ -51,6 +70,7 @@ $(document).ready(function () {
 
             }
         });
+
     });
 
     $('.deleteButton').on('click', function (event) {
@@ -59,5 +79,9 @@ $(document).ready(function () {
         setIdToDelete($(this).attr('iddelete'));
         showDeleteModal();
     });
+
+
+
+
 
 });

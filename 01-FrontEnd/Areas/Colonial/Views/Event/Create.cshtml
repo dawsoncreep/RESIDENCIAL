@@ -37,7 +37,7 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.DateStart, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.DateStart, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.EditorFor(model => model.DateStart, new { htmlAttributes = new { @class = "form-control", data_provide = "datepicker" } })
                     @Html.ValidationMessageFor(model => model.DateStart, "", new { @class = "text-danger" })
                 </div>
             </div>
@@ -46,8 +46,8 @@
                 @Html.LabelFor(model => model.DateEnd, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
                     <div class="input-group date" data-provide="datepicker">
-                        @Html.EditorFor(model => model.DateEnd, new { htmlAttributes = new { @class = "form-control" } })
-                        <div class="input-group-addon" >
+                        @Html.EditorFor(model => model.DateEnd, new { htmlAttributes = new { @class = "form-control", data_provide = "datepicker" } })
+                        <div class="input-group-addon">
                             <span class="glyphicon glyphicon-th"></span>
                         </div>
                     </div>
@@ -73,23 +73,23 @@
 
                     @Html.DropDownListFor(model => model.EventTypeId,
                         Model.lstEventType.Select(s => new SelectListItem { Text = s.Description, Value = s.Id.ToString() }).ToList(),
-                        new { @class = "form-control btn btn-default dropdown-toggle", type = "button" })
+                        new { @class = "form-control btn btn-default dropdown-toggle", type = "button", eventTypeCheck = Url.Action("IsAttachedToExternalEvent", "Event") })
 
                     @Html.ValidationMessageFor(model => model.EventType, "", new { @class = "text-danger" })
                 </div>
             </div>
-
-            @*<div class="form-group">
-                @Html.LabelFor(model => model.External, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-
-                    @Html.DropDownListFor(model => model.ExternalId,
-                        Model.lstEventType.Select(s => new SelectListItem { Text = s.Description, Value = s.Id.ToString() }).ToList(),
-                        new { @class = "form-control btn btn-default dropdown-toggle", type = "button" })
-
-                    @Html.ValidationMessageFor(model => model.External, "", new { @class = "text-danger" })
+           
+            <div class="form-group" id="externalUserDiv">
+                @Html.Hidden("lstJSONExternalsHidden", Model.lstJSONExternal)
+                @Html.HiddenFor(model => model.ExternalId)
+                <div class="col-md-2">
+                    <br />
                 </div>
-            </div>*@
+                <div class="col-md-10">
+                    <div id="lstJSONExternals" ></div>
+
+                </div>
+            </div>
 
 
             <div class="form-group">

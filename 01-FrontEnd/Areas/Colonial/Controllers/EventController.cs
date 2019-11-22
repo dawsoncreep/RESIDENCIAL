@@ -17,6 +17,7 @@ namespace FrontEnd.Areas.Colonial.Controllers
         private readonly IEventService _eventService = DependecyFactory.GetInstance<IEventService>();
         private readonly IEventTypeService _eventTypeService = DependecyFactory.GetInstance<IEventTypeService>();
         private readonly ILocationService _location = DependecyFactory.GetInstance<ILocationService>();
+        private readonly IExternalUserService _externaluser = DependecyFactory.GetInstance<IExternalUserService>();
         private static ILogger logger = LogManager.GetCurrentClassLogger();
 
         public EventController()
@@ -38,7 +39,21 @@ namespace FrontEnd.Areas.Colonial.Controllers
             EventForGridView model = new EventForGridView();
             model.lstEventType = _eventTypeService.GetAll().ToList();
             model.lstLocation = _location.GetByUserName(CurrentUserHelper.Get.UserName).ToList();
-            model.lstExternal = new List<External>() { };
+            model.lstJSONExternal = Newtonsoft.Json.JsonConvert.SerializeObject(_externaluser.GetAll().Where(w => model.lstLocation.
+                Select(s => s.Id.ToString()).Contains(w.Location.Id.ToString())).ToList().Select(s =>
+                    new
+                    {
+                       text = String.Format("{0} {1} {2}",s.Name,s.FirstName,s.LastName),
+                       value = s.Id,
+                       selected = false,
+                       description = String.Format("{0}",s.ExternalType.Description),
+                       imageSrc = s.Image
+                    }));
+            
+
+            
+
+
             return View(model);
         }
 
@@ -56,15 +71,19 @@ namespace FrontEnd.Areas.Colonial.Controllers
                 }
                 else
                 {
+
                     model.Location = _location.GetById(Convert.ToInt32(model.LocationId));
                     model.EventType = _eventTypeService.GetById(Convert.ToInt32(model.EventTypeId));
-                    //dummy external.
-                    model.External = new External
+
+                    if(model.EventType.IsTiedToExternalUser && String.IsNullOrEmpty(model.ExternalId))
                     {
-                        FirstName = "VELEZ",
-                        LastName = "GUZMAN",
-                        Name = "MANUEL"
-                    };
+                        ModelState.AddModelError("EventForGridView.ExternalId",
+                            String.Format("{0} {1}",Resources.Resources.External, Resources.Resources.Required));
+
+                        return RedirectToAction("Index", "Event", new { Area = "Colonial" });
+                    }
+                    
+                    model.External = _externaluser.GetById(Convert.ToInt32(model.ExternalId));
 
                     var rh = _eventService.InsertUpdate(model.ToEvent());
                     return RedirectToAction("Index", "Event", new { Area = "Colonial" });
@@ -82,11 +101,31 @@ namespace FrontEnd.Areas.Colonial.Controllers
         {
             var model = _eventService.GetById(id).ToEventForGridView();
             model.lstEventType = _eventTypeService.GetAll().ToList();
-            model.lstLocation = _location.GetByUserName(CurrentUserHelper.Get.UserName).ToList();
-            model.lstExternal = new List<External>() { };
+            model.EventTypeId = model.EventTypeId;
 
+            model.lstLocation = _location.GetByUserName(CurrentUserHelper.Get.UserName).ToList();
+            model.LocationId = model.LocationId;
+
+            model.lstJSONExternal = Newtonsoft.Json.JsonConvert.SerializeObject(_externaluser.GetAll().Where(w => model.lstLocation.
+                Select(s => s.Id.ToString()).Contains(w.Location.Id.ToString())).ToList().Select(s =>
+                    new
+                    {
+                        text = String.Format("{0} {1} {2}", s.Name, s.FirstName, s.LastName),
+                        value = s.Id,
+                        selected = s.Id == model.External.Id ? true : false,
+                        description = String.Format("{0}", s.ExternalType.Description),
+                        imageSrc = s.Image
+                    }));
             return View(model);
         }
+
+        [HttpGet]
+        public ActionResult IsAttachedToExternalEvent(String eventTypeId)
+        {
+            EventType evtType = _eventTypeService.GetById(Convert.ToInt32(eventTypeId));
+            return new JsonResult {Data = evtType.IsTiedToExternalUser, JsonRequestBehavior= JsonRequestBehavior.AllowGet } ;
+        }
+
 
         // POST: Colonial/Event/Edit/5
         [HttpPost]
@@ -107,6 +146,16 @@ namespace FrontEnd.Areas.Colonial.Controllers
 
                     model.Location = _location.GetById(Convert.ToInt32(model.LocationId));
                     model.EventType = _eventTypeService.GetById(Convert.ToInt32(model.EventTypeId));
+
+                    if (model.EventType.IsTiedToExternalUser && String.IsNullOrEmpty(model.ExternalId))
+                    {
+                        ModelState.AddModelError("EventForGridView.ExternalId",
+                            String.Format("{0} {1}", Resources.Resources.External, Resources.Resources.Required));
+
+                        return RedirectToAction("Index", "Event", new { Area = "Colonial" });
+                    }
+
+                    model.External = _externaluser.GetById(Convert.ToInt32(model.ExternalId));
 
                     var rh = _eventService.InsertUpdate(model.ToEvent());
                     return RedirectToAction("Index", "Event", new { Area = "Colonial" });

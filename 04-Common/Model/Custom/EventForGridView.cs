@@ -51,7 +51,9 @@ namespace Model.Custom
 
         public List<EventType> lstEventType { get; set; }
 
-        public List<External> lstExternal { get; set; }
+        public String lstJSONExternal { get; set; }
+
+
 
 
     }

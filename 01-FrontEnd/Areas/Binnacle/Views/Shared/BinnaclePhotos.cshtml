@@ -1,0 +1,23 @@
+﻿@model ExternalBinnacle
+
+<table class="table-striped table-responsive col-xs-12" >
+    <thead>
+        <tr>
+            <th> Description </th>
+            <th> Photo </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.ExternalBinnaclePhoto)
+        {
+            <tr>
+                <td class="col-xs-3">
+                    @item.BinnaclePhotoType.Description
+                </td>
+                <td class="col-xs-9">
+                    <img src="@item.Image" alt="@item.BinnaclePhotoType.Description" class="img-responsive" />
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

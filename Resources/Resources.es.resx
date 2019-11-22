@@ -411,4 +411,10 @@
   <data name="BinnacleMenu" xml:space="preserve">
     <value>Bitácoras</value>
   </data>
+  <data name="TiedToExternalUser" xml:space="preserve">
+    <value>Ligado a Usuario Externo</value>
+  </data>
+  <data name="Required" xml:space="preserve">
+    <value>Requerido</value>
+  </data>
 </root>

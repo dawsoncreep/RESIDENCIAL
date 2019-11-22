@@ -880,6 +880,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Required.
+        /// </summary>
+        public static string Required {
+            get {
+                return ResourceManager.GetString("Required", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Role.
         /// </summary>
         public static string Role {
@@ -957,6 +966,15 @@ namespace Resources {
         public static string TagMenu {
             get {
                 return ResourceManager.GetString("TagMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tied To External User.
+        /// </summary>
+        public static string TiedToExternalUser {
+            get {
+                return ResourceManager.GetString("TiedToExternalUser", resourceCulture);
             }
         }
         

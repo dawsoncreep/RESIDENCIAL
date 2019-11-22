@@ -448,6 +448,9 @@ namespace FrontEnd
                     cols.Add().WithColumnName("Description")
                         .WithHeaderText("Description")
                         .WithValueExpression(i => i.Description);
+                    cols.Add().WithColumnName("IsTiedToExternalUser")
+                        .WithHeaderText(Resources.TiedToExternalUser)
+                        .WithValueExpression(i => i.IsTiedToExternalUser ? "True" : "False");
                 })
                 .WithSorting(true, "Id")
                 .WithPaging(true, 10)
@@ -658,62 +661,74 @@ namespace FrontEnd
                 })
             );
 
-
-            MVCGridDefinitionTable.Add("ExternalBinnacleGrid", new MVCGridBuilder<ExternalBinnacle>()
-                .WithAuthorizationType(AuthorizationType.AllowAnonymous)
-                .AddColumns(cols =>
-                {
-                    cols.Add().WithColumnName("Id")
-                        .WithHeaderText("Id")
-                        .WithValueExpression(i => i.Id.ToString()); // use the Value Expression to return the cell text for this column
-                    cols.Add().WithColumnName("EntryDate")
-                        .WithHeaderText("EntryDate")
-                        .WithValueExpression(i => i.EntryDate.ToString("yyyy-MM-dd HH:mm:ss"));
-                    cols.Add().WithColumnName("ExitDate")
-                        .WithHeaderText("ExitDate")
-                        .WithValueExpression(i => i.ExitDate.Value != null ? i.ExitDate.Value.ToString("yyyy-MM-dd HH:mm:ss") : "");
-                    cols.Add().WithColumnName("ExternalName")
-                        .WithHeaderText("ExternalName")
-                        .WithValueExpression(i => i.ExternalName);
-                    cols.Add().WithColumnName("UserName")
-                        .WithHeaderText("UserName")
-                        .WithValueExpression(i => i.ColonialName);
-                    cols.Add().WithColumnName("LicencePlate")
-                        .WithHeaderText("LicencePlate")
-                        .WithValueExpression(i => i.LicensePlateText);
-                    cols.Add().WithColumnName("ExternalType")
-                        .WithHeaderText("ExternalType")
-                        .WithValueExpression(i => i.ExternalTypeText);
-                    cols.Add("Image").WithHtmlEncoding(false)
-                        .WithHeaderText(" ")
-                        .WithValueTemplate("<img class='img-responsive img-thumbnail' id='imgExternalUser' src='{Model.Image}' />")
-                        .WithCellCssClassExpression(p => p.External.Image != null ? "col-xs-1 danger center" : "col-xs-1 danger");
-
-                })
-                .WithSorting(true, "Id")
-                .WithPaging(true, 10)
-                .WithRetrieveDataMethod((context) =>
-                {
-                    var options = context.QueryOptions;
-                    var result = new QueryResult<ExternalBinnacle>();
-                    IExternalBinnacleService _externalBinnacleService = DependecyFactory.GetInstance<IExternalBinnacleService>();
-                    var query = _externalBinnacleService.GetAll().AsQueryable();
-
-                    result.TotalRecords = query.Count();
-
-                    if (options.GetLimitOffset().HasValue)
+            try
+            {
+                MVCGridDefinitionTable.Add("ExternalBinnacleGrid", new MVCGridBuilder<ExternalBinnacle>()
+                    .WithAuthorizationType(AuthorizationType.AllowAnonymous)
+                    .AddColumns(cols =>
                     {
-                        query = query.Skip(options.GetLimitOffset().Value).Take(options.GetLimitRowcount().Value);
-                    }
-                    result.Items = query.ToList();
-                    return result;
+                        cols.Add("Id").WithHtmlEncoding(false)
+                            .WithHeaderText("Id")
+                            .WithValueExpression((i, c) => i.Id.ToString())
+                            .WithValueTemplate("<button class='btn btn-default binnacleDetails' id='binnacleDetailsBtn' " +
+                            " href= '{Value}' >" +
+                            "<span class='glyphicon glyphicon-eye-open' aria-hidden='true'></span>" +
+                            " </button> ")
+                            .WithValueExpression((p, c) => c.UrlHelper.Action("Details", "ExternalBinnacle", new { Area= "Binnacle", Id = p.Id }));
+                        cols.Add().WithColumnName("EntryDate")
+                            .WithHeaderText("EntryDate")
+                            .WithValueExpression(i => i.EntryDate.ToString("yyyy-MM-dd HH:mm:ss"));
+                        cols.Add().WithColumnName("ExitDate")
+                            .WithHeaderText("ExitDate")
+                            .WithValueExpression(i => i.ExitDate.HasValue ? i.ExitDate.Value.ToString("yyyy-MM-dd HH:mm:ss") : "");
+                        cols.Add().WithColumnName("ExternalName")
+                            .WithHeaderText("ExternalName")
+                            .WithValueExpression(i => i.ExternalName);
+                        cols.Add().WithColumnName("UserName")
+                            .WithHeaderText("UserName")
+                            .WithValueExpression(i => i.ColonialName);
+                        cols.Add().WithColumnName("LicencePlate")
+                            .WithHeaderText("LicencePlate")
+                            .WithValueExpression(i => i.LicensePlateText);
+                        cols.Add().WithColumnName("ExternalType")
+                            .WithHeaderText("ExternalType")
+                            .WithValueExpression(i => i.ExternalTypeText);
+                        cols.Add("Image").WithHtmlEncoding(false)
+                            .WithHeaderText(" ")
+                            .WithValueTemplate("<img class='img-responsive img-thumbnail' id='imgExternalUser' src='{Model.External.Image}' />")
+                            .WithCellCssClassExpression(p => p.External.Image != null ? "col-xs-1 danger center" : "col-xs-1 danger");
+
+                    })
+                    .WithSorting(true, "Id")
+                    .WithPaging(true, 10)
+                    .WithRetrieveDataMethod((context) =>
+                    {
+                        var options = context.QueryOptions;
+                        var result = new QueryResult<ExternalBinnacle>();
+                        IExternalBinnacleService _externalBinnacleService = DependecyFactory.GetInstance<IExternalBinnacleService>();
+                        var query = _externalBinnacleService.GetAll().AsQueryable();
+
+                        result.TotalRecords = query.Count();
+
+                        if (options.GetLimitOffset().HasValue)
+                        {
+                            query = query.Skip(options.GetLimitOffset().Value).Take(options.GetLimitRowcount().Value);
+                        }
+                        result.Items = query.ToList();
+                        return result;
                     //return new QueryResult<Permission>()
                     //{
                     //    Items = items,
                     //    TotalRecords = items.Count()
                     //};
                 })
-            );
+                );
+
+            }
+            catch(Exception ex)
+            {
+
+            }
 
         }
     }

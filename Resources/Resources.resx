@@ -435,4 +435,10 @@
   <data name="BinnacleMenu" xml:space="preserve">
     <value>Binnacles</value>
   </data>
+  <data name="TiedToExternalUser" xml:space="preserve">
+    <value>Tied To External User</value>
+  </data>
+  <data name="Required" xml:space="preserve">
+    <value>Required</value>
+  </data>
 </root>

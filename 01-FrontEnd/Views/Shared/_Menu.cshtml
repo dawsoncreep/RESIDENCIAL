@@ -66,7 +66,7 @@
 
                                 </li>
 
-</li>
+
                                 @if (MenuByPermissions.isUserAuthorized(Enums.PermissionMenuId.CatalogsMenu))
                                 {
                                     <li class="dropdown-submenu">
@@ -113,6 +113,24 @@
                             <ul class="dropdown-menu">
                                 <li>
                                     @Html.getMenu(Enums.PermissionMenuId.EventMenu,null)
+                                </li>
+                            </ul>
+                        </li>
+                    }
+                    @if (MenuByPermissions.isUserAuthorized(Enums.PermissionMenuId.BinnacleMenu))
+                    {
+                        <li class="dropdown">
+                            <a class="dropdown-toggle"
+                               data-toggle="dropdown" 
+                               role="button" 
+                               aria-haspopup="true" 
+                               aria-expanded="false">
+                                @Resources.BinnacleMenu
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    @Html.getMenu(Enums.PermissionMenuId.BinnacleMenu, null)
                                 </li>
                             </ul>
                         </li>

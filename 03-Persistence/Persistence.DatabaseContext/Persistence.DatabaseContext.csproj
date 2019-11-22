@@ -267,6 +267,10 @@
     <Compile Include="Migrations\201910300635340_BinnaclePhotoType1.Designer.cs">
       <DependentUpon>201910300635340_BinnaclePhotoType1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201911062325308_EventTypesTiedToExternalUsers.cs" />
+    <Compile Include="Migrations\201911062325308_EventTypesTiedToExternalUsers.Designer.cs">
+      <DependentUpon>201911062325308_EventTypesTiedToExternalUsers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -436,6 +440,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201910300635340_BinnaclePhotoType1.resx">
       <DependentUpon>201910300635340_BinnaclePhotoType1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911062325308_EventTypesTiedToExternalUsers.resx">
+      <DependentUpon>201911062325308_EventTypesTiedToExternalUsers.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

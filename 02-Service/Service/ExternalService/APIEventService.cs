@@ -26,17 +26,20 @@ namespace Service.ExternalService
         private readonly IRepository<Event> _eventRepo;
         private readonly IRepository<EventType> _eventTypeRepo;
         private readonly IRepository<Location> _locationRepo;
+        private readonly IRepository<External> _external;
 
         public APIEventService(
             IDbContextScopeFactory dbContextScopeFactory,
             IRepository<Event> eventRepo,
             IRepository<EventType> eventTypeRepo,
-            IRepository<Location> locationRepo)
+            IRepository<Location> locationRepo,
+            IRepository<External> external)
         {
             _dbContextScopeFactory = dbContextScopeFactory;
             _eventRepo = eventRepo;
             _eventTypeRepo = eventTypeRepo;
             _locationRepo = locationRepo;
+            _external = external;
         }
 
         public ResponseHelper Delete(int id)
@@ -71,7 +74,7 @@ namespace Service.ExternalService
             {
                 using (var ctx = _dbContextScopeFactory.CreateReadOnly())
                 {
-                    result = new List<Event>(_eventRepo.GetAll(et => et.EventType, l => l.Location));
+                    result = new List<Event>(_eventRepo.GetAll(et => et.EventType, l => l.Location, ex => ex.External));
                 }
 
                 return result;
@@ -90,7 +93,7 @@ namespace Service.ExternalService
             {
                 using (var ctx = _dbContextScopeFactory.CreateReadOnly())
                 {
-                    rh.Result = _eventRepo.SingleOrDefault(s => s.Id == id, l => l.Location, et => et.EventType);
+                    rh.Result = _eventRepo.SingleOrDefault(s => s.Id == id, l => l.Location, et => et.EventType, ex => ex.External);
                 }
                 rh.SetResponse(true);
                 return rh;
@@ -122,6 +125,8 @@ namespace Service.ExternalService
                         model.EventType = _eventTypeRepo.
                             Find(f => f.Id == model.EventType.Id).SingleOrDefault();
                         _eventRepo.Insert(model);
+                        model.External = _external.
+                            Find(f => f.Id == model.External.Id).SingleOrDefault();
                     }
                     else
                     {

@@ -21,7 +21,8 @@ namespace FrontEnd.App_Start
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Assets/node_modules/bootstrap/dist/js/bootstrap.js",
-                      "~/Assets/node_modules/Respond.js/dest/respond.js"));
+                      "~/Assets/node_modules/Respond.js/dest/respond.js",
+                      "~/Assets/node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/enums").Include(
                       "~/Assets/js/enums.js"));
@@ -42,16 +43,25 @@ namespace FrontEnd.App_Start
                 "~/Assets/js/Colonial/*.js"
                 ));
 
+            bundles.Add(new ScriptBundle("~/bundles/binnacle").Include(
+                "~/Assets/js/Binnacle/*.js"
+                ));
+
             
 
             bundles.Add(new ScriptBundle("~/bundles/common").Include(
                 "~/Assets/js/common.js"
                 ));
 
+            bundles.Add(new ScriptBundle("~/bundles/plugins").Include(
+                "~/Assets/node_modules/ddslick/dist/jquery.ddslick.min.js"
+                ));
+
 
             bundles.Add(new StyleBundle("~/Content/bootstraptheme").Include(
                     "~/Assets/node_modules/bootstrap/dist/css/bootstrap-theme.css",
-                    "~/Assets/css/site.css"));
+                    "~/Assets/css/site.css",
+                    "~/Assets/node_modules/bootstrap-datepicker/dist/css/bootstrap-datepicker.css"));
 
             bundles.Add(new StyleBundle("~/Content/fontawesome").Include(
                 "~/Assets/node_modules/font-awesome/css/font-awesome.css"

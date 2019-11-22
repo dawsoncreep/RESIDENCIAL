@@ -16,6 +16,9 @@ namespace Model.Domain
         [MaxLength(100)]
         public string Description { get; set; }
 
+        [Display(Name = "TiedToExternalUser", ResourceType = typeof(Resources.Resources))]
+        public bool IsTiedToExternalUser { get; set; }
+
 
     }
 }

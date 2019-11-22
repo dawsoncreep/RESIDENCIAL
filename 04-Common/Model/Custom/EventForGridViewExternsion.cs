@@ -33,6 +33,7 @@ namespace Model.Custom
                 Description = model.Description,
                 EventType = model.EventType,
                 External = model.External,
+                ExternalId = model.External.Id.ToString(),
                 EventTypeId = model.EventType.Id.ToString(),
                 LocationId = model.Location.Id.ToString(),
                 Id = model.Id,

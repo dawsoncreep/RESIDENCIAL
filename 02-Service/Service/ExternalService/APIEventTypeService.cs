@@ -120,6 +120,7 @@ namespace Service.ExternalService
                     else
                     {
                         permissionById.Description = model.Description;
+                        permissionById.IsTiedToExternalUser = model.IsTiedToExternalUser;
                         _eventTypeRepo.Update(permissionById);
                     }
 
