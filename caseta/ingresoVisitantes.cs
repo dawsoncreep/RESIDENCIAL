@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace caseta
 {
-    public partial class ingresoVisitantes : Form
+    public partial class Frm_IngresoVisita : Form
     {
-        public ingresoVisitantes()
+        public Frm_IngresoVisita()
         {
             InitializeComponent();
         }

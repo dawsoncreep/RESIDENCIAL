@@ -1,6 +1,6 @@
 ﻿namespace caseta
 {
-    partial class ingresoVisitantes
+    partial class Frm_IngresoVisita
     {
         /// <summary>
         /// Required designer variable.
@@ -29,258 +29,377 @@
         private void InitializeComponent()
         {
             this.gbingreso = new System.Windows.Forms.GroupBox();
-            this.gbCamaras = new System.Windows.Forms.GroupBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.btnBuscaDomicilio = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.gbVisitantesActuales = new System.Windows.Forms.GroupBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.Gbx_Busqueda = new System.Windows.Forms.GroupBox();
             this.button3 = new System.Windows.Forms.Button();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.Pbx_ = new System.Windows.Forms.PictureBox();
+            this.gbCamaras = new System.Windows.Forms.GroupBox();
+            this.Tbx_Desc = new System.Windows.Forms.TextBox();
+            this.Lbl_Desc = new System.Windows.Forms.Label();
+            this.Btn_PAcceso = new System.Windows.Forms.Button();
+            this.Pb_PlacaT = new System.Windows.Forms.PictureBox();
+            this.Pb_Pdelantera = new System.Windows.Forms.PictureBox();
+            this.Pb_Face = new System.Windows.Forms.PictureBox();
+            this.btnBuscaDomicilio = new System.Windows.Forms.Button();
+            this.Tbx_Domicilio = new System.Windows.Forms.TextBox();
+            this.Tbx_Nombre = new System.Windows.Forms.TextBox();
+            this.Tbx_PLacas = new System.Windows.Forms.TextBox();
+            this.Cbx_RType = new System.Windows.Forms.ComboBox();
+            this.Lbl_RType = new System.Windows.Forms.Label();
+            this.Lbl_Domicilio = new System.Windows.Forms.Label();
+            this.Lbl_Nombre = new System.Windows.Forms.Label();
+            this.Lbl_Placas = new System.Windows.Forms.Label();
+            this.Lbl_Credential = new System.Windows.Forms.Label();
+            this.Pb_Credential = new System.Windows.Forms.PictureBox();
+            this.Lbl_Face = new System.Windows.Forms.Label();
+            this.Lbl_PlacaT = new System.Windows.Forms.Label();
+            this.Lbl_PlacaD = new System.Windows.Forms.Label();
+            this.gbVisitantesActuales = new System.Windows.Forms.GroupBox();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.gbingreso.SuspendLayout();
-            this.gbCamaras.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            this.gbVisitantesActuales.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            this.Gbx_Busqueda.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pbx_)).BeginInit();
+            this.gbCamaras.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Pb_PlacaT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pb_Pdelantera)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pb_Face)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pb_Credential)).BeginInit();
+            this.gbVisitantesActuales.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.SuspendLayout();
             // 
             // gbingreso
             // 
-            this.gbingreso.Controls.Add(this.groupBox1);
+            this.gbingreso.Controls.Add(this.Gbx_Busqueda);
             this.gbingreso.Controls.Add(this.gbCamaras);
             this.gbingreso.Dock = System.Windows.Forms.DockStyle.Left;
             this.gbingreso.Location = new System.Drawing.Point(0, 0);
+            this.gbingreso.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gbingreso.Name = "gbingreso";
-            this.gbingreso.Size = new System.Drawing.Size(559, 727);
+            this.gbingreso.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbingreso.Size = new System.Drawing.Size(419, 591);
             this.gbingreso.TabIndex = 0;
             this.gbingreso.TabStop = false;
             this.gbingreso.Text = "Ingreso Visitantes";
             // 
+            // Gbx_Busqueda
+            // 
+            this.Gbx_Busqueda.Controls.Add(this.button3);
+            this.Gbx_Busqueda.Controls.Add(this.textBox9);
+            this.Gbx_Busqueda.Controls.Add(this.pictureBox10);
+            this.Gbx_Busqueda.Controls.Add(this.button2);
+            this.Gbx_Busqueda.Controls.Add(this.textBox4);
+            this.Gbx_Busqueda.Controls.Add(this.Pbx_);
+            this.Gbx_Busqueda.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.Gbx_Busqueda.Location = new System.Drawing.Point(2, 407);
+            this.Gbx_Busqueda.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Gbx_Busqueda.Name = "Gbx_Busqueda";
+            this.Gbx_Busqueda.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Gbx_Busqueda.Size = new System.Drawing.Size(415, 182);
+            this.Gbx_Busqueda.TabIndex = 1;
+            this.Gbx_Busqueda.TabStop = false;
+            this.Gbx_Busqueda.Text = "Busqueda";
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(342, 125);
+            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(68, 34);
+            this.button3.TabIndex = 25;
+            this.button3.Text = "Seleccionar";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // textBox9
+            // 
+            this.textBox9.Location = new System.Drawing.Point(218, 125);
+            this.textBox9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox9.Multiline = true;
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(121, 104);
+            this.textBox9.TabIndex = 24;
+            this.textBox9.Text = "Placas, Nombre, Domicilio";
+            // 
+            // pictureBox10
+            // 
+            this.pictureBox10.Location = new System.Drawing.Point(11, 125);
+            this.pictureBox10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Size = new System.Drawing.Size(202, 103);
+            this.pictureBox10.TabIndex = 23;
+            this.pictureBox10.TabStop = false;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(342, 17);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(68, 34);
+            this.button2.TabIndex = 22;
+            this.button2.Text = "Seleccionar";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(218, 17);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox4.Multiline = true;
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(121, 104);
+            this.textBox4.TabIndex = 21;
+            this.textBox4.Text = "Placas, Nombre, Domicilio";
+            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            // 
+            // Pbx_
+            // 
+            this.Pbx_.Location = new System.Drawing.Point(11, 17);
+            this.Pbx_.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Pbx_.Name = "Pbx_";
+            this.Pbx_.Size = new System.Drawing.Size(202, 103);
+            this.Pbx_.TabIndex = 20;
+            this.Pbx_.TabStop = false;
+            // 
             // gbCamaras
             // 
-            this.gbCamaras.Controls.Add(this.textBox12);
-            this.gbCamaras.Controls.Add(this.label14);
-            this.gbCamaras.Controls.Add(this.textBox11);
-            this.gbCamaras.Controls.Add(this.label13);
-            this.gbCamaras.Controls.Add(this.textBox10);
-            this.gbCamaras.Controls.Add(this.label12);
-            this.gbCamaras.Controls.Add(this.button4);
-            this.gbCamaras.Controls.Add(this.pictureBox5);
-            this.gbCamaras.Controls.Add(this.pictureBox2);
-            this.gbCamaras.Controls.Add(this.pictureBox3);
+            this.gbCamaras.Controls.Add(this.Tbx_Desc);
+            this.gbCamaras.Controls.Add(this.Lbl_Desc);
+            this.gbCamaras.Controls.Add(this.Btn_PAcceso);
+            this.gbCamaras.Controls.Add(this.Pb_PlacaT);
+            this.gbCamaras.Controls.Add(this.Pb_Pdelantera);
+            this.gbCamaras.Controls.Add(this.Pb_Face);
             this.gbCamaras.Controls.Add(this.btnBuscaDomicilio);
-            this.gbCamaras.Controls.Add(this.textBox3);
-            this.gbCamaras.Controls.Add(this.textBox2);
-            this.gbCamaras.Controls.Add(this.textBox1);
-            this.gbCamaras.Controls.Add(this.comboBox1);
-            this.gbCamaras.Controls.Add(this.label8);
-            this.gbCamaras.Controls.Add(this.label7);
-            this.gbCamaras.Controls.Add(this.label6);
-            this.gbCamaras.Controls.Add(this.label5);
-            this.gbCamaras.Controls.Add(this.label4);
-            this.gbCamaras.Controls.Add(this.pictureBox4);
-            this.gbCamaras.Controls.Add(this.label3);
-            this.gbCamaras.Controls.Add(this.label2);
-            this.gbCamaras.Controls.Add(this.label1);
+            this.gbCamaras.Controls.Add(this.Tbx_Domicilio);
+            this.gbCamaras.Controls.Add(this.Tbx_Nombre);
+            this.gbCamaras.Controls.Add(this.Tbx_PLacas);
+            this.gbCamaras.Controls.Add(this.Cbx_RType);
+            this.gbCamaras.Controls.Add(this.Lbl_RType);
+            this.gbCamaras.Controls.Add(this.Lbl_Domicilio);
+            this.gbCamaras.Controls.Add(this.Lbl_Nombre);
+            this.gbCamaras.Controls.Add(this.Lbl_Placas);
+            this.gbCamaras.Controls.Add(this.Lbl_Credential);
+            this.gbCamaras.Controls.Add(this.Pb_Credential);
+            this.gbCamaras.Controls.Add(this.Lbl_Face);
+            this.gbCamaras.Controls.Add(this.Lbl_PlacaT);
+            this.gbCamaras.Controls.Add(this.Lbl_PlacaD);
             this.gbCamaras.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gbCamaras.Location = new System.Drawing.Point(3, 18);
+            this.gbCamaras.Location = new System.Drawing.Point(2, 15);
+            this.gbCamaras.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gbCamaras.Name = "gbCamaras";
-            this.gbCamaras.Size = new System.Drawing.Size(553, 476);
+            this.gbCamaras.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbCamaras.Size = new System.Drawing.Size(415, 387);
             this.gbCamaras.TabIndex = 0;
             this.gbCamaras.TabStop = false;
             this.gbCamaras.Text = "Cámaras";
             // 
-            // pictureBox5
+            // Tbx_Desc
             // 
-            this.pictureBox5.Location = new System.Drawing.Point(0, 38);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(269, 127);
-            this.pictureBox5.TabIndex = 19;
-            this.pictureBox5.TabStop = false;
+            this.Tbx_Desc.Location = new System.Drawing.Point(110, 320);
+            this.Tbx_Desc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Tbx_Desc.Name = "Tbx_Desc";
+            this.Tbx_Desc.Size = new System.Drawing.Size(228, 20);
+            this.Tbx_Desc.TabIndex = 30;
             // 
-            // pictureBox2
+            // Lbl_Desc
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(278, 38);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(269, 127);
-            this.pictureBox2.TabIndex = 18;
-            this.pictureBox2.TabStop = false;
+            this.Lbl_Desc.AutoSize = true;
+            this.Lbl_Desc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_Desc.Location = new System.Drawing.Point(7, 317);
+            this.Lbl_Desc.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Lbl_Desc.Name = "Lbl_Desc";
+            this.Lbl_Desc.Size = new System.Drawing.Size(92, 20);
+            this.Lbl_Desc.TabIndex = 29;
+            this.Lbl_Desc.Text = "Descripción";
             // 
-            // pictureBox3
+            // Btn_PAcceso
             // 
-            this.pictureBox3.Location = new System.Drawing.Point(0, 188);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(269, 127);
-            this.pictureBox3.TabIndex = 17;
-            this.pictureBox3.TabStop = false;
+            this.Btn_PAcceso.Location = new System.Drawing.Point(354, 292);
+            this.Btn_PAcceso.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Btn_PAcceso.Name = "Btn_PAcceso";
+            this.Btn_PAcceso.Size = new System.Drawing.Size(56, 47);
+            this.Btn_PAcceso.TabIndex = 26;
+            this.Btn_PAcceso.Text = "Pedir Acceso";
+            this.Btn_PAcceso.UseVisualStyleBackColor = true;
+            // 
+            // Pb_PlacaT
+            // 
+            this.Pb_PlacaT.Location = new System.Drawing.Point(0, 31);
+            this.Pb_PlacaT.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Pb_PlacaT.Name = "Pb_PlacaT";
+            this.Pb_PlacaT.Size = new System.Drawing.Size(202, 103);
+            this.Pb_PlacaT.TabIndex = 19;
+            this.Pb_PlacaT.TabStop = false;
+            // 
+            // Pb_Pdelantera
+            // 
+            this.Pb_Pdelantera.Location = new System.Drawing.Point(208, 31);
+            this.Pb_Pdelantera.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Pb_Pdelantera.Name = "Pb_Pdelantera";
+            this.Pb_Pdelantera.Size = new System.Drawing.Size(202, 103);
+            this.Pb_Pdelantera.TabIndex = 18;
+            this.Pb_Pdelantera.TabStop = false;
+            // 
+            // Pb_Face
+            // 
+            this.Pb_Face.Location = new System.Drawing.Point(0, 153);
+            this.Pb_Face.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Pb_Face.Name = "Pb_Face";
+            this.Pb_Face.Size = new System.Drawing.Size(202, 103);
+            this.Pb_Face.TabIndex = 17;
+            this.Pb_Face.TabStop = false;
             // 
             // btnBuscaDomicilio
             // 
-            this.btnBuscaDomicilio.Location = new System.Drawing.Point(472, 447);
+            this.btnBuscaDomicilio.Location = new System.Drawing.Point(354, 363);
+            this.btnBuscaDomicilio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnBuscaDomicilio.Name = "btnBuscaDomicilio";
-            this.btnBuscaDomicilio.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscaDomicilio.Size = new System.Drawing.Size(56, 19);
             this.btnBuscaDomicilio.TabIndex = 16;
             this.btnBuscaDomicilio.Text = "Buscar";
             this.btnBuscaDomicilio.UseVisualStyleBackColor = true;
             // 
-            // textBox3
+            // Tbx_Domicilio
             // 
-            this.textBox3.Location = new System.Drawing.Point(147, 449);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(303, 22);
-            this.textBox3.TabIndex = 15;
+            this.Tbx_Domicilio.Location = new System.Drawing.Point(110, 365);
+            this.Tbx_Domicilio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Tbx_Domicilio.Name = "Tbx_Domicilio";
+            this.Tbx_Domicilio.Size = new System.Drawing.Size(228, 20);
+            this.Tbx_Domicilio.TabIndex = 15;
             // 
-            // textBox2
+            // Tbx_Nombre
             // 
-            this.textBox2.Location = new System.Drawing.Point(147, 423);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(303, 22);
-            this.textBox2.TabIndex = 14;
+            this.Tbx_Nombre.Location = new System.Drawing.Point(110, 344);
+            this.Tbx_Nombre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Tbx_Nombre.Name = "Tbx_Nombre";
+            this.Tbx_Nombre.Size = new System.Drawing.Size(228, 20);
+            this.Tbx_Nombre.TabIndex = 14;
             // 
-            // textBox1
+            // Tbx_PLacas
             // 
-            this.textBox1.Location = new System.Drawing.Point(86, 366);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(135, 22);
-            this.textBox1.TabIndex = 13;
+            this.Tbx_PLacas.Location = new System.Drawing.Point(111, 296);
+            this.Tbx_PLacas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Tbx_PLacas.Name = "Tbx_PLacas";
+            this.Tbx_PLacas.Size = new System.Drawing.Size(102, 20);
+            this.Tbx_PLacas.TabIndex = 13;
             // 
-            // comboBox1
+            // Cbx_RType
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(142, 332);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(308, 24);
-            this.comboBox1.TabIndex = 12;
+            this.Cbx_RType.FormattingEnabled = true;
+            this.Cbx_RType.Location = new System.Drawing.Point(114, 268);
+            this.Cbx_RType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Cbx_RType.Name = "Cbx_RType";
+            this.Cbx_RType.Size = new System.Drawing.Size(224, 21);
+            this.Cbx_RType.TabIndex = 12;
             // 
-            // label8
+            // Lbl_RType
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(9, 328);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(127, 25);
-            this.label8.TabIndex = 11;
-            this.label8.Text = "Tipo Registro";
+            this.Lbl_RType.AutoSize = true;
+            this.Lbl_RType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_RType.Location = new System.Drawing.Point(7, 266);
+            this.Lbl_RType.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Lbl_RType.Name = "Lbl_RType";
+            this.Lbl_RType.Size = new System.Drawing.Size(103, 20);
+            this.Lbl_RType.TabIndex = 11;
+            this.Lbl_RType.Text = "Tipo Registro";
             // 
-            // label7
+            // Lbl_Domicilio
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(10, 446);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(90, 25);
-            this.label7.TabIndex = 10;
-            this.label7.Text = "Domicilio";
+            this.Lbl_Domicilio.AutoSize = true;
+            this.Lbl_Domicilio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_Domicilio.Location = new System.Drawing.Point(8, 362);
+            this.Lbl_Domicilio.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Lbl_Domicilio.Name = "Lbl_Domicilio";
+            this.Lbl_Domicilio.Size = new System.Drawing.Size(72, 20);
+            this.Lbl_Domicilio.TabIndex = 10;
+            this.Lbl_Domicilio.Text = "Domicilio";
             // 
-            // label6
+            // Lbl_Nombre
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(10, 419);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(81, 25);
-            this.label6.TabIndex = 9;
-            this.label6.Text = "Nombre";
+            this.Lbl_Nombre.AutoSize = true;
+            this.Lbl_Nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_Nombre.Location = new System.Drawing.Point(8, 340);
+            this.Lbl_Nombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Lbl_Nombre.Name = "Lbl_Nombre";
+            this.Lbl_Nombre.Size = new System.Drawing.Size(65, 20);
+            this.Lbl_Nombre.TabIndex = 9;
+            this.Lbl_Nombre.Text = "Nombre";
             // 
-            // label5
+            // Lbl_Placas
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(9, 362);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(71, 25);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Placas";
+            this.Lbl_Placas.AutoSize = true;
+            this.Lbl_Placas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_Placas.Location = new System.Drawing.Point(7, 294);
+            this.Lbl_Placas.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Lbl_Placas.Name = "Lbl_Placas";
+            this.Lbl_Placas.Size = new System.Drawing.Size(56, 20);
+            this.Lbl_Placas.TabIndex = 8;
+            this.Lbl_Placas.Text = "Placas";
             // 
-            // label4
+            // Lbl_Credential
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(309, 168);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(75, 17);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Credencial";
+            this.Lbl_Credential.AutoSize = true;
+            this.Lbl_Credential.Location = new System.Drawing.Point(232, 136);
+            this.Lbl_Credential.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Lbl_Credential.Name = "Lbl_Credential";
+            this.Lbl_Credential.Size = new System.Drawing.Size(57, 13);
+            this.Lbl_Credential.TabIndex = 7;
+            this.Lbl_Credential.Text = "Credencial";
             // 
-            // pictureBox4
+            // Pb_Credential
             // 
-            this.pictureBox4.Location = new System.Drawing.Point(278, 188);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(269, 127);
-            this.pictureBox4.TabIndex = 6;
-            this.pictureBox4.TabStop = false;
+            this.Pb_Credential.Location = new System.Drawing.Point(208, 153);
+            this.Pb_Credential.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Pb_Credential.Name = "Pb_Credential";
+            this.Pb_Credential.Size = new System.Drawing.Size(202, 103);
+            this.Pb_Credential.TabIndex = 6;
+            this.Pb_Credential.TabStop = false;
             // 
-            // label3
+            // Lbl_Face
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 168);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(50, 17);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Rostro";
+            this.Lbl_Face.AutoSize = true;
+            this.Lbl_Face.Location = new System.Drawing.Point(4, 136);
+            this.Lbl_Face.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Lbl_Face.Name = "Lbl_Face";
+            this.Lbl_Face.Size = new System.Drawing.Size(38, 13);
+            this.Lbl_Face.TabIndex = 2;
+            this.Lbl_Face.Text = "Rostro";
             // 
-            // label2
+            // Lbl_PlacaT
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(275, 18);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(109, 17);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Placa Delantera";
+            this.Lbl_PlacaT.AutoSize = true;
+            this.Lbl_PlacaT.Location = new System.Drawing.Point(206, 15);
+            this.Lbl_PlacaT.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Lbl_PlacaT.Name = "Lbl_PlacaT";
+            this.Lbl_PlacaT.Size = new System.Drawing.Size(83, 13);
+            this.Lbl_PlacaT.TabIndex = 1;
+            this.Lbl_PlacaT.Text = "Placa Delantera";
             // 
-            // label1
+            // Lbl_PlacaD
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(97, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Placa Trasera";
+            this.Lbl_PlacaD.AutoSize = true;
+            this.Lbl_PlacaD.Location = new System.Drawing.Point(4, 15);
+            this.Lbl_PlacaD.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Lbl_PlacaD.Name = "Lbl_PlacaD";
+            this.Lbl_PlacaD.Size = new System.Drawing.Size(73, 13);
+            this.Lbl_PlacaD.TabIndex = 0;
+            this.Lbl_PlacaD.Text = "Placa Trasera";
             // 
             // gbVisitantesActuales
             // 
@@ -297,273 +416,159 @@
             this.gbVisitantesActuales.Controls.Add(this.label10);
             this.gbVisitantesActuales.Controls.Add(this.label9);
             this.gbVisitantesActuales.Dock = System.Windows.Forms.DockStyle.Right;
-            this.gbVisitantesActuales.Location = new System.Drawing.Point(562, 0);
+            this.gbVisitantesActuales.Location = new System.Drawing.Point(422, 0);
+            this.gbVisitantesActuales.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gbVisitantesActuales.Name = "gbVisitantesActuales";
-            this.gbVisitantesActuales.Size = new System.Drawing.Size(454, 727);
+            this.gbVisitantesActuales.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbVisitantesActuales.Size = new System.Drawing.Size(340, 591);
             this.gbVisitantesActuales.TabIndex = 1;
             this.gbVisitantesActuales.TabStop = false;
             this.gbVisitantesActuales.Text = "Visitantes Actuales";
             // 
+            // textBox8
+            // 
+            this.textBox8.Location = new System.Drawing.Point(216, 62);
+            this.textBox8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox8.Multiline = true;
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(121, 104);
+            this.textBox8.TabIndex = 23;
+            this.textBox8.Text = "Placas, Nombre, Domicilio";
+            // 
+            // pictureBox9
+            // 
+            this.pictureBox9.Location = new System.Drawing.Point(9, 62);
+            this.pictureBox9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(202, 103);
+            this.pictureBox9.TabIndex = 22;
+            this.pictureBox9.TabStop = false;
+            // 
+            // textBox7
+            // 
+            this.textBox7.Location = new System.Drawing.Point(216, 388);
+            this.textBox7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox7.Multiline = true;
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(121, 104);
+            this.textBox7.TabIndex = 31;
+            this.textBox7.Text = "Placas, Nombre, Domicilio";
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Location = new System.Drawing.Point(9, 388);
+            this.pictureBox8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(202, 103);
+            this.pictureBox8.TabIndex = 30;
+            this.pictureBox8.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.button1.Location = new System.Drawing.Point(2, 570);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(336, 19);
+            this.button1.TabIndex = 29;
+            this.button1.Text = "Ver mas...";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(216, 280);
+            this.textBox6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox6.Multiline = true;
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(121, 104);
+            this.textBox6.TabIndex = 28;
+            this.textBox6.Text = "Placas, Nombre, Domicilio";
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Location = new System.Drawing.Point(9, 280);
+            this.pictureBox7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(202, 103);
+            this.pictureBox7.TabIndex = 27;
+            this.pictureBox7.TabStop = false;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(216, 171);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox5.Multiline = true;
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(121, 104);
+            this.textBox5.TabIndex = 26;
+            this.textBox5.Text = "Placas, Nombre, Domicilio";
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Location = new System.Drawing.Point(9, 171);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(202, 103);
+            this.pictureBox6.TabIndex = 25;
+            this.pictureBox6.TabStop = false;
+            // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(208, 18);
+            this.label11.Location = new System.Drawing.Point(156, 15);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(87, 17);
+            this.label11.Size = new System.Drawing.Size(65, 13);
             this.label11.TabIndex = 24;
             this.label11.Text = "Pre Registro";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(9, 39);
+            this.label10.Location = new System.Drawing.Point(7, 32);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(82, 17);
+            this.label10.Size = new System.Drawing.Size(61, 13);
             this.label10.TabIndex = 23;
             this.label10.Text = "Preferentes";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(6, 18);
+            this.label9.Location = new System.Drawing.Point(4, 15);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(115, 17);
+            this.label9.Size = new System.Drawing.Size(87, 13);
             this.label9.TabIndex = 22;
             this.label9.Text = "No. de Visitantes";
             // 
-            // textBox4
+            // Frm_IngresoVisita
             // 
-            this.textBox4.Location = new System.Drawing.Point(290, 21);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(160, 127);
-            this.textBox4.TabIndex = 21;
-            this.textBox4.Text = "Placas, Nombre, Domicilio";
-            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(15, 21);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(269, 127);
-            this.pictureBox1.TabIndex = 20;
-            this.pictureBox1.TabStop = false;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(288, 211);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(160, 127);
-            this.textBox5.TabIndex = 26;
-            this.textBox5.Text = "Placas, Nombre, Domicilio";
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Location = new System.Drawing.Point(12, 211);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(269, 127);
-            this.pictureBox6.TabIndex = 25;
-            this.pictureBox6.TabStop = false;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(288, 344);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(160, 127);
-            this.textBox6.TabIndex = 28;
-            this.textBox6.Text = "Placas, Nombre, Domicilio";
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.Location = new System.Drawing.Point(12, 344);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(269, 127);
-            this.pictureBox7.TabIndex = 27;
-            this.pictureBox7.TabStop = false;
-            // 
-            // button1
-            // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button1.Location = new System.Drawing.Point(3, 701);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(448, 23);
-            this.button1.TabIndex = 29;
-            this.button1.Text = "Ver mas...";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(288, 477);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(160, 127);
-            this.textBox7.TabIndex = 31;
-            this.textBox7.Text = "Placas, Nombre, Domicilio";
-            // 
-            // pictureBox8
-            // 
-            this.pictureBox8.Location = new System.Drawing.Point(12, 477);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(269, 127);
-            this.pictureBox8.TabIndex = 30;
-            this.pictureBox8.TabStop = false;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.textBox9);
-            this.groupBox1.Controls.Add(this.pictureBox10);
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.pictureBox1);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox1.Location = new System.Drawing.Point(3, 500);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(553, 224);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Busqueda";
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(288, 76);
-            this.textBox8.Multiline = true;
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(160, 127);
-            this.textBox8.TabIndex = 23;
-            this.textBox8.Text = "Placas, Nombre, Domicilio";
-            // 
-            // pictureBox9
-            // 
-            this.pictureBox9.Location = new System.Drawing.Point(12, 76);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(269, 127);
-            this.pictureBox9.TabIndex = 22;
-            this.pictureBox9.TabStop = false;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(456, 21);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(91, 42);
-            this.button2.TabIndex = 22;
-            this.button2.Text = "Seleccionar";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(456, 154);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(91, 42);
-            this.button3.TabIndex = 25;
-            this.button3.Text = "Seleccionar";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // textBox9
-            // 
-            this.textBox9.Location = new System.Drawing.Point(290, 154);
-            this.textBox9.Multiline = true;
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(160, 127);
-            this.textBox9.TabIndex = 24;
-            this.textBox9.Text = "Placas, Nombre, Domicilio";
-            // 
-            // pictureBox10
-            // 
-            this.pictureBox10.Location = new System.Drawing.Point(15, 154);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(269, 127);
-            this.pictureBox10.TabIndex = 23;
-            this.pictureBox10.TabStop = false;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(472, 359);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 58);
-            this.button4.TabIndex = 26;
-            this.button4.Text = "Pedir Acceso";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // textBox10
-            // 
-            this.textBox10.Location = new System.Drawing.Point(309, 369);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(141, 22);
-            this.textBox10.TabIndex = 28;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(236, 363);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(67, 25);
-            this.label12.TabIndex = 27;
-            this.label12.Text = "Marca";
-            // 
-            // textBox11
-            // 
-            this.textBox11.Location = new System.Drawing.Point(86, 394);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(135, 22);
-            this.textBox11.TabIndex = 30;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(9, 390);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(77, 25);
-            this.label13.TabIndex = 29;
-            this.label13.Text = "Modelo";
-            // 
-            // textBox12
-            // 
-            this.textBox12.Location = new System.Drawing.Point(309, 395);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(141, 22);
-            this.textBox12.TabIndex = 32;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(236, 392);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(59, 25);
-            this.label14.TabIndex = 31;
-            this.label14.Text = "Color";
-            // 
-            // ingresoVisitantes
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1016, 727);
+            this.ClientSize = new System.Drawing.Size(762, 591);
             this.Controls.Add(this.gbVisitantesActuales);
             this.Controls.Add(this.gbingreso);
-            this.Name = "ingresoVisitantes";
-            this.Text = "ingresoVisitantes";
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Name = "Frm_IngresoVisita";
+            this.Text = "Ingreso Visita";
             this.gbingreso.ResumeLayout(false);
+            this.Gbx_Busqueda.ResumeLayout(false);
+            this.Gbx_Busqueda.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pbx_)).EndInit();
             this.gbCamaras.ResumeLayout(false);
             this.gbCamaras.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pb_PlacaT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pb_Pdelantera)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pb_Face)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pb_Credential)).EndInit();
             this.gbVisitantesActuales.ResumeLayout(false);
             this.gbVisitantesActuales.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -572,30 +577,30 @@
 
         private System.Windows.Forms.GroupBox gbingreso;
         private System.Windows.Forms.GroupBox gbCamaras;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Label Lbl_Credential;
+        private System.Windows.Forms.PictureBox Pb_Credential;
+        private System.Windows.Forms.Label Lbl_Face;
+        private System.Windows.Forms.Label Lbl_PlacaT;
+        private System.Windows.Forms.Label Lbl_PlacaD;
+        private System.Windows.Forms.Label Lbl_RType;
+        private System.Windows.Forms.Label Lbl_Domicilio;
+        private System.Windows.Forms.Label Lbl_Nombre;
+        private System.Windows.Forms.Label Lbl_Placas;
+        private System.Windows.Forms.PictureBox Pb_PlacaT;
+        private System.Windows.Forms.PictureBox Pb_Pdelantera;
+        private System.Windows.Forms.PictureBox Pb_Face;
         private System.Windows.Forms.Button btnBuscaDomicilio;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox Tbx_Domicilio;
+        private System.Windows.Forms.TextBox Tbx_Nombre;
+        private System.Windows.Forms.TextBox Tbx_PLacas;
+        private System.Windows.Forms.ComboBox Cbx_RType;
         private System.Windows.Forms.GroupBox gbVisitantesActuales;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.PictureBox Pbx_;
+        private System.Windows.Forms.GroupBox Gbx_Busqueda;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.PictureBox pictureBox10;
@@ -609,12 +614,8 @@
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button Btn_PAcceso;
+        private System.Windows.Forms.TextBox Tbx_Desc;
+        private System.Windows.Forms.Label Lbl_Desc;
     }
 }

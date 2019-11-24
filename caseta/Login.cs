@@ -16,5 +16,12 @@ namespace caseta
         {
             InitializeComponent();
         }
+
+        private void BtnIngresar_Click(object sender, EventArgs e)
+        {
+            Frm_Menu frm = new Frm_Menu();
+            this.Hide();
+            frm.Show();
+        }
     }
 }

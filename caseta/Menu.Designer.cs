@@ -1,6 +1,6 @@
 ﻿namespace caseta
 {
-    partial class fMenu
+    partial class Frm_Menu
     {
         /// <summary>
         /// Required designer variable.
@@ -28,50 +28,55 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.Btn_VCheckIn = new System.Windows.Forms.Button();
+            this.Btn_Revision = new System.Windows.Forms.Button();
+            this.Btn_Record = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
+            // Btn_VCheckIn
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(32, 32);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(285, 130);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Ingreso Visitantes";
-            this.button1.UseVisualStyleBackColor = true;
+            this.Btn_VCheckIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_VCheckIn.Location = new System.Drawing.Point(24, 26);
+            this.Btn_VCheckIn.Margin = new System.Windows.Forms.Padding(2);
+            this.Btn_VCheckIn.Name = "Btn_VCheckIn";
+            this.Btn_VCheckIn.Size = new System.Drawing.Size(214, 106);
+            this.Btn_VCheckIn.TabIndex = 0;
+            this.Btn_VCheckIn.Text = "Ingreso Visitantes";
+            this.Btn_VCheckIn.UseVisualStyleBackColor = true;
+            this.Btn_VCheckIn.Click += new System.EventHandler(this.Btn_VCheckIn_Click);
             // 
-            // button2
+            // Btn_Revision
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(32, 168);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(285, 130);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Revisión Entradas / Salidas";
-            this.button2.UseVisualStyleBackColor = true;
+            this.Btn_Revision.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_Revision.Location = new System.Drawing.Point(24, 136);
+            this.Btn_Revision.Margin = new System.Windows.Forms.Padding(2);
+            this.Btn_Revision.Name = "Btn_Revision";
+            this.Btn_Revision.Size = new System.Drawing.Size(214, 106);
+            this.Btn_Revision.TabIndex = 1;
+            this.Btn_Revision.Text = "Revisión Entradas / Salidas";
+            this.Btn_Revision.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // Btn_Record
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(32, 304);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(285, 130);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Historial Entradas / Salidas";
-            this.button3.UseVisualStyleBackColor = true;
+            this.Btn_Record.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_Record.Location = new System.Drawing.Point(24, 247);
+            this.Btn_Record.Margin = new System.Windows.Forms.Padding(2);
+            this.Btn_Record.Name = "Btn_Record";
+            this.Btn_Record.Size = new System.Drawing.Size(214, 106);
+            this.Btn_Record.TabIndex = 2;
+            this.Btn_Record.Text = "Historial Entradas / Salidas";
+            this.Btn_Record.UseVisualStyleBackColor = true;
             // 
-            // fMenu
+            // Frm_Menu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(357, 462);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Name = "fMenu";
+            this.ClientSize = new System.Drawing.Size(268, 375);
+            this.Controls.Add(this.Btn_Record);
+            this.Controls.Add(this.Btn_Revision);
+            this.Controls.Add(this.Btn_VCheckIn);
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Name = "Frm_Menu";
             this.Text = "Menú";
             this.ResumeLayout(false);
 
@@ -79,8 +84,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button Btn_VCheckIn;
+        private System.Windows.Forms.Button Btn_Revision;
+        private System.Windows.Forms.Button Btn_Record;
     }
 }
