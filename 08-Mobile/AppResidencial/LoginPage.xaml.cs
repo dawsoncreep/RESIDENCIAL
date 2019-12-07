@@ -33,7 +33,7 @@ namespace AppResidencial
         private void BtnIniciar_Clicked(object sender, EventArgs e)
         {
 
-            HttpWebRequest myHttpWebRequest = (HttpWebRequest)HttpWebRequest.Create("http://10.92.184.149:5001/oauth2/token");
+          /*  HttpWebRequest myHttpWebRequest = (HttpWebRequest)HttpWebRequest.Create("http://10.92.184.149:5001/oauth2/token");
             myHttpWebRequest.Method = "POST";
             var dataD = new Dictionary<string, string>();
             dataD.Add("username", "admin");
@@ -84,13 +84,13 @@ namespace AppResidencial
 
             }
 
-           
-            
 
-            
-          
+
+
+
+
             //return pageContent;
-
+            
             if (usuario != "admin" || pass != "moce650529324")
             {
 
@@ -103,7 +103,9 @@ namespace AppResidencial
             {
                 Navigation.PushAsync(new HomePage());
                
-            }
+            }*/
+
+            Navigation.PushAsync(new HomePage());
         }
            
     }

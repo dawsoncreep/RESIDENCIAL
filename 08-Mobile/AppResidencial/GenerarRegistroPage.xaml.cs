@@ -51,7 +51,6 @@ namespace AppResidencial
             };
 
             var postResult1 = AppService.AppCommon.AppRestRequest.DoResourceServerPOST("api/eventtype/InsertUpdate", res);
-
         }
     }
 }

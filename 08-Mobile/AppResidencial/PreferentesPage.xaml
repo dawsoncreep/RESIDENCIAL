@@ -19,11 +19,25 @@
             <ListView.Header>
                 <Label Text="Proximas Visitas" HorizontalOptions="Center" VerticalOptions="Center" TextColor="White"/>
             </ListView.Header>
-             
-            
-            
-            
-        </ListView>
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal"  >
+                                <StackLayout Orientation="Vertical">
+                                    <Label x:Name="Name"></Label>
+                                    <Label x:Name="LastName"></Label>
+                                </StackLayout>
+                                <Image HeightRequest="30" WidthRequest="30" HorizontalOptions="EndAndExpand"></Image>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+
+
+
+            </ListView>
         
         
     </Grid>

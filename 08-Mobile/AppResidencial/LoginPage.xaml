@@ -23,7 +23,7 @@
 
                         <StackLayout >
                             <Entry x:Name="entry_usuario" Placeholder="Usuario" PlaceholderColor="WhiteSmoke" TextColor="White"  />
-                        <Entry x:Name="entry_pass" Placeholder="Contraseña" PlaceholderColor="WhiteSmoke" IsPassword="True" TextColor="White" />
+                            <Entry x:Name="entry_pass" Placeholder="Contraseña" PlaceholderColor="WhiteSmoke" IsPassword="True" TextColor="White" />
                             <Picker x:Name="picker_fracc" Title="Fraccionamiento" FontSize="18"  TextColor="White"
                                    TitleColor="WhiteSmoke"/>
 

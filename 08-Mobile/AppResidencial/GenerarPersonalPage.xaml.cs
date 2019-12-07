@@ -29,7 +29,6 @@ namespace AppResidencial
 
         private void BtnGuardar_Clicked(object sender, EventArgs e)
         {
-
             Model.Domain.Location location = new Model.Domain.Location()
             {
 
