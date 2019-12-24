@@ -2,6 +2,8 @@
 using Common;
 using Microsoft.AspNet.Identity.Owin;
 using Model.Auth;
+using Model.Custom;
+using NLog;
 using Service.InternalService;
 using System;
 using System.Linq;
@@ -14,6 +16,7 @@ namespace FrontEnd.Areas.Administration.Controllers
     [Authorize(Roles ="Admin,SuperUser,ClusterAdministrator")]
     public class UsersController : Controller
     {
+        private static ILogger logger = LogManager.GetCurrentClassLogger();
         private ApplicationRoleManager _roleManager
         {
             get
@@ -31,6 +34,7 @@ namespace FrontEnd.Areas.Administration.Controllers
         }
 
         private readonly IUserService _userService = DependecyFactory.GetInstance<IUserService>();
+        private readonly IRoleService _roleService = DependecyFactory.GetInstance<IRoleService>();
 
         // GET: User
         public ActionResult Index()
@@ -40,9 +44,36 @@ namespace FrontEnd.Areas.Administration.Controllers
             return View(model);
         }
 
-        public async Task<ActionResult> AddUser(ApplicationUser newUser)
+        public ActionResult Create()
         {
-            throw new NotImplementedException();
+            UserForGridView model = new UserForGridView();
+            model.lstRoles = _roleService.GetAll();
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> AddUser(UserForGridView newUser)
+        {
+            try
+            {
+                var userN = _userManager.FindByNameAsync(newUser.UserName);
+                if ( userN != null)
+                {
+                    newUser.PassWord = "qwerty123";
+                    var ApplicationUser = newUser.ToUser();
+                    var model = await _userManager.CreateAsync(ApplicationUser);
+                    var roleresult =_userManager.AddToRoleAsync(ApplicationUser.Id.ToString(), newUser.role.Id);
+                }
+
+                return RedirectToAction("Index", "Users", new { Area = "Administration" });
+            }
+            catch (Exception e)
+            {
+                logger.Error(e);
+                return RedirectToAction("Index", "Users", new { Area = "Administration" });
+            }
+            
         }
 
         public async Task<ActionResult> Get(string id)

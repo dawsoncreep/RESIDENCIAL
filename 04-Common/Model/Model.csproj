@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Model</RootNamespace>
-    <AssemblyName>Model</AssemblyName>
+    <AssemblyName>c</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -81,6 +81,7 @@
     <Compile Include="Custom\PermissionRoleForGridView.cs" />
     <Compile Include="Custom\TagForGridView.cs" />
     <Compile Include="Custom\UserForGridView.cs" />
+    <Compile Include="Custom\UserForGridViewExtension.cs" />
     <Compile Include="Domain\Audience.cs" />
     <Compile Include="Domain\Binnacle.cs" />
     <Compile Include="Domain\BinnaclePhoto.cs" />

@@ -1,4 +1,6 @@
 ﻿using Common;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 using Model.Auth;
 using NLog;
 using Persistence.DbContextScope;
@@ -14,6 +16,7 @@ namespace Service.ExternalService
         IEnumerable<ApplicationUser> GetAll();
         ApplicationUser Get(string userName);
         ApplicationUser Get(Guid id);
+        ResponseHelper InsertUpdate(ApplicationUser model);
     }
 
     public class APIUserService : IAPIUserService
@@ -21,6 +24,7 @@ namespace Service.ExternalService
         private static ILogger logger = LogManager.GetCurrentClassLogger();
         private readonly IDbContextScopeFactory _dbContextScopeFactory;
         private readonly IRepository<ApplicationUser> _applicationUserRepo;
+        private Persistence.DatabaseContext.ApplicationDbContext _context = new Persistence.DatabaseContext.ApplicationDbContext();
 
         public APIUserService(
             IDbContextScopeFactory dbContextScopeFactory,
@@ -88,6 +92,30 @@ namespace Service.ExternalService
                 return null;
             }
 
+        }
+
+        public ResponseHelper InsertUpdate(ApplicationUser model)
+        {
+            var rh = new ResponseHelper();
+            var store = new UserStore<ApplicationUser>(_context);
+            var manager = new UserManager<ApplicationUser>(store);
+            var user = new ApplicationUser
+            {
+                UserName = model.UserName,
+                Email = model.Email,
+            };
+
+            try
+            {
+                manager.Create(user, model.PasswordHash);
+                rh.SetResponse(true);
+            }
+            catch (Exception e)
+            {
+                logger.Error(e.Message);
+            }
+
+            return rh;
         }
     }
 }

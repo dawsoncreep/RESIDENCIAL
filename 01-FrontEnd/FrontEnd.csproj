@@ -1479,6 +1479,7 @@
     <Content Include="Assets\node_modules\ddslick\node_modules\jquery\src\.eslintrc.json" />
     <Content Include="Assets\node_modules\ddslick\package.json" />
     <Content Include="Assets\node_modules\ddslick\README.md" />
+    <Content Include="Areas\Administration\Views\Users\Create.cshtml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>

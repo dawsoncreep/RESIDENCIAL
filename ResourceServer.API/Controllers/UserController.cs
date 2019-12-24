@@ -1,4 +1,5 @@
 ﻿using Common;
+using Model.Auth;
 using NLog;
 using Service.ExternalService;
 using System;
@@ -65,6 +66,23 @@ namespace ResourceServer.API.Controllers
                 var users = _apiUserService.GetAll().ToList();
                 return Ok(users);
                 
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex);
+                return InternalServerError(ex);
+            }
+        }
+
+        [HttpPost]
+        [Route("InsertUpdate")]
+        public IHttpActionResult InsertUpdate(ApplicationUser model)
+        {
+            try
+            {
+                var rh = _apiUserService.InsertUpdate(model);
+                return Ok(rh);
+
             }
             catch (Exception ex)
             {
