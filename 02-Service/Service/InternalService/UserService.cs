@@ -14,12 +14,48 @@ namespace Service.InternalService
         IEnumerable<UserForGridView> GetAll();
         UserForGridView Get(string userName);
         UserForGridView GetById(string Id);
+        ResponseHelper InsertUpdate(ApplicationUser model);
+        ResponseHelper DeleteUserRole(ApplicationUserRole model);
     }
 
     public class UserService : IUserService
     {
         private static ILogger logger = LogManager.GetCurrentClassLogger();
         private readonly IRoleService _roleService = DependecyFactory.GetInstance<IRoleService>();
+
+        public ResponseHelper DeleteUserRole(ApplicationUserRole model)
+        {
+            var rh = new ResponseHelper();
+            try
+            {
+                var client = new RestClient(Parameters.resourceServerUrl);
+
+                var request = new RestRequest("/userRole/Delete", Method.POST);
+
+                request.Parameters.Add(new Parameter
+                {
+                    Name = "model",
+                    ContentType = "application/json",
+                    DataFormat = DataFormat.Json,
+                    Type = ParameterType.RequestBody,
+                    Value = model
+                });
+                request.AddHeader("Accept", "application/json");
+                request.AddHeader("Content-Type", "application/json");
+
+
+                IRestResponse<ResponseHelper> response = client.Execute<ResponseHelper>(request);
+
+                rh = response.Data;
+
+            }
+            catch (Exception e)
+            {
+                logger.Error(e.Message);
+            }
+
+            return rh;
+        }
 
         public UserForGridView Get(string userName)
         {
@@ -148,6 +184,40 @@ namespace Service.InternalService
             }
 
             return result; 
+        }
+
+        public ResponseHelper InsertUpdate(ApplicationUser model)
+        {
+            var rh = new ResponseHelper();
+            try
+            {
+                var client = new RestClient(Parameters.resourceServerUrl);
+
+                var request = new RestRequest("/user/InsertUpdate", Method.POST);
+
+                request.Parameters.Add(new Parameter
+                {
+                    Name = "model",
+                    ContentType = "application/json",
+                    DataFormat = DataFormat.Json,
+                    Type = ParameterType.RequestBody,
+                    Value = model
+                });
+                request.AddHeader("Accept", "application/json");
+                request.AddHeader("Content-Type", "application/json");
+
+
+                IRestResponse<ResponseHelper> response = client.Execute<ResponseHelper>(request);
+
+                rh = response.Data;
+
+            }
+            catch (Exception e)
+            {
+                logger.Error(e.Message);
+            }
+
+            return rh;
         }
     }
 }

@@ -15,7 +15,7 @@ namespace Model.Custom
         public string LastName { get; set; }
         public List<ApplicationRole> Roles { get; set; }
         public string PassWord { get; set; }
-        public ApplicationUser role { get; set; }
+        public ApplicationRole role { get; set; }
 
         [Required]
         public String LocationTypeId { get; set; }

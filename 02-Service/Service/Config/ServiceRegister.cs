@@ -37,6 +37,7 @@ namespace Service.Config
             container.Register<IRepository<ExternalBinnacle>>((x) => new Repository<ExternalBinnacle>(ambientDbContextLocator));
             container.Register<IRepository<ExternalBinnaclePhoto>>((x) => new Repository<ExternalBinnaclePhoto>(ambientDbContextLocator));
             container.Register<IRepository<BinnaclePhotoType>>((x) => new Repository<BinnaclePhotoType>(ambientDbContextLocator));
+            container.Register<IRepository<ApplicationUserRole>>((x) => new Repository<ApplicationUserRole>(ambientDbContextLocator));
 
             #endregion
 
@@ -58,6 +59,7 @@ namespace Service.Config
             container.Register<IAPITagService, APITagService>();
             container.Register<IAPIBinnacleTypeService, APIBinnacleTypeService>();
             container.Register<IAPIExternalBinnacleService, APIExternalBinnacleService>();
+            container.Register<IAPIUserRoleService, APIUserRoleService>();
 
 
             #endregion

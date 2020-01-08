@@ -1480,6 +1480,7 @@
     <Content Include="Assets\node_modules\ddslick\package.json" />
     <Content Include="Assets\node_modules\ddslick\README.md" />
     <Content Include="Areas\Administration\Views\Users\Create.cshtml" />
+    <Content Include="Areas\Administration\Views\Users\Edit.cshtml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>

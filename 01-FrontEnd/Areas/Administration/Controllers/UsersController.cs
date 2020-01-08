@@ -9,6 +9,7 @@ using NLog;
 using Persistence.DatabaseContext;
 using Service.InternalService;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
@@ -20,6 +21,7 @@ namespace FrontEnd.Areas.Administration.Controllers
     public class UsersController : Controller
     {
         private static ILogger logger = LogManager.GetCurrentClassLogger();
+
         private ApplicationRoleManager _roleManager
         {
             get
@@ -60,14 +62,18 @@ namespace FrontEnd.Areas.Administration.Controllers
         {
             try
             {
-                var userN = _userManager.FindByNameAsync(newUser.UserName);
-                if ( userN != null)
+
+                var role = _roleManager.FindById(newUser.role.Id);
+                var User = newUser.ToUser();
+                var result = _userService.InsertUpdate(User);
+                var UserR = _userManager.FindByName(User.UserName);
+                var roleUser = new ApplicationUserRole
                 {
-                    newUser.PassWord = newUser.PassWord;
-                    var ApplicationUser = newUser.ToUser();
-                    var model = await _userManager.CreateAsync(ApplicationUser);
-                    var roleresult =_userManager.AddToRoleAsync(ApplicationUser.Id.ToString(), newUser.role.Id);
-                }
+                    RoleId = newUser.role.Id,
+                    UserId = UserR.Id
+                };
+
+                var roleresult = AddRole(roleUser);
 
                 return RedirectToAction("Index", "Users", new { Area = "Administration" });
             }
@@ -106,7 +112,7 @@ namespace FrontEnd.Areas.Administration.Controllers
         {
             var model = await  _userManager.FindByIdAsync(id);
             var user = model.ToUserForGridView();
-            user.lstRoles = _roleManager.Roles.OrderBy(x => x.Name).ToList();
+            user.lstRoles = _roleManager.Roles.ToList();
 
             return View(user);
         }
@@ -118,6 +124,7 @@ namespace FrontEnd.Areas.Administration.Controllers
             try
             {
                 var user = await _userManager.FindByIdAsync(model.Id);
+                var userRole = new ApplicationUserRole();
 
                 user.Name = model.Name ?? user.Name;
                 user.LastName = model.LastName ?? user.LastName;
@@ -125,10 +132,17 @@ namespace FrontEnd.Areas.Administration.Controllers
                 user.MotherSurname = model.MotherSurname ?? user.MotherSurname;
                 user.Email = model.Email ?? user.Email;
 
+                if(user.Roles.Count != 0)
+                {
+                    userRole.UserId = user.Id;
+                    userRole.RoleId = user.Roles.ToList().FirstOrDefault().RoleId;
+                }
+                
+
                 var result = await _userManager.UpdateAsync(user);
-                var resultR = await _userManager.RemoveFromRoleAsync(user.Id, model.role.Id);
+                var resultRU = _userService.DeleteUserRole(userRole);
                 var resultRole = await _userManager.AddToRoleAsync(user.Id, model.role.Id);
-                if (!result.Succeeded|| !resultR.Succeeded|| !result.Succeeded)
+                if (!result.Succeeded || !result.Succeeded)
                 {
                     throw new Exception(result.Errors.First());
                 }
