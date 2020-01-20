@@ -37,7 +37,6 @@
             this.Tbx_Interior = new System.Windows.Forms.TextBox();
             this.Lbl_Interior = new System.Windows.Forms.Label();
             this.Tbx_Calle = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.Lbl_Calle = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.Gbx_Resultados = new System.Windows.Forms.GroupBox();
@@ -57,13 +56,13 @@
             // Btn_Buscar
             // 
             this.Btn_Buscar.Location = new System.Drawing.Point(535, 58);
-            this.Btn_Buscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Btn_Buscar.Margin = new System.Windows.Forms.Padding(2);
             this.Btn_Buscar.Name = "Btn_Buscar";
             this.Btn_Buscar.Size = new System.Drawing.Size(56, 19);
             this.Btn_Buscar.TabIndex = 0;
             this.Btn_Buscar.Text = "Buscar";
             this.Btn_Buscar.UseVisualStyleBackColor = true;
-            this.Btn_Buscar.Click += new System.EventHandler(this.button1_Click);
+            this.Btn_Buscar.Click += new System.EventHandler(this.Btn_Buscar_Click);
             // 
             // Gbx_Busqueda
             // 
@@ -74,15 +73,14 @@
             this.Gbx_Busqueda.Controls.Add(this.Tbx_Interior);
             this.Gbx_Busqueda.Controls.Add(this.Lbl_Interior);
             this.Gbx_Busqueda.Controls.Add(this.Tbx_Calle);
-            this.Gbx_Busqueda.Controls.Add(this.textBox1);
             this.Gbx_Busqueda.Controls.Add(this.Lbl_Calle);
             this.Gbx_Busqueda.Controls.Add(this.label1);
             this.Gbx_Busqueda.Controls.Add(this.Btn_Buscar);
             this.Gbx_Busqueda.Dock = System.Windows.Forms.DockStyle.Top;
             this.Gbx_Busqueda.Location = new System.Drawing.Point(0, 0);
-            this.Gbx_Busqueda.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Gbx_Busqueda.Margin = new System.Windows.Forms.Padding(2);
             this.Gbx_Busqueda.Name = "Gbx_Busqueda";
-            this.Gbx_Busqueda.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Gbx_Busqueda.Padding = new System.Windows.Forms.Padding(2);
             this.Gbx_Busqueda.Size = new System.Drawing.Size(600, 81);
             this.Gbx_Busqueda.TabIndex = 1;
             this.Gbx_Busqueda.TabStop = false;
@@ -91,7 +89,7 @@
             // Tbx_Telefono
             // 
             this.Tbx_Telefono.Location = new System.Drawing.Point(309, 42);
-            this.Tbx_Telefono.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Tbx_Telefono.Margin = new System.Windows.Forms.Padding(2);
             this.Tbx_Telefono.Name = "Tbx_Telefono";
             this.Tbx_Telefono.Size = new System.Drawing.Size(203, 20);
             this.Tbx_Telefono.TabIndex = 8;
@@ -109,7 +107,7 @@
             // Tbx_Numero
             // 
             this.Tbx_Numero.Location = new System.Drawing.Point(309, 17);
-            this.Tbx_Numero.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Tbx_Numero.Margin = new System.Windows.Forms.Padding(2);
             this.Tbx_Numero.Name = "Tbx_Numero";
             this.Tbx_Numero.Size = new System.Drawing.Size(203, 20);
             this.Tbx_Numero.TabIndex = 6;
@@ -127,7 +125,7 @@
             // Tbx_Interior
             // 
             this.Tbx_Interior.Location = new System.Drawing.Point(43, 42);
-            this.Tbx_Interior.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Tbx_Interior.Margin = new System.Windows.Forms.Padding(2);
             this.Tbx_Interior.Name = "Tbx_Interior";
             this.Tbx_Interior.Size = new System.Drawing.Size(203, 20);
             this.Tbx_Interior.TabIndex = 4;
@@ -145,18 +143,10 @@
             // Tbx_Calle
             // 
             this.Tbx_Calle.Location = new System.Drawing.Point(43, 17);
-            this.Tbx_Calle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Tbx_Calle.Margin = new System.Windows.Forms.Padding(2);
             this.Tbx_Calle.Name = "Tbx_Calle";
             this.Tbx_Calle.Size = new System.Drawing.Size(203, 20);
             this.Tbx_Calle.TabIndex = 2;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(43, 20);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(203, 20);
-            this.textBox1.TabIndex = 2;
             // 
             // Lbl_Calle
             // 
@@ -183,9 +173,9 @@
             this.Gbx_Resultados.Controls.Add(this.Dgv_Domicilio);
             this.Gbx_Resultados.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Gbx_Resultados.Location = new System.Drawing.Point(0, 81);
-            this.Gbx_Resultados.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Gbx_Resultados.Margin = new System.Windows.Forms.Padding(2);
             this.Gbx_Resultados.Name = "Gbx_Resultados";
-            this.Gbx_Resultados.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Gbx_Resultados.Padding = new System.Windows.Forms.Padding(2);
             this.Gbx_Resultados.Size = new System.Drawing.Size(600, 285);
             this.Gbx_Resultados.TabIndex = 2;
             this.Gbx_Resultados.TabStop = false;
@@ -206,7 +196,7 @@
             this.Seleccionar});
             this.Dgv_Domicilio.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Dgv_Domicilio.Location = new System.Drawing.Point(2, 15);
-            this.Dgv_Domicilio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Dgv_Domicilio.Margin = new System.Windows.Forms.Padding(2);
             this.Dgv_Domicilio.Name = "Dgv_Domicilio";
             this.Dgv_Domicilio.ReadOnly = true;
             this.Dgv_Domicilio.RowTemplate.Height = 24;
@@ -215,18 +205,21 @@
             // 
             // Calle
             // 
+            this.Calle.DataPropertyName = "Street";
             this.Calle.HeaderText = "Calle";
             this.Calle.Name = "Calle";
             this.Calle.ReadOnly = true;
             // 
             // Numero
             // 
+            this.Numero.DataPropertyName = "OutNumber";
             this.Numero.HeaderText = "Numero";
             this.Numero.Name = "Numero";
             this.Numero.ReadOnly = true;
             // 
             // Interior
             // 
+            this.Interior.DataPropertyName = "InNumber";
             this.Interior.HeaderText = "Interior";
             this.Interior.Name = "Interior";
             this.Interior.ReadOnly = true;
@@ -263,7 +256,7 @@
             this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.Gbx_Resultados);
             this.Controls.Add(this.Gbx_Busqueda);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "busquedaDomicilio";
             this.Text = "busquedaDomicilio";
             this.Gbx_Busqueda.ResumeLayout(false);
@@ -287,7 +280,6 @@
         private System.Windows.Forms.TextBox Tbx_Interior;
         private System.Windows.Forms.Label Lbl_Interior;
         private System.Windows.Forms.TextBox Tbx_Calle;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label Lbl_Calle;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Calle;
