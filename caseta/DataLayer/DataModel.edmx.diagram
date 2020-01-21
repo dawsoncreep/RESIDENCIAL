@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9c1c3ad2296743fd9a07ff863705510e" Name="Diagram1">
+        <EntityTypeShape EntityType="SecureGateModel.C__MigrationHistory" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SecureGateModel.ApplicationParameters" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SecureGateModel.AspNetRoles" Width="1.5" PointX="5.25" PointY="25.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SecureGateModel.AspNetUserClaims" Width="1.5" PointX="7.5" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SecureGateModel.AspNetUserLogins" Width="1.5" PointX="7.5" PointY="17.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SecureGateModel.AspNetUserRoles" Width="1.5" PointX="7.5" PointY="34.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SecureGateModel.AspNetUsers" Width="1.5" PointX="5.25" PointY="28.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SecureGateModel.Audiences" Width="1.5" PointX="7.5" PointY="23.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SecureGateModel.BinnaclePhotoes" Width="1.5" PointX="10.5" PointY="34.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SecureGateModel.BinnaclePhotoTypes" Width="1.5" PointX="8.25" PointY="31.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SecureGateModel.Binnacles" Width="1.5" PointX="9.75" PointY="47.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SecureGateModel.BinnacleTypes" Width="1.5" PointX="12" PointY="48.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SecureGateModel.Bulletins" Width="1.5" PointX="7.5" PointY="37.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SecureGateModel.EventLocations" Width="1.5" PointX="7.5" PointY="41.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SecureGateModel.Events" Width="1.5" PointX="18.25" PointY="38.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SecureGateModel.EventTypes" Width="1.5" PointX="16" PointY="43.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SecureGateModel.ExternalBinnaclePhotoes" Width="1.5" PointX="20.5" PointY="38.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SecureGateModel.ExternalBinnacles" Width="1.5" PointX="15.25" PointY="36.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SecureGateModel.ExternalPhotoes" Width="1.5" PointX="7.5" PointY="45.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SecureGateModel.Externals" Width="1.5" PointX="13" PointY="35.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SecureGateModel.ExternalTypes" Width="1.5" PointX="10.75" PointY="31.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SecureGateModel.Locations" Width="1.5" PointX="9.75" PointY="40" IsExpanded="true" />
+        <EntityTypeShape EntityType="SecureGateModel.LocationTelephones" Width="1.5" PointX="7.5" PointY="49.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SecureGateModel.LocationTypes" Width="1.5" PointX="7.5" PointY="28.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SecureGateModel.LocationUserNotifications" Width="1.5" PointX="7.5" PointY="53.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SecureGateModel.LocationUsers" Width="1.5" PointX="13" PointY="32.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SecureGateModel.LocationVehicles" Width="1.5" PointX="7.5" PointY="57.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SecureGateModel.Notifications" Width="1.5" PointX="12.75" PointY="43.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SecureGateModel.PermissionRoles" Width="1.5" PointX="3" PointY="38.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SecureGateModel.Permissions" Width="1.5" PointX="0.75" PointY="37.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SecureGateModel.PermissionUsers" Width="1.5" PointX="3" PointY="35.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SecureGateModel.PhotoTypes" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SecureGateModel.Tags" Width="1.5" PointX="7.5" PointY="62.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SecureGateModel.UserBinnacles" Width="1.5" PointX="7.5" PointY="67.125" IsExpanded="true" />
+        <AssociationConnector Association="SecureGateModel.FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureGateModel.FK_dbo_PermissionRoles_dbo_AspNetRoles_ApplicationRole_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureGateModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureGateModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureGateModel.FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureGateModel.FK_dbo_AspNetUsers_dbo_EventLocations_EventLocation_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureGateModel.FK_dbo_AspNetUsers_dbo_PermissionUsers_PermissionUser_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureGateModel.FK_dbo_AspNetUsers_dbo_UserBinnacles_UserBinnacle_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureGateModel.FK_dbo_Audiences_dbo_AspNetUsers_CreatedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureGateModel.FK_dbo_Audiences_dbo_AspNetUsers_DeletedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureGateModel.FK_dbo_Audiences_dbo_AspNetUsers_UpdatedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureGateModel.FK_dbo_BinnaclePhotoes_dbo_AspNetUsers_CreatedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureGateModel.FK_dbo_BinnaclePhotoes_dbo_AspNetUsers_DeletedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureGateModel.FK_dbo_BinnaclePhotoes_dbo_AspNetUsers_UpdatedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureGateModel.FK_dbo_Binnacles_dbo_AspNetUsers_CreatedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureGateModel.FK_dbo_Binnacles_dbo_AspNetUsers_DeletedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureGateModel.FK_dbo_Binnacles_dbo_AspNetUsers_UpdatedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureGateModel.FK_dbo_Bulletins_dbo_AspNetUsers_CreatedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureGateModel.FK_dbo_Bulletins_dbo_AspNetUsers_DeletedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureGateModel.FK_dbo_Bulletins_dbo_AspNetUsers_UpdatedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureGateModel.FK_dbo_CustomerBinnacles_dbo_AspNetUsers_CreatedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureGateModel.FK_dbo_CustomerBinnacles_dbo_AspNetUsers_DeletedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureGateModel.FK_dbo_CustomerBinnacles_dbo_AspNetUsers_UpdatedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureGateModel.FK_dbo_CustomerPhotoes_dbo_AspNetUsers_CreatedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureGateModel.FK_dbo_CustomerPhotoes_dbo_AspNetUsers_DeletedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureGateModel.FK_dbo_CustomerPhotoes_dbo_AspNetUsers_UpdatedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureGateModel.FK_dbo_EventLocations_dbo_AspNetUsers_CreatedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureGateModel.FK_dbo_EventLocations_dbo_AspNetUsers_DeletedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureGateModel.FK_dbo_EventLocations_dbo_AspNetUsers_UpdatedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureGateModel.FK_dbo_Events_dbo_AspNetUsers_CreatedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureGateModel.FK_dbo_Events_dbo_AspNetUsers_DeletedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureGateModel.FK_dbo_Events_dbo_AspNetUsers_UpdatedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureGateModel.FK_dbo_Externals_dbo_AspNetUsers_CreatedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureGateModel.FK_dbo_Externals_dbo_AspNetUsers_DeletedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureGateModel.FK_dbo_Externals_dbo_AspNetUsers_UpdatedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureGateModel.FK_dbo_Locations_dbo_AspNetUsers_CreatedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureGateModel.FK_dbo_Locations_dbo_AspNetUsers_DeletedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureGateModel.FK_dbo_Locations_dbo_AspNetUsers_UpdatedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureGateModel.FK_dbo_LocationTelephones_dbo_AspNetUsers_CreatedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureGateModel.FK_dbo_LocationTelephones_dbo_AspNetUsers_DeletedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureGateModel.FK_dbo_LocationTelephones_dbo_AspNetUsers_UpdatedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureGateModel.FK_dbo_LocationUserNotifications_dbo_AspNetUsers_CreatedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureGateModel.FK_dbo_LocationUserNotifications_dbo_AspNetUsers_DeletedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureGateModel.FK_dbo_LocationUserNotifications_dbo_AspNetUsers_UpdatedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureGateModel.FK_dbo_LocationUsers_dbo_AspNetUsers_ApplicationUser_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureGateModel.FK_dbo_LocationVehicles_dbo_AspNetUsers_CreatedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureGateModel.FK_dbo_LocationVehicles_dbo_AspNetUsers_DeletedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureGateModel.FK_dbo_LocationVehicles_dbo_AspNetUsers_UpdatedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureGateModel.FK_dbo_Notifications_dbo_AspNetUsers_CreatedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureGateModel.FK_dbo_Notifications_dbo_AspNetUsers_DeletedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureGateModel.FK_dbo_Notifications_dbo_AspNetUsers_UpdatedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureGateModel.FK_dbo_PermissionUsers_dbo_AspNetUsers_ApplicationUser_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureGateModel.FK_dbo_Tags_dbo_AspNetUsers_ApplicationUser_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureGateModel.FK_dbo_Tags_dbo_AspNetUsers_CreatedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureGateModel.FK_dbo_Tags_dbo_AspNetUsers_DeletedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureGateModel.FK_dbo_Tags_dbo_AspNetUsers_UpdatedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureGateModel.FK_dbo_UserBinnacles_dbo_AspNetUsers_CreatedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureGateModel.FK_dbo_UserBinnacles_dbo_AspNetUsers_DeletedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureGateModel.FK_dbo_UserBinnacles_dbo_AspNetUsers_UpdatedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureGateModel.FK_dbo_BinnaclePhotoes_dbo_BinnaclePhotoTypes_BinnaclePhotoType_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureGateModel.FK_dbo_BinnaclePhotoes_dbo_Binnacles_Binnacle_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureGateModel.FK_dbo_BinnaclePhotoes_dbo_ExternalBinnacles_ExternalBinnacle_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureGateModel.FK_dbo_ExternalBinnaclePhotoes_dbo_BinnaclePhotoTypes_BinnaclePhotoType_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureGateModel.FK_dbo_Binnacles_dbo_UserBinnacles_UserBinnacle_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureGateModel.FK_dbo_BinnacleTypes_dbo_Binnacles_Binnacle_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureGateModel.FK_dbo_Events_dbo_Binnacles_Binnacle_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureGateModel.FK_dbo_ExternalBinnacles_dbo_BinnacleTypes_BinnacleType_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureGateModel.FK_dbo_Events_dbo_EventLocations_EventLocation_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureGateModel.FK_dbo_Locations_dbo_EventLocations_EventLocation_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureGateModel.FK_dbo_Events_dbo_EventTypes_EventType_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureGateModel.FK_dbo_Events_dbo_Externals_External_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureGateModel.FK_dbo_Events_dbo_Locations_Location_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureGateModel.FK_dbo_ExternalBinnaclePhotoes_dbo_ExternalBinnacles_ExternalBinnacle_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureGateModel.FK_dbo_ExternalBinnacles_dbo_Externals_External_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureGateModel.FK_dbo_Externals_dbo_ExternalTypes_ExternalType_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureGateModel.FK_dbo_Externals_dbo_Locations_Location_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureGateModel.FK_dbo_Locations_dbo_LocationTelephones_LocationTelephone_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureGateModel.FK_dbo_Locations_dbo_LocationTypes_LocationType_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureGateModel.FK_dbo_Locations_dbo_LocationVehicles_LocationVehicle_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureGateModel.FK_dbo_LocationUsers_dbo_Locations_Location_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureGateModel.FK_dbo_Notifications_dbo_LocationUserNotifications_LocationUserNotification_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureGateModel.FK_dbo_PermissionRoles_dbo_Permissions_Permission_Id1" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureGateModel.FK_dbo_Permissions_dbo_PermissionUsers_PermissionUser_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureGateModel.FK_dbo_PermissionUsers_dbo_Permissions_Permission_Id" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

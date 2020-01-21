@@ -10,16 +10,15 @@ using System.Windows.Forms;
 
 namespace caseta
 {
-    public partial class ingresoVisitantes : Form
+    public partial class busquedaDomicilio : Form
     {
-        public ingresoVisitantes()
+        public busquedaDomicilio()
         {
             InitializeComponent();
         }
 
-        private void textBox4_TextChanged(object sender, EventArgs e)
+        private void Btn_Buscar_Click(object sender, EventArgs e)
         {
-
         }
     }
 }
