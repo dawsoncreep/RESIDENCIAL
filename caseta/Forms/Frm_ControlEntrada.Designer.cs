@@ -51,14 +51,14 @@
             // Menu_IngresoTag
             // 
             this.Menu_IngresoTag.Name = "Menu_IngresoTag";
-            this.Menu_IngresoTag.Size = new System.Drawing.Size(118, 27);
+            this.Menu_IngresoTag.Size = new System.Drawing.Size(117, 27);
             this.Menu_IngresoTag.Text = "Ingreso Tag";
             this.Menu_IngresoTag.Click += new System.EventHandler(this.Menu_IngresoTag_Click);
             // 
             // Menu_IngresoVisita
             // 
             this.Menu_IngresoVisita.Name = "Menu_IngresoVisita";
-            this.Menu_IngresoVisita.Size = new System.Drawing.Size(118, 27);
+            this.Menu_IngresoVisita.Size = new System.Drawing.Size(117, 27);
             this.Menu_IngresoVisita.Text = "Ingreso Visita";
             this.Menu_IngresoVisita.Click += new System.EventHandler(this.Menu_IngresoVisita_Click);
             // 
@@ -73,6 +73,7 @@
             this.MainMenuStrip = this.MS_Menu;
             this.Name = "Frm_ControlEntrada";
             this.Text = "Control de Entrada";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.MS_Menu.ResumeLayout(false);
             this.MS_Menu.PerformLayout();
             this.ResumeLayout(false);

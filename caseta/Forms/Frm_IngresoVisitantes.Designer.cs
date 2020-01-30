@@ -39,37 +39,39 @@
             this.Gbx_Busqueda = new System.Windows.Forms.GroupBox();
             this.DGV_Busqueda = new System.Windows.Forms.DataGridView();
             this.Btn_Buscar = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.Tbx_Busqueda = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.DGV_VisitantesActuales = new System.Windows.Forms.DataGridView();
             this.gbVisitantesActuales = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.DGV_VisitantesActuales = new System.Windows.Forms.DataGridView();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.Gbx_Registro = new System.Windows.Forms.GroupBox();
+            this.Cbbx_Domicilio = new System.Windows.Forms.ComboBox();
+            this.Tbx_Apellidos = new System.Windows.Forms.TextBox();
+            this.Lbl_Apellidos = new System.Windows.Forms.Label();
+            this.Tbx_Nombre = new System.Windows.Forms.TextBox();
+            this.Lbl_Nombre = new System.Windows.Forms.Label();
+            this.Lbl_Domicilio = new System.Windows.Forms.Label();
             this.Lbl_RType = new System.Windows.Forms.Label();
             this.Cbx_RType = new System.Windows.Forms.ComboBox();
             this.Tbx_Desc = new System.Windows.Forms.TextBox();
             this.Tbx_PLacas = new System.Windows.Forms.TextBox();
             this.Lbl_Desc = new System.Windows.Forms.Label();
-            this.Lbl_Domicilio = new System.Windows.Forms.Label();
             this.Btn_PAcceso = new System.Windows.Forms.Button();
-            this.Tbx_Nombre = new System.Windows.Forms.TextBox();
             this.Lbl_Placas = new System.Windows.Forms.Label();
-            this.Lbl_Nombre = new System.Windows.Forms.Label();
-            this.Tbx_Domicilio = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.Gbx_Busqueda.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Busqueda)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DGV_VisitantesActuales)).BeginInit();
             this.gbVisitantesActuales.SuspendLayout();
-            this.tableLayoutPanel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_VisitantesActuales)).BeginInit();
+            this.tableLayoutPanel3.SuspendLayout();
             this.Gbx_Registro.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // SPC_Credencial
@@ -156,7 +158,7 @@
             // 
             this.Gbx_Busqueda.Controls.Add(this.DGV_Busqueda);
             this.Gbx_Busqueda.Controls.Add(this.Btn_Buscar);
-            this.Gbx_Busqueda.Controls.Add(this.textBox1);
+            this.Gbx_Busqueda.Controls.Add(this.Tbx_Busqueda);
             this.Gbx_Busqueda.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Gbx_Busqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Gbx_Busqueda.Location = new System.Drawing.Point(600, 3);
@@ -188,14 +190,14 @@
             this.Btn_Buscar.Text = "Buscar";
             this.Btn_Buscar.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // Tbx_Busqueda
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.Tbx_Busqueda.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(6, 21);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(453, 22);
-            this.textBox1.TabIndex = 0;
+            this.Tbx_Busqueda.Location = new System.Drawing.Point(6, 21);
+            this.Tbx_Busqueda.Name = "Tbx_Busqueda";
+            this.Tbx_Busqueda.Size = new System.Drawing.Size(453, 22);
+            this.Tbx_Busqueda.TabIndex = 0;
             // 
             // tableLayoutPanel1
             // 
@@ -236,65 +238,6 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1195, 489);
             this.tableLayoutPanel2.TabIndex = 37;
             // 
-            // tableLayoutPanel3
-            // 
-            this.tableLayoutPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel3.ColumnCount = 2;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Controls.Add(this.Gbx_Busqueda, 1, 0);
-            this.tableLayoutPanel3.Controls.Add(this.Gbx_Registro, 0, 0);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 498);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 1;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1195, 207);
-            this.tableLayoutPanel3.TabIndex = 39;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(4, 15);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(87, 13);
-            this.label9.TabIndex = 22;
-            this.label9.Text = "No. de Visitantes";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(7, 32);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(61, 13);
-            this.label10.TabIndex = 23;
-            this.label10.Text = "Preferentes";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(201, 15);
-            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(65, 13);
-            this.label11.TabIndex = 24;
-            this.label11.Text = "Pre Registro";
-            // 
-            // DGV_VisitantesActuales
-            // 
-            this.DGV_VisitantesActuales.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.DGV_VisitantesActuales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGV_VisitantesActuales.Location = new System.Drawing.Point(5, 48);
-            this.DGV_VisitantesActuales.Name = "DGV_VisitantesActuales";
-            this.DGV_VisitantesActuales.Size = new System.Drawing.Size(464, 453);
-            this.DGV_VisitantesActuales.TabIndex = 25;
-            // 
             // gbVisitantesActuales
             // 
             this.gbVisitantesActuales.Controls.Add(this.DGV_VisitantesActuales);
@@ -311,41 +254,158 @@
             this.gbVisitantesActuales.TabStop = false;
             this.gbVisitantesActuales.Text = "Visitantes Actuales";
             // 
-            // tableLayoutPanel4
+            // DGV_VisitantesActuales
             // 
-            this.tableLayoutPanel4.ColumnCount = 1;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel3, 0, 1);
-            this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel2, 0, 0);
-            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 2;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(1201, 708);
-            this.tableLayoutPanel4.TabIndex = 31;
+            this.DGV_VisitantesActuales.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.DGV_VisitantesActuales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGV_VisitantesActuales.Location = new System.Drawing.Point(5, 48);
+            this.DGV_VisitantesActuales.Name = "DGV_VisitantesActuales";
+            this.DGV_VisitantesActuales.Size = new System.Drawing.Size(464, 453);
+            this.DGV_VisitantesActuales.TabIndex = 25;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(201, 15);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(65, 13);
+            this.label11.TabIndex = 24;
+            this.label11.Text = "Pre Registro";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(7, 32);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(61, 13);
+            this.label10.TabIndex = 23;
+            this.label10.Text = "Preferentes";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(4, 15);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(87, 13);
+            this.label9.TabIndex = 22;
+            this.label9.Text = "No. de Visitantes";
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel3.ColumnCount = 2;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Controls.Add(this.Gbx_Busqueda, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.Gbx_Registro, 0, 0);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 498);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 1;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 207F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1195, 207);
+            this.tableLayoutPanel3.TabIndex = 39;
             // 
             // Gbx_Registro
             // 
+            this.Gbx_Registro.Controls.Add(this.Cbbx_Domicilio);
+            this.Gbx_Registro.Controls.Add(this.Tbx_Apellidos);
+            this.Gbx_Registro.Controls.Add(this.Lbl_Apellidos);
+            this.Gbx_Registro.Controls.Add(this.Tbx_Nombre);
+            this.Gbx_Registro.Controls.Add(this.Lbl_Nombre);
+            this.Gbx_Registro.Controls.Add(this.Lbl_Domicilio);
             this.Gbx_Registro.Controls.Add(this.Lbl_RType);
             this.Gbx_Registro.Controls.Add(this.Cbx_RType);
             this.Gbx_Registro.Controls.Add(this.Tbx_Desc);
             this.Gbx_Registro.Controls.Add(this.Tbx_PLacas);
             this.Gbx_Registro.Controls.Add(this.Lbl_Desc);
-            this.Gbx_Registro.Controls.Add(this.Lbl_Domicilio);
             this.Gbx_Registro.Controls.Add(this.Btn_PAcceso);
-            this.Gbx_Registro.Controls.Add(this.Tbx_Nombre);
             this.Gbx_Registro.Controls.Add(this.Lbl_Placas);
-            this.Gbx_Registro.Controls.Add(this.Lbl_Nombre);
-            this.Gbx_Registro.Controls.Add(this.Tbx_Domicilio);
             this.Gbx_Registro.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Gbx_Registro.Location = new System.Drawing.Point(3, 3);
             this.Gbx_Registro.Name = "Gbx_Registro";
             this.Gbx_Registro.Size = new System.Drawing.Size(591, 201);
             this.Gbx_Registro.TabIndex = 41;
             this.Gbx_Registro.TabStop = false;
+            // 
+            // Cbbx_Domicilio
+            // 
+            this.Cbbx_Domicilio.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Cbbx_Domicilio.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.Cbbx_Domicilio.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.Cbbx_Domicilio.FormattingEnabled = true;
+            this.Cbbx_Domicilio.Location = new System.Drawing.Point(152, 27);
+            this.Cbbx_Domicilio.Margin = new System.Windows.Forms.Padding(2);
+            this.Cbbx_Domicilio.Name = "Cbbx_Domicilio";
+            this.Cbbx_Domicilio.Size = new System.Drawing.Size(431, 21);
+            this.Cbbx_Domicilio.TabIndex = 2;
+            // 
+            // Tbx_Apellidos
+            // 
+            this.Tbx_Apellidos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Tbx_Apellidos.Location = new System.Drawing.Point(152, 96);
+            this.Tbx_Apellidos.Margin = new System.Windows.Forms.Padding(2);
+            this.Tbx_Apellidos.Name = "Tbx_Apellidos";
+            this.Tbx_Apellidos.Size = new System.Drawing.Size(430, 20);
+            this.Tbx_Apellidos.TabIndex = 5;
+            // 
+            // Lbl_Apellidos
+            // 
+            this.Lbl_Apellidos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Lbl_Apellidos.AutoSize = true;
+            this.Lbl_Apellidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_Apellidos.Location = new System.Drawing.Point(8, 90);
+            this.Lbl_Apellidos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Lbl_Apellidos.Name = "Lbl_Apellidos";
+            this.Lbl_Apellidos.Size = new System.Drawing.Size(100, 25);
+            this.Lbl_Apellidos.TabIndex = 35;
+            this.Lbl_Apellidos.Text = "Apellidos";
+            // 
+            // Tbx_Nombre
+            // 
+            this.Tbx_Nombre.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Tbx_Nombre.Location = new System.Drawing.Point(152, 73);
+            this.Tbx_Nombre.Margin = new System.Windows.Forms.Padding(2);
+            this.Tbx_Nombre.Name = "Tbx_Nombre";
+            this.Tbx_Nombre.Size = new System.Drawing.Size(430, 20);
+            this.Tbx_Nombre.TabIndex = 4;
+            // 
+            // Lbl_Nombre
+            // 
+            this.Lbl_Nombre.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Lbl_Nombre.AutoSize = true;
+            this.Lbl_Nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_Nombre.Location = new System.Drawing.Point(8, 67);
+            this.Lbl_Nombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Lbl_Nombre.Name = "Lbl_Nombre";
+            this.Lbl_Nombre.Size = new System.Drawing.Size(87, 25);
+            this.Lbl_Nombre.TabIndex = 33;
+            this.Lbl_Nombre.Text = "Nombre";
+            // 
+            // Lbl_Domicilio
+            // 
+            this.Lbl_Domicilio.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Lbl_Domicilio.AutoSize = true;
+            this.Lbl_Domicilio.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_Domicilio.Location = new System.Drawing.Point(8, 21);
+            this.Lbl_Domicilio.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Lbl_Domicilio.Name = "Lbl_Domicilio";
+            this.Lbl_Domicilio.Size = new System.Drawing.Size(99, 25);
+            this.Lbl_Domicilio.TabIndex = 31;
+            this.Lbl_Domicilio.Text = "Domicilio";
             // 
             // Lbl_RType
             // 
@@ -369,28 +429,28 @@
             this.Cbx_RType.Margin = new System.Windows.Forms.Padding(2);
             this.Cbx_RType.Name = "Cbx_RType";
             this.Cbx_RType.Size = new System.Drawing.Size(431, 21);
-            this.Cbx_RType.TabIndex = 12;
+            this.Cbx_RType.TabIndex = 1;
             // 
             // Tbx_Desc
             // 
             this.Tbx_Desc.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Tbx_Desc.Location = new System.Drawing.Point(152, 52);
+            this.Tbx_Desc.Location = new System.Drawing.Point(152, 120);
             this.Tbx_Desc.Margin = new System.Windows.Forms.Padding(2);
             this.Tbx_Desc.Name = "Tbx_Desc";
             this.Tbx_Desc.Size = new System.Drawing.Size(431, 20);
-            this.Tbx_Desc.TabIndex = 30;
+            this.Tbx_Desc.TabIndex = 6;
             // 
             // Tbx_PLacas
             // 
             this.Tbx_PLacas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Tbx_PLacas.Location = new System.Drawing.Point(152, 28);
+            this.Tbx_PLacas.Location = new System.Drawing.Point(152, 50);
             this.Tbx_PLacas.Margin = new System.Windows.Forms.Padding(2);
-            this.Tbx_PLacas.MaxLength = 7;
+            this.Tbx_PLacas.MaxLength = 10;
             this.Tbx_PLacas.Name = "Tbx_PLacas";
-            this.Tbx_PLacas.Size = new System.Drawing.Size(403, 20);
-            this.Tbx_PLacas.TabIndex = 13;
+            this.Tbx_PLacas.Size = new System.Drawing.Size(234, 20);
+            this.Tbx_PLacas.TabIndex = 3;
             // 
             // Lbl_Desc
             // 
@@ -398,25 +458,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Lbl_Desc.AutoSize = true;
             this.Lbl_Desc.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_Desc.Location = new System.Drawing.Point(8, 46);
+            this.Lbl_Desc.Location = new System.Drawing.Point(8, 114);
             this.Lbl_Desc.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Lbl_Desc.Name = "Lbl_Desc";
             this.Lbl_Desc.Size = new System.Drawing.Size(125, 25);
             this.Lbl_Desc.TabIndex = 29;
             this.Lbl_Desc.Text = "Descripción";
-            // 
-            // Lbl_Domicilio
-            // 
-            this.Lbl_Domicilio.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Lbl_Domicilio.AutoSize = true;
-            this.Lbl_Domicilio.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_Domicilio.Location = new System.Drawing.Point(8, 94);
-            this.Lbl_Domicilio.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.Lbl_Domicilio.Name = "Lbl_Domicilio";
-            this.Lbl_Domicilio.Size = new System.Drawing.Size(99, 25);
-            this.Lbl_Domicilio.TabIndex = 10;
-            this.Lbl_Domicilio.Text = "Domicilio";
             // 
             // Btn_PAcceso
             // 
@@ -424,23 +471,14 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Btn_PAcceso.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_PAcceso.Location = new System.Drawing.Point(67, 124);
+            this.Btn_PAcceso.Location = new System.Drawing.Point(67, 144);
             this.Btn_PAcceso.Margin = new System.Windows.Forms.Padding(2);
             this.Btn_PAcceso.Name = "Btn_PAcceso";
-            this.Btn_PAcceso.Size = new System.Drawing.Size(461, 71);
-            this.Btn_PAcceso.TabIndex = 26;
+            this.Btn_PAcceso.Size = new System.Drawing.Size(319, 51);
+            this.Btn_PAcceso.TabIndex = 7;
             this.Btn_PAcceso.Text = "Pedir Acceso";
             this.Btn_PAcceso.UseVisualStyleBackColor = true;
-            // 
-            // Tbx_Nombre
-            // 
-            this.Tbx_Nombre.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Tbx_Nombre.Location = new System.Drawing.Point(152, 76);
-            this.Tbx_Nombre.Margin = new System.Windows.Forms.Padding(2);
-            this.Tbx_Nombre.Name = "Tbx_Nombre";
-            this.Tbx_Nombre.Size = new System.Drawing.Size(431, 20);
-            this.Tbx_Nombre.TabIndex = 14;
+            this.Btn_PAcceso.Click += new System.EventHandler(this.Btn_PAcceso_Click);
             // 
             // Lbl_Placas
             // 
@@ -448,35 +486,28 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Lbl_Placas.AutoSize = true;
             this.Lbl_Placas.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_Placas.Location = new System.Drawing.Point(8, 22);
+            this.Lbl_Placas.Location = new System.Drawing.Point(8, 44);
             this.Lbl_Placas.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Lbl_Placas.Name = "Lbl_Placas";
             this.Lbl_Placas.Size = new System.Drawing.Size(77, 25);
             this.Lbl_Placas.TabIndex = 8;
             this.Lbl_Placas.Text = "Placas";
             // 
-            // Lbl_Nombre
+            // tableLayoutPanel4
             // 
-            this.Lbl_Nombre.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Lbl_Nombre.AutoSize = true;
-            this.Lbl_Nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_Nombre.Location = new System.Drawing.Point(9, 70);
-            this.Lbl_Nombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.Lbl_Nombre.Name = "Lbl_Nombre";
-            this.Lbl_Nombre.Size = new System.Drawing.Size(87, 25);
-            this.Lbl_Nombre.TabIndex = 9;
-            this.Lbl_Nombre.Text = "Nombre";
-            // 
-            // Tbx_Domicilio
-            // 
-            this.Tbx_Domicilio.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Tbx_Domicilio.Location = new System.Drawing.Point(152, 100);
-            this.Tbx_Domicilio.Margin = new System.Windows.Forms.Padding(2);
-            this.Tbx_Domicilio.Name = "Tbx_Domicilio";
-            this.Tbx_Domicilio.Size = new System.Drawing.Size(431, 20);
-            this.Tbx_Domicilio.TabIndex = 15;
+            this.tableLayoutPanel4.ColumnCount = 1;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel3, 0, 1);
+            this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel2, 0, 0);
+            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 2;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(1201, 708);
+            this.tableLayoutPanel4.TabIndex = 31;
             // 
             // Frm_IngresoVisita
             // 
@@ -495,13 +526,13 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.DGV_VisitantesActuales)).EndInit();
             this.gbVisitantesActuales.ResumeLayout(false);
             this.gbVisitantesActuales.PerformLayout();
-            this.tableLayoutPanel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_VisitantesActuales)).EndInit();
+            this.tableLayoutPanel3.ResumeLayout(false);
             this.Gbx_Registro.ResumeLayout(false);
             this.Gbx_Registro.PerformLayout();
+            this.tableLayoutPanel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -518,7 +549,7 @@
         private System.Windows.Forms.GroupBox Gbx_Busqueda;
         private System.Windows.Forms.DataGridView DGV_Busqueda;
         private System.Windows.Forms.Button Btn_Buscar;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox Tbx_Busqueda;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
@@ -534,11 +565,13 @@
         private System.Windows.Forms.TextBox Tbx_Desc;
         private System.Windows.Forms.TextBox Tbx_PLacas;
         private System.Windows.Forms.Label Lbl_Desc;
-        private System.Windows.Forms.Label Lbl_Domicilio;
         private System.Windows.Forms.Button Btn_PAcceso;
-        private System.Windows.Forms.TextBox Tbx_Nombre;
         private System.Windows.Forms.Label Lbl_Placas;
+        private System.Windows.Forms.TextBox Tbx_Apellidos;
+        private System.Windows.Forms.Label Lbl_Apellidos;
+        private System.Windows.Forms.TextBox Tbx_Nombre;
         private System.Windows.Forms.Label Lbl_Nombre;
-        private System.Windows.Forms.TextBox Tbx_Domicilio;
+        private System.Windows.Forms.Label Lbl_Domicilio;
+        private System.Windows.Forms.ComboBox Cbbx_Domicilio;
     }
 }
